@@ -14,13 +14,12 @@ body {
     background-color: #091921;
     height: 100vh;
     color: white;
-
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    padding-left: 2rem;
-
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
 }
 
 .root h3 {
