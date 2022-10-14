@@ -13,12 +13,10 @@ export default function TypeWriter() {
                 <TypeIt className="largeTxt"
                     getBeforeInit={(instance) => {
                         instance.type("And now for something completely").pause(300).delete(10).pause(800).type("not so completely different. ");
-
-                        // Remember to return it!
                         return instance;
                     }}
 
-                />;
+                />
 
             </Wrapper>
 
@@ -35,4 +33,5 @@ const Wrapper = styled.div`
     flex-direction: column;
     text-align: left;
     line-height: auto;
+    letter-spacing: 0.8;
     `

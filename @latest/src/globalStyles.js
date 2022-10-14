@@ -1,5 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
- 
+
 const GlobalStyle = createGlobalStyle`
 
   :root {
@@ -14,6 +14,9 @@ const GlobalStyle = createGlobalStyle`
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+
+  --ti-cursor-color: green;
+  
 }
 
 a {
@@ -45,11 +48,13 @@ h1 {
 
 .largeTxt  {
     font-size: 6rem;
-   
+    color: green;
 }
 
 @media screen and (max-width: 768px) {
-    .largeTxt {font-size: 4rem }
+    .largeTxt {font-size: 4rem;
+        color: green;
+     }
 
 }
 
@@ -122,5 +127,5 @@ h1 {
 }
 
 `;
- 
+
 export default GlobalStyle;
