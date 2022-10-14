@@ -40,24 +40,7 @@ h1 {
   line-height: 1.1;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
+
 
 
 
@@ -72,6 +55,55 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.App {
+  height: 100vh;
+  width: auto;
+  text-align: center;
+  font-size: 62.5%;
+  color: #2e3440;
+  background-color: #d8dee9;
+  transition: all 0.2s ease;
+}
+.dark,
+.dark .App {
+  color: #d8dee9;
+  background-color: #2e3440;
+  transition: all 0.2s ease;
+}
+/* Button Styles */
+
+.dark-mode-toggle {
+  width: 50px;
+  height: 23px;
+  border-radius: 45px;
+  top: 0;
+  left: 0;
+}
+.dark-mode-toggle svg {
+  fill: #000;
+}
+.dark-mode-slider {
+  height: 15px;
+  width: 15px;
+  margin: 2px;
+  border-radius: 50%;
+  background-color: #2e3440;
+  display: flex;
+  position: relative;
+  transform: translateX(3px);
+  transition: all 0.2s ease;
+}
+
+.dark .dark-mode-slider {
+  transform: translateX(25px);
 }
 
 `;
