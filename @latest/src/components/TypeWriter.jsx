@@ -1,5 +1,5 @@
-import React from 'react'
-import TypeIt from 'typeit-react'
+import React from 'react';
+import TypeIt from 'typeit-react';
 import styled from 'styled-components';
 
 
@@ -12,7 +12,7 @@ export default function TypeWriter() {
             <Wrapper>
                 <TypeIt className="largeTxt"
                     getBeforeInit={(instance) => {
-                        instance.type("And now for something completely").pause(300).delete(10).pause(800).type("not so completely different. ");
+                        instance.type("And now for something completely").pause(300).delete(10).pause(800).type("not so completely different.");
                         return instance;
                     }}
 
@@ -32,6 +32,6 @@ const Wrapper = styled.div`
     justify-content: center;
     flex-direction: column;
     text-align: left;
-    line-height: auto;
+    line-height: 1;
     letter-spacing: 0.8;
     `

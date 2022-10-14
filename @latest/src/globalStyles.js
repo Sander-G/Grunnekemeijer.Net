@@ -16,7 +16,9 @@ const GlobalStyle = createGlobalStyle`
   -webkit-text-size-adjust: 100%;
 
   --ti-cursor-color: green;
-  
+  --ti-cursor-line-height: normal;
+  --ti-cursor-font-size: 1.2rem;
+ 
 }
 
 a {
@@ -47,19 +49,20 @@ h1 {
 
 
 .largeTxt  {
-    font-size: 6rem;
+    font-size: 2rem;
     color: green;
+    font-family: monospace;
 }
 
 @media screen and (max-width: 768px) {
-    .largeTxt {font-size: 4rem;
+    .largeTxt {font-size: 1rem;
         color: green;
      }
 
 }
 
 @media screen and (max-width: 450px) {
-    .largeTxt {font-size: 3rem }
+    .largeTxt {font-size: 0.8rem }
 
 }
 
