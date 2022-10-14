@@ -1,4 +1,8 @@
-:root {
+import { createGlobalStyle } from 'styled-components';
+ 
+const GlobalStyle = createGlobalStyle`
+
+  :root {
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
   font-size: 16px;
   line-height: 24px;
@@ -26,10 +30,9 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  text-align: center;
 }
 
 h1 {
@@ -56,6 +59,8 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
@@ -68,3 +73,7 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+`;
+ 
+export default GlobalStyle;
