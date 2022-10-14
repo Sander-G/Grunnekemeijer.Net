@@ -1,4 +1,5 @@
 import DarkModeBtn from './components/DarkModeBtn'
+import TypeWriter from './components/TypeWriter'
 import GlobalStyle from './globalStyles'
 
 function App() {
@@ -7,6 +8,7 @@ function App() {
     <div className="App">
      <GlobalStyle />
      <DarkModeBtn/>
+     <TypeWriter/>
     </div>
   )
 }

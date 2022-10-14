@@ -3,10 +3,7 @@ import { createGlobalStyle } from 'styled-components';
 const GlobalStyle = createGlobalStyle`
 
   :root {
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 400;
+
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
@@ -29,10 +26,14 @@ a:hover {
 }
 
 body {
-  margin: 0;
-  min-width: 320px;
-  min-height: 100vh;
-  text-align: center;
+    margin:  0;
+    font-family:  -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing:  antialiased;
+    -moz-osx-font-smoothing:  grayscale;
+    font-size: 62.5%;
+    overflow-x: hidden;
+    min-height: 100vh;
+    position: relative;
 }
 
 h1 {
@@ -42,6 +43,20 @@ h1 {
 
 
 
+.largeTxt  {
+    font-size: 6rem;
+   
+}
+
+@media screen and (max-width: 768px) {
+    .largeTxt {font-size: 4rem }
+
+}
+
+@media screen and (max-width: 450px) {
+    .largeTxt {font-size: 3rem }
+
+}
 
 
 @media (prefers-color-scheme: light) {
@@ -68,15 +83,15 @@ h1 {
   width: auto;
   text-align: center;
   font-size: 62.5%;
-  color: #2e3440;
-  background-color: #d8dee9;
-  transition: all 0.2s ease;
+  color: #091921;
+  background-color: #e6e5e5;
+  transition: all 0.6s ease;
 }
 .dark,
 .dark .App {
-  color: #d8dee9;
-  background-color: #2e3440;
-  transition: all 0.2s ease;
+  color: #e6e5e5;
+  background-color: #091921;
+  transition: all 0.8s ease;
 }
 /* Button Styles */
 
@@ -95,11 +110,11 @@ h1 {
   width: 15px;
   margin: 2px;
   border-radius: 50%;
-  background-color: #2e3440;
+  background-color: #091921;
   display: flex;
   position: relative;
   transform: translateX(3px);
-  transition: all 0.2s ease;
+  transition: all 0.4s ease;
 }
 
 .dark .dark-mode-slider {
