@@ -5,7 +5,7 @@ const GlobalStyle = createGlobalStyle`
   :root {
 
 
-  color-scheme: light dark;
+  color-scheme: dark light;
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
 
@@ -62,7 +62,8 @@ h1 {
 }
 
 @media screen and (max-width: 450px) {
-    .largeTxt {font-size: 0.8rem }
+    .largeTxt {font-size: 0.8rem;
+    font-family: 'Terminal' }
 
 }
 
@@ -93,13 +94,13 @@ h1 {
   font-size: 62.5%;
   color: #091921;
   background-color: #e6e5e5;
-  transition: all 0.6s ease;
+  transition: all 0.3s ease;
 }
 .dark,
 .dark .App {
   color: #e6e5e5;
   background-color: #091921;
-  transition: all 0.8s ease;
+  transition: all 0.3s ease;
 }
 /* Button Styles */
 
