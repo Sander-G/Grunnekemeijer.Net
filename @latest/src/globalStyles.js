@@ -51,7 +51,7 @@ h1 {
     src: url(${clacon2}) format('woff2');
 }
 
-.largeTxt  {
+.terminal  {
     
     font-size: 1rem;
     color: green;
