@@ -1,5 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
-
+import clacon2 from './assets/clacon2.woff2'
 const GlobalStyle = createGlobalStyle`
 
   :root {
@@ -46,12 +46,16 @@ h1 {
   line-height: 1.1;
 }
 
-
+@font-face {
+    font-family: clacon2;
+    src: url(${clacon2}) format('woff2');
+}
 
 .largeTxt  {
-    font-size: 2rem;
+    
+    font-size: 1rem;
     color: green;
-    font-family: monospace;
+    font-family: clacon2;
 }
 
 @media screen and (max-width: 768px) {
