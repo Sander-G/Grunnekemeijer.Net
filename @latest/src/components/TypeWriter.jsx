@@ -12,28 +12,32 @@ import { useState, useEffect } from 'react'
 
 
 export default function TypeWriter() {
+
+  
+
     const weekDay = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
     const monthName = ["Jan", "Feb","Mar", "Apr", "May", "Jun", "Jul", "Aug","Sep", "Oct", "Nov", "Dec"]
  
     const [currentDate, setCurrentDate] = useState('');
+
     useEffect(() => {
         const d = new Date();
-        let day = weekDay[d.getDay()];
+        const day = weekDay[d.getDay()];
         const m = new Date();
-        let month = monthName[m.getMonth()]
-        const date = new Date().getDate(); //Current Date
-       
-   
-
-        const hours = new Date().getHours(); //Current Hours
-        const min = new Date().getMinutes(); //Current Minutes
-        const sec = new Date().getSeconds(); //Current Seconds
+        const month = monthName[m.getMonth()]
+        const date = new Date().getDate(); 
+        const hours = new Date().getHours(); 
+        const min = new Date().getMinutes();
+        const sec = new Date().getSeconds(); 
+        const minutes = ("0" + min).slice(-2);
+        const seconds = ("0" + sec).slice(-2);
        
 
         setCurrentDate(
             day + ' ' + month + ' ' + date 
-            + ' ' + hours + ':' + min + ':' + sec
-        );
+            + ' ' + hours + ':' + minutes + ':' + seconds
+        ) ;
+       
     }, []);
 
 
@@ -42,7 +46,9 @@ export default function TypeWriter() {
     const getData = async () => {
         const res = await axios.get('https://geolocation-db.com/json/')
         console.log(res.data);
-        setIp(res.data.IPv4)
+        setIp(res.data.IPv4);
+        localStorage.setItem("lastIP", JSON.stringify(res.data.IPv4));
+       
     }
     useEffect(() => {
         //passing getData method to the lifecycle method
