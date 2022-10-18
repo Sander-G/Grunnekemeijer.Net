@@ -40,21 +40,27 @@ export default function TypeWriter() {
        
     }, []);
 
+    useEffect(() => {
+       localStorage.setItem("lastCheck", JSON.stringify(currentDate)) ;
+    }, []);
 
-    const [ip, setIp] = useState('');
+    
+    // let lastCheck = localStorage.getItem("lastCheck") ? JSON.parse(localStorage.getItem("lastCheck")) : [];
+    
+
+    // const [ip, setIp] = useState('');
     //creating function to load ip address from the API
     const getData = async () => {
         const res = await axios.get('https://geolocation-db.com/json/')
-        console.log(res.data);
-        setIp(res.data.IPv4);
-        localStorage.setItem("lastIP", JSON.stringify(res.data.IPv4));
+            //  setIp(res.data.IPv4);
+            localStorage.setItem("lastIP", JSON.stringify(res.data.IPv4));
        
     }
     useEffect(() => {
         //passing getData method to the lifecycle method
         getData()
     }, [])
-
+    let ip = localStorage.getItem("lastIP") ? JSON.parse(localStorage.getItem("lastIP")) : [];
     return (
 
         <>
@@ -63,7 +69,7 @@ export default function TypeWriter() {
             </Wrapper>
             <Wrapper>
 
-                <span className='terminal'>SG:\&nbsp; </span>
+                <span className='terminal'>S:\&nbsp; </span>
                 <TypeIt className="terminal"
                     getBeforeInit={(instance) => {
                         instance.type("And now for something completely").pause(300).delete(10).pause(800).type("not so completely different.");
