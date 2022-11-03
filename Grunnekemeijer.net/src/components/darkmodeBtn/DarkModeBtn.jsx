@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState, useEffect } from "react";
-import styled from 'styled-components';
+import { Wrapper, DmButton} from './DarkModeBtn.styled'
+
 
 
 
@@ -36,16 +37,3 @@ export default function DarkModeBtn() {
         </>
     )
 }
-
-const Wrapper = styled.div`
-display: flex ;
-flex-direction: row;
-justify-content: flex-start;
-align-items: center;
-padding: 0.5rem;
-gap: 0.5rem;
-`
-const DmButton = styled.div`
-margin: 0.5rem 1rem;
-
-`

@@ -7,7 +7,7 @@ const GlobalStyle = createGlobalStyle`
 
   color-scheme: dark light;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: #1A1A1A;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -96,14 +96,14 @@ h1 {
   width: auto;
   text-align: center;
   font-size: 62.5%;
-  color: #091921;
+  color: #1A1A1A;
   background-color: #e6e5e5;
   transition: all 0.3s ease;
 }
 .dark,
 .dark .App {
-  color: #e6e5e5;
-  background-color: #091921;
+  color: #343434;
+  background-color: #1A1A1A;
   transition: all 0.3s ease;
 }
 /* Button Styles */
@@ -118,21 +118,9 @@ h1 {
 .dark-mode-toggle svg {
   fill: #000;
 }
-.dark-mode-slider {
-  height: 15px;
-  width: 15px;
-  margin: 2px;
-  border-radius: 50%;
-  background-color: #091921;
-  display: flex;
-  position: relative;
-  transform: translateX(3px);
-  transition: all 0.4s ease;
-}
 
-.dark .dark-mode-slider {
-  transform: translateX(25px);
-}
+
+
 
 `;
 
