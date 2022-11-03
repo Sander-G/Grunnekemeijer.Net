@@ -9,7 +9,7 @@ flex-wrap: wrap;
 `
 export const G = styled.div`
 display:flex;
-font-size: 12rem;
+font-size: 16rem;
 letter-spacing: 0.4rem;
 font-weight: 800;
 border: 0.5px solid hotpink;
@@ -49,8 +49,9 @@ display: flex;
 height: auto;
 min-width: fit-content;
 writing-mode: vertical-lr;
-font-size: 6rem;
-letter-spacing: -0.1rem;
+font-size: 8rem;
+font-stretch: expanded;
+letter-spacing: -0.2rem;
 font-weight: 800;
 justify-content: center ;
 border: 0.5px solid hotpink; 

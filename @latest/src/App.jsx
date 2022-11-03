@@ -1,5 +1,5 @@
 import DarkModeBtn from './components/DarkModeBtn'
-import TypeWriter from './components/TypeWriter'
+// import TypeWriter from './components/TypeWriter'
 import NameDiv from './components/nameDiv/NameDiv'
 import GlobalStyle from './globalStyles'
 
