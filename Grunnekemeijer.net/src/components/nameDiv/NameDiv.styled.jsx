@@ -4,8 +4,24 @@ import styled from 'styled-components'
 export const Container = styled.div`
 display: flex;
 max-width: 100vw;
-height: auto;
+max-height: 100%;
 flex-wrap: wrap;
+margin: 1rem;
+justify-content: space-between;
+border: 0.5px solid hotpink;
+color: #343434;
+cursor: crosshair;
+
+--x-shadow: 0;
+--y-shadow: 0;
+--x:50%;
+--y:50%;
+transition: all 0.2s ease;
+&:hover > div{
+			transition: all 0.2s ease;
+			text-shadow: var(--x-shadow) var(--y-shadow) 10px #1A1A1A;
+		}
+
 `
 export const G = styled.div`
 display:flex;
@@ -15,6 +31,9 @@ font-weight: 800;
 border: 0.5px solid hotpink;
 height: auto;
 width: fit-content;
+
+
+
 `
 // export const R = styled.div`
 // display: flex;
@@ -55,4 +74,15 @@ letter-spacing: -0.2rem;
 font-weight: 800;
 justify-content: center ;
 border: 0.5px solid hotpink; 
-`
+
+--x-shadow: 0;
+--y-shadow: 0;
+--x:50%;
+--y:50%;
+transition: all 0.2s ease;
+&:hover{
+			transition: all 0.2s ease;
+			text-shadow: var(--x-shadow) var(--y-shadow) 10px #1A1A1A;
+		}
+`;
+

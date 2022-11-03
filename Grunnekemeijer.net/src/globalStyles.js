@@ -5,9 +5,9 @@ const GlobalStyle = createGlobalStyle`
   :root {
 
 
-  color-scheme: dark light;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #1A1A1A;
+  ${'' /* color-scheme: dark light; */}
+  ${'' /* color: rgba(255, 255, 255, 0.87); */}
+  ${'' /* background-color: #1A1A1A; */}
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -102,7 +102,7 @@ h1 {
 }
 .dark,
 .dark .App {
-  color: #343434;
+  color: #e6e5e5;
   background-color: #1A1A1A;
   transition: all 0.3s ease;
 }
@@ -119,9 +119,19 @@ h1 {
   fill: #000;
 }
 
-
-
-
 `;
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 export default GlobalStyle;
