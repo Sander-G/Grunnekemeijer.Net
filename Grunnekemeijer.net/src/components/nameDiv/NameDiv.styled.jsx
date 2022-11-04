@@ -16,7 +16,7 @@ display: flex;
 max-width: 100vw;
 max-height: 100%;
 flex-wrap: wrap;
-margin: 1rem;
+margin: 0rem 1rem;
 justify-content: space-between;
 border: 0.5px solid hotpink;
 color: #343434;

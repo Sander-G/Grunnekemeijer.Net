@@ -2,14 +2,15 @@ import DarkModeBtn from './components/darkmodeBtn/DarkModeBtn'
 // import TypeWriter from './components/TypeWriter'
 import NameDiv from './components/nameDiv/NameDiv'
 import GlobalStyle from './globalStyles'
-
+import Navbar from './components/navbar/Navbar'
 
 function App() {
 
   return (
     <div className="App">
+    
      <GlobalStyle />
-     <DarkModeBtn/>
+     <Navbar/>
      {/* <TypeWriter/> */}
      <NameDiv/>
 
