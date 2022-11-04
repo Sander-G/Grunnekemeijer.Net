@@ -34,9 +34,9 @@ document.onmousemove = function(e) {
 
 
   return (
-    <Container className='shadow_txt'>
+    <Container >
     
-    <G>G</G>
+    <G className='shadow_txt'>G</G>
     <R>R</R>
     <U>U</U>
     <N>N</N>
@@ -44,7 +44,7 @@ document.onmousemove = function(e) {
     <E>E</E> 
     <K>K</K>
     <E>E</E>
-    <M>M</M>
+    <M className='M'>M</M>
     <E>E</E>
     <I>I</I>
     <J>J</J>
