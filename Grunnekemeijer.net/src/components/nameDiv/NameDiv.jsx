@@ -37,19 +37,19 @@ document.onmousemove = function(e) {
     <Container >
     
     <G className='shadow_txt'>G</G>
-    <R>R</R>
-    <U>U</U>
-    <N>N</N>
-    <N>N</N>
-    <E>E</E> 
-    <K>K</K>
-    <E>E</E>
+    <R className='R'>R</R>
+    <U className='U'>U</U>
+    <N className='N1'>N</N>
+    <N className='N2'>N</N>
+    <E className='E'>E</E> 
+    <K className='K'>K</K>
+    <E className='E'>E</E>
     <M className='M'>M</M>
-    <E>E</E>
-    <I>I</I>
-    <J>J</J>
-    <E>E</E>
-    <R>R</R>
+    <E className='E'>E</E>
+    <I className='I'>I</I>
+    <J className='J'>J</J>
+    <E className='E'>E</E>
+    <R className='R'>R</R>
     <DotNet>.NET</DotNet>
     </Container>
 

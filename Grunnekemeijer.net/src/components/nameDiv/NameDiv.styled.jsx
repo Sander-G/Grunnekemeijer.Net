@@ -2,7 +2,7 @@ import styled, { keyframes} from 'styled-components'
 import texture from '../../assets/texture_alpha.png'
 const shakeAnimation = keyframes`  
 	0% { transform: translateX(0) }
-	25% { transform: translateX(1px) }
+	25% { transform: translateX(0.5px) }
 	50% { transform: translateX(0px) }
 	75% { transform: translateX(-0.5px) }
 	100% { transform: translateX(0) }
@@ -27,7 +27,7 @@ transition: all 0.6s ease;
 &:hover > .M {
 			transition: all 0.2s ease;
 			text-shadow: var(--x-shadow) var(--y-shadow) 15px #1A1A1A;
-			transform: scaleY(-1);
+			transform: scaleX(1);
 			text-shadow: -1px 0 skyblue, 0 1px skyblue, 1px 0 skyblue, 0 -1px skyblue;
 		}
 
