@@ -1,9 +1,15 @@
 import React from 'react'
-
-export default function flashlight() {
+import {Wrapper, FlashlightButton} from './Flashlight.styled'
+import flashlight from './../../assets/flashlight.png'
+export default function Flashlight() {
   return (
-    <>  flashlight
-    
+    <>  
+    <Wrapper>
+    <FlashlightButton>
+    <img src={flashlight}/>
+  
+    </FlashlightButton>
+    </Wrapper>
     </>
   )
 }
