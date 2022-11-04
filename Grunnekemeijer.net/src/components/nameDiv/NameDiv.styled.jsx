@@ -2,9 +2,9 @@ import styled, { keyframes} from 'styled-components'
 import texture from '../../assets/texture_alpha.png'
 const shakeAnimation = keyframes`  
 	0% { transform: translateX(0) }
-	25% { transform: translateX(0.5px) }
+	25% { transform: translateX(0.25px) }
 	50% { transform: translateX(0px) }
-	75% { transform: translateX(-0.5px) }
+	75% { transform: translateX(-0.25px) }
 	100% { transform: translateX(0) }
    `;
 
@@ -18,6 +18,8 @@ justify-content: space-between;
 border: 0.5px solid hotpink;
 color: #343434;
 cursor: crosshair;
+user-select: none;
+pointer-events: unset;
 
 --x-shadow: 0;
 --y-shadow: 0;

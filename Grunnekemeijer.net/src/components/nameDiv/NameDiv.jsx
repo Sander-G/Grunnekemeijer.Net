@@ -11,8 +11,8 @@ document.onmousemove = function(e) {
   let x = e.pageX - window.innerWidth/2;
   let y = e.pageY - window.innerHeight/2;
 
-  title.style.setProperty('--x', x + 'px')
-  title.style.setProperty('--y', y + 'px')
+  // title.style.setProperty('--x', x + 'px')
+  // title.style.setProperty('--y', y + 'px')
 }
 
 // schaduw
