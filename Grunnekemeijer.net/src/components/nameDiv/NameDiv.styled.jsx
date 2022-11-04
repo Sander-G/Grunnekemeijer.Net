@@ -41,8 +41,8 @@ transition: all 0.6s ease;
 `
 export const G = styled.p`
 display:flex;
-font-size: 16rem;
-letter-spacing: 0.4rem;
+
+letter-spacing: 0.1rem;
 font-weight: 800;
 ;
 border: 0.5px solid hotpink;
@@ -101,9 +101,8 @@ export const DotNet = styled.p`
 display: flex;
 height: auto;
 min-width: fit-content;
+align-self: flex-end;
 writing-mode: vertical-lr;
-font-size: 8rem;
-font-stretch: expanded;
 letter-spacing: -0.2rem;
 font-weight: 800;
 justify-content: center ;

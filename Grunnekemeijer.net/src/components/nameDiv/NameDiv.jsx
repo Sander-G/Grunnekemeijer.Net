@@ -34,7 +34,7 @@ document.onmousemove = function(e) {
 
 
   return (
-    <Container >
+    <Container className='nameDiv'>
     
     <G className='shadow_txt'>G</G>
     <R className='R'>R</R>

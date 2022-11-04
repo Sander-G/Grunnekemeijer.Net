@@ -119,6 +119,14 @@ h1 {
   fill: #000;
 }
 
+.nameDiv > p {
+  font-size: calc(30rem + 0.25 * (100vw - 80em) / 40);
+  font-size: -webkit-calc(3000% + 0.25 * (100vw - 8000%) / 40);
+
+
+
+}
+
 `;
 
 
