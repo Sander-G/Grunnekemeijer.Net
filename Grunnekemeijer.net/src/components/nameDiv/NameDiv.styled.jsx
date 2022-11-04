@@ -1,10 +1,13 @@
 import styled, { keyframes} from 'styled-components'
 import texture from '../../assets/texture_alpha.png'
 const shakeAnimation = keyframes`  
-	0% { transform: translateX(0) }
+	0% { transform: translateX(0)}
+	13% {transform: translateY(-0.25px) }
 	25% { transform: translateX(0.25px) }
 	50% { transform: translateX(0px) }
+	63% {transform: translateY(0.1px) }
 	75% { transform: translateX(-0.25px) }
+	99% { transform: translateY(0.25px)}
 	100% { transform: translateX(0) }
    `;
 
