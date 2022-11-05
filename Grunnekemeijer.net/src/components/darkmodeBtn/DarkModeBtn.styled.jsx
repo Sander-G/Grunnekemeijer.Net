@@ -11,5 +11,6 @@ align-items: center;
 `
 export const DmButton = styled.div`
 margin: 0.5rem 1rem;
+cursor: pointer;
 
 `
