@@ -21,6 +21,8 @@ const GlobalStyle = createGlobalStyle`
  
 }
 
+
+
 a {
   font-weight: 500;
   color: #646cff;

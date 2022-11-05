@@ -3,13 +3,12 @@ import styled from "styled-components";
 
 export const MenuLabel = styled.label`
   position: fixed;
-  top: 0rem;
-  right: 1.5rem;
+  top: 0.5rem;
+  right: 1.25rem;
   height: 3rem;
   width: 3rem;
   cursor: pointer;
   z-index: 1000;
-
   text-align: left;
 
 `;
@@ -24,7 +23,7 @@ height: 7px;
 display: inline-block;
 margin-top: 1.25rem;
 transition: all 0.3s;
-border-radius: 3px;
+border-radius: 6px;
 border: ${(props) => (props.clicked ? "1px solid transparent" : "1px solid hotpink")};
 &::before,
 &::after {
@@ -36,7 +35,7 @@ border: ${(props) => (props.clicked ? "1px solid transparent" : "1px solid hotpi
   position: absolute;
   left: -1px;
   top:-1px;
-  border-radius: 3px;
+  border-radius: 6px;
   border: 1px solid hotpink; 
   transition: all 0.3s;
 }
