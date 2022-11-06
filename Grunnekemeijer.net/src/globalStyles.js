@@ -124,10 +124,46 @@ h1 {
 .nameDiv > p {
   font-size: calc(30rem + 0.25 * (100vw - 80em) / 40);
   font-size: -webkit-calc(3000% + 0.25 * (100vw - 8000%) / 40);
-
-
-
 }
+
+
+// flashlight cursor
+.on {
+  height: 175px;
+  width: 175px;
+  border-radius: 50%;
+  position: fixed;
+  background: radial-gradient(
+    rgba(0, 0, 0, 0) 0%,
+    rgba(223, 237, 24, 0.1) 99%);
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  cursor: none;
+  user-select: none;
+  z-index: 1979;
+ 
+}
+
+
+  ${'' /* *,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  cursor: none;
+} */}
+
+.off {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  cursor: none;
+  user-select: none;
+  z-index: 1979;
+}
+
 
 `;
 
