@@ -1,4 +1,4 @@
-import styled, { keyframes} from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 import texture from '../../assets/texture_alpha.png'
 const shakeAnimation = keyframes`  
 	0% { transform: translateX(0)}
@@ -23,6 +23,9 @@ color: #343434;
 cursor: crosshair;
 user-select: none;
 pointer-events: unset;
+
+/* animation: ${shakeAnimation} 0.8s linear infinite; */
+/* animate whole container..? */
 
 --x-shadow: 0;
 --y-shadow: 0;
@@ -62,16 +65,8 @@ text-shadow: -1px 0 hotpink, 0 1px hotpink, 1px 0 hotpink, 0 -1px hotpink;
 &:hover{
 			transition: all 0.6s ease;
 			text-shadow: var(--x-shadow) var(--y-shadow) 10px #1A1A1A;
-			animation: ${shakeAnimation} 0.2s linear infinite;
-			
-			
-
-			
+			animation: ${shakeAnimation} 0.2s linear infinite;			
 		}
-
-
-
-
 `
 // export const R = styled.div`
 // display: flex;

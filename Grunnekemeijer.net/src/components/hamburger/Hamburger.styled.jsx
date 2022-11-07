@@ -47,12 +47,12 @@ border: ${(props) => (props.clicked ? "1px solid transparent" : "1px solid hotpi
   top: ${(props) => (props.clicked ? "0" : "0.8rem")};
   transform: ${(props) => (props.clicked ? "rotate(-135deg)" : "rotate(0)")};
 }
-${MenuLabel}:hover &::before {
+/* ${MenuLabel}:hover &::before {
     top: ${(props) => (props.clicked ? "0" : "-0.9rem")};
   }
   ${MenuLabel}:hover &::after {
-    top: ${(props) => (props.clicked ? "0" : "0.8rem")};
-  }
+    top: ${(props) => (props.clicked ? "0" : "0.9rem")};
+  } */
 
 
 `;
