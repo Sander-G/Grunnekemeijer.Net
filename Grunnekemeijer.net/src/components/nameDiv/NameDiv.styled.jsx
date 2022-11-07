@@ -1,6 +1,6 @@
 import styled, { keyframes } from 'styled-components'
 import texture from '../../assets/texture_alpha.png'
-const shakeAnimation = keyframes`  
+export const shakeAnimation = keyframes`  
 	0% { transform: translateX(0)}
 	13% {transform: translateY(-0.25px) }
 	25% { transform: translateX(0.25px) }
@@ -52,7 +52,6 @@ display:flex;
 
 letter-spacing: 0.1rem;
 font-weight: 800;
-;
 border: 0.5px solid hotpink;
 height: auto;
 width: fit-content;
