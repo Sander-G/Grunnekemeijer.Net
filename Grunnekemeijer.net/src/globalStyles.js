@@ -146,13 +146,13 @@ h1 {
 }
 
 
-  ${'' /* *,
+   /* *,
 *::before,
 *::after {
   margin: 0;
   padding: 0;
   cursor: none;
-} */}
+} */
 
 .off {
   position: fixed;
