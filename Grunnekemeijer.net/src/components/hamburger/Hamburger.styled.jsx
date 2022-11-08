@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 
 export const MenuLabel = styled.label`
-  position: fixed;
+  position: inherit;
   top: 0.5rem;
   right: 1.25rem;
   height: 3rem;
