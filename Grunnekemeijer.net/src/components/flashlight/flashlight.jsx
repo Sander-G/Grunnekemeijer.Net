@@ -3,11 +3,11 @@ import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import {Wrapper, FlashlightButton} from './Flashlight.styled'
 import flashlight from './../../assets/flashlight.png'
-import UIFx from "uifx";
-import tickMp3 from './../../assets/tick.mp3'
+
+
 
 export default function Flashlight() {
-  const tick = new UIFx(tickMp3);
+
   const [isOn, setIsOn] = useState('false');
   const [mousePosition, setMousePosition] = useState({
     x: 0,
@@ -44,7 +44,7 @@ export default function Flashlight() {
   return (
     <>  
     <Wrapper>
-    <FlashlightButton onClick={ ()=> {setIsOn(!isOn); {tick.play}}}>
+    <FlashlightButton onClick={ () => {setIsOn(!isOn)} }>
     <img src={flashlight} />
     <motion.div
        className={isOn? "off" : "on"}
