@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { Container, LeftContainer, RightContainer  } from './Navbar.styled'
 import DarkModeBtn from '../darkmodeBtn/DarkModeBtn'
 import Flashlight from '../flashlight/flashlight'
@@ -7,6 +7,8 @@ import { Menu } from '../menu/Menu'
 
 
 export default function Navbar() {
+ const [menuActive, setMenuActive] = useState (false)
+ 
   return (
     <>
     <Container>
