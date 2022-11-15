@@ -1,6 +1,0 @@
-${MenuLabel}:hover &::before {
-    top: ${(props) => (props.clicked ? “0” : “-1rem”)};
-   }
-   ${MenuLabel}:hover &::after {
-    top: ${(props) => (props.clicked ? “0” : “1rem”)};
-   }

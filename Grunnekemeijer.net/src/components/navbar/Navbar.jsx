@@ -8,7 +8,10 @@ import { Menu } from '../menu/Menu'
 
 export default function Navbar() {
  const [menuActive, setMenuActive] = useState (false)
- 
+ const handleMenuToggle = () => {
+  setMenuActive(!menuActive);
+}
+
   return (
     <>
     <Container>
@@ -18,7 +21,7 @@ export default function Navbar() {
     </LeftContainer>
     <RightContainer>
     <Menu/>
-    <Hamburger/>
+    <Hamburger onClick={handleMenuToggle}/>
     </RightContainer>
     </Container>
     

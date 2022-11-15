@@ -2,7 +2,7 @@ import React,{useState} from "react";
 import { MenuLabel, Icon } from "./Hamburger.styled";
 
 
-export default function Hamburger({menuActive}) {
+export default function Hamburger() {
 const [click, setClick] = useState(false);
 const handleClick = () => setClick(!click);
   
@@ -10,7 +10,8 @@ const handleClick = () => setClick(!click);
     return (
     <>
     <MenuLabel 
-    htmlFor="navi-toggle" onClick={handleClick}>
+     onClick={handleClick}>
+
 
     <Icon clicked={click}>&nbsp;</Icon>
 
