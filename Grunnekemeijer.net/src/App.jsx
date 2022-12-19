@@ -3,7 +3,8 @@
 import NameDiv from './components/nameDiv/NameDiv'
 import GlobalStyle from './globalStyles'
 import Navbar from './components/navbar/Navbar'
-import Socials from './components/socialsContainer/Socials'
+import Socials from './components/socials/Socials'
+
 
 
 
