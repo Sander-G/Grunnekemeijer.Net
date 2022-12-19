@@ -1,5 +1,4 @@
 import React from 'react';
-import {Howl, Howler} from 'howler';
 
 import {
   Container,
