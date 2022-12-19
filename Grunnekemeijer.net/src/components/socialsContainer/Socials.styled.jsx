@@ -9,7 +9,7 @@ export const Container = styled.div`
     justify-content: flex-end;
     border: 0.5px solid hotpink;
     margin: 0rem 1rem;
-    padding: 0.5rem;
+    padding: 0.2rem;
     & img {
     margin: 0.5rem;
     }
