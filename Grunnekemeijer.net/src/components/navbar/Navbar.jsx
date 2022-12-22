@@ -11,6 +11,7 @@ export default function Navbar() {
  const handleMenuToggle = () => {
   setMenuActive(!menuActive);
 }
+// navbar set active class for menu display / hamburger
 
   return (
     <>
