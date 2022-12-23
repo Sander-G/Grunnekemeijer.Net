@@ -45,6 +45,8 @@ transition: all 0.6s ease;
 			text-shadow: -1px 0 skyblue, 0 1px skyblue, 1px 0 skyblue, 0 -1px skyblue;
 		}
 
+		
+
 `
 export const G = styled.p`
 display:flex;
@@ -63,6 +65,14 @@ text-shadow: -1px 0 hotpink, 0 1px hotpink, 1px 0 hotpink, 0 -1px hotpink;
 			transition: all 0.6s ease;
 			text-shadow: var(--x-shadow) var(--y-shadow) 10px #1A1A1A;
 			animation: ${shakeAnimation} 0.2s linear infinite;			
+		}
+
+		@media (max-width:1024px) {
+			scale: 0.8;
+		
+		}
+		@media (max-width:768px) {
+			scale: 0.6;
 		}
 `
 // export const R = styled.div`
@@ -119,6 +129,13 @@ transition: all 0.s ease;
 			text-shadow: var(--x-shadow) var(--y-shadow) 10px #1A1A1A;
 			animation: ${shakeAnimation} 0.5s linear infinite;
 			text-shadow: -1px 0 skyblue, 0 1px skyblue, 1px 0 skyblue, 0 -1px skyblue;
+		}
+		@media (max-width:1024px) {
+			scale: 0.8;
+		
+		}
+		@media (max-width:768px) {
+			scale: 0.6;
 		}
 
 	
