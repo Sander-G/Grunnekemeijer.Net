@@ -67,13 +67,7 @@ text-shadow: -1px 0 hotpink, 0 1px hotpink, 1px 0 hotpink, 0 -1px hotpink;
 			animation: ${shakeAnimation} 0.2s linear infinite;			
 		}
 
-		@media (max-width:1024px) {
-			scale: 0.8;
 		
-		}
-		@media (max-width:768px) {
-			scale: 0.6;
-		}
 `
 // export const R = styled.div`
 // display: flex;
@@ -130,13 +124,7 @@ transition: all 0.s ease;
 			animation: ${shakeAnimation} 0.5s linear infinite;
 			text-shadow: -1px 0 skyblue, 0 1px skyblue, 1px 0 skyblue, 0 -1px skyblue;
 		}
-		@media (max-width:1024px) {
-			scale: 0.8;
 		
-		}
-		@media (max-width:768px) {
-			scale: 0.6;
-		}
 
 	
 `;
