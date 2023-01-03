@@ -6,7 +6,6 @@ import Socials from '../components/socials/Socials'
 export default function Home() {
     return (
         <>
-        <Navbar />
         <NameDiv />
         <Socials />
         </>
