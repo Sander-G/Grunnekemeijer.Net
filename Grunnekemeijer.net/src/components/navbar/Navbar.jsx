@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import { Container, LeftContainer, RightContainer  } from './Navbar.styled'
+import { Container, LeftContainer, RightContainer, Button  } from './Navbar.styled'
 import DarkModeBtn from '../darkmodeBtn/DarkModeBtn'
 import Flashlight from '../flashlight/flashlight'
 import Hamburger from '../hamburger/Hamburger'
@@ -21,8 +21,11 @@ export default function Navbar() {
     <Flashlight/>
     </LeftContainer>
     <RightContainer>
-    <Menu/>
-    <Hamburger onClick={handleMenuToggle}/>
+    
+      {menuActive && (
+    <Menu/>)}
+    <Button onClick={handleMenuToggle}>
+    <Hamburger/></Button>
     </RightContainer>
     </Container>
     

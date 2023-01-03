@@ -2,14 +2,12 @@ import styled from "styled-components";
 
 
 export const MenuLabel = styled.label`
-  position: inherit;
-  top: 0.5rem;
-  right: 1.25rem;
-  height: 3rem;
-  width: 3rem;
+  position: relative;
+  height: 2rem;
+  width: 2rem;
   cursor: pointer;
   z-index: 1000;
-  text-align: left;
+
 
 `;
 
@@ -47,12 +45,7 @@ border: ${(props) => (props.clicked ? "1px solid transparent" : "1px solid hotpi
   top: ${(props) => (props.clicked ? "0" : "0.8rem")};
   transform: ${(props) => (props.clicked ? "rotate(-135deg)" : "rotate(0)")};
 }
-/* ${MenuLabel}:hover &::before {
-    top: ${(props) => (props.clicked ? "0" : "-0.9rem")};
-  }
-  ${MenuLabel}:hover &::after {
-    top: ${(props) => (props.clicked ? "0" : "0.9rem")};
-  } */
+
 
 
 `;
