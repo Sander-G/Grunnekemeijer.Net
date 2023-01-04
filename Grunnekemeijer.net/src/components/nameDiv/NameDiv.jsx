@@ -1,6 +1,7 @@
 import React from 'react';
 import UIFx from 'uifx';
 import sound from '../../assets/tick.mp3';
+// should work
 import {
   Container,
   G, R, U, N, E, K, M, I, J, DotNet
@@ -9,8 +10,6 @@ import {
 export default function NameDiv() {
 
 let beep = new UIFx(sound)
-
-
   return (
     <Container className='nameDiv'>
       <G className='G'onMouseEnter={()=>beep.play()}>G</G>
