@@ -21,12 +21,15 @@ display: flex;
 flex-direction: row;
 align-items: center;
 justify-content: center;
-gap: 0.75rem;
+gap: 0.5rem;
 padding-right: 1rem; 
 
 `
 export const Button = styled.button`
 border: 0;
+height: 40px;
+width: 40px;
+margin-top:0.4rem;
 background: transparent;
-padding-bottom: 0.8rem;
+
 `

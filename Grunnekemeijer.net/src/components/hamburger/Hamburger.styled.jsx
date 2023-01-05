@@ -3,10 +3,13 @@ import styled from "styled-components";
 
 export const MenuLabel = styled.label`
   position: relative;
-  height: 2rem;
-  width: 2rem;
+  height: 40px;
+  width: 40px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   cursor: pointer;
-  z-index: 1000;
+  z-index: 100;
+
 
 
 `;
@@ -19,7 +22,7 @@ background-color: ${(props) => (props.clicked ? "transparent" : "#525252")};
 width: 35px;
 height: 7px;
 display: inline-block;
-margin-top: 1.25rem;
+
 transition: all 0.3s;
 border-radius: 6px;
 border: ${(props) => (props.clicked ? "1px solid transparent" : "1px solid hotpink")};
