@@ -74,10 +74,10 @@ h1 {
 }
 
 
-@media (prefers-color-scheme: light) {
+${'' /* @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
-    background-color: #ffffff;
+    background-color: #d0d0d0;
   }
   a:hover {
     color: #747bff;
@@ -85,7 +85,7 @@ h1 {
   button {
     background-color: #f9f9f9;
   }
-}
+} */}
 
 
 * {
@@ -110,7 +110,7 @@ h1 {
 }
 /* Button Styles */
 
-.dark-mode-toggle {
+${'' /* .dark-mode-toggle {
   width: 50px;
   height: 23px;
   border-radius: 45px;
@@ -118,8 +118,8 @@ h1 {
   left: 0;
 }
 .dark-mode-toggle svg {
-  fill: #000;
-}
+  fill: #964141;
+} */}
 
 .nameDiv > p {
   font-size: calc(30rem + 0.25 * (100vw - 80em) / 40);

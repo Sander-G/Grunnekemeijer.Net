@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState, useEffect } from "react";
-import { Wrapper, DmButton} from './DarkModeBtn.styled'
+import { Wrapper, DmButton } from './DarkModeBtn.styled'
 
 
 

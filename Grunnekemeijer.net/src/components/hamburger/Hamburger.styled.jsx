@@ -9,6 +9,7 @@ export const MenuLabel = styled.label`
   padding-bottom: 10px;
   cursor: pointer;
   z-index: 100;
+  user-select: none;
 
 
 
