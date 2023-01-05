@@ -5,9 +5,9 @@ const GlobalStyle = createGlobalStyle`
   :root {
 
 
-  ${'' /* color-scheme: dark light; */}
-  ${'' /* color: rgba(255, 255, 255, 0.87); */}
-  ${'' /* background-color: #1A1A1A; */}
+  color-scheme: dark light; 
+color: rgba(255, 255, 255, 0.87); 
+   background-color: #1A1A1A;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -25,11 +25,11 @@ const GlobalStyle = createGlobalStyle`
 
 a {
   font-weight: 500;
-  color: #646cff;
+  color: #343434;
   text-decoration: inherit;
 }
 a:hover {
-  color: #535bf2;
+  color: #525252;
 }
 
 body {
@@ -80,7 +80,7 @@ h1 {
     background-color: #d0d0d0;
   }
   a:hover {
-    color: #747bff;
+    color: #525252;
   }
   button {
     background-color: #f9f9f9;
@@ -107,6 +107,14 @@ h1 {
   color: #e6e5e5;
   background-color: #1A1A1A;
   transition: all 0.3s ease;
+
+  & a {
+    color: #525252;
+  }
+
+  & a:hover {
+    color: #343434;
+  }
 }
 /* Button Styles */
 
@@ -118,7 +126,7 @@ h1 {
   left: 0;
 }
 .dark-mode-toggle svg {
-  fill: #964141;
+  fill: #de2626;
 }
 
 .nameDiv > p {

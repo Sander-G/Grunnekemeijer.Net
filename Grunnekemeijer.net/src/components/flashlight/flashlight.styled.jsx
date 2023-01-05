@@ -17,5 +17,5 @@ user-select: none;
 `
 
 export const RotatedIcon = styled(MdFlashlightOn)`
-  transform: rotate(40deg);
+  transform: rotate(45deg);
   `;

@@ -7,7 +7,7 @@ export const shakeAnimation = keyframes`
 	50% { transform: translateX(0px) }
 	63% {transform: translateY(0.1px) }
 	75% { transform: translateX(-0.25px) }
-	99% { transform: translateY(0.25px)}
+	95% { transform: translateY(0.25px)}
 	100% { transform: translateX(0) }
    `;
 
