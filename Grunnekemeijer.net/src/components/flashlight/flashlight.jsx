@@ -1,9 +1,9 @@
 
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import {Wrapper, FlashlightButton} from './Flashlight.styled'
+import {Wrapper, FlashlightButton, RotatedIcon} from './flashlight.styled'
 import flashlight from './../../assets/flashlight.png'
-
+import { IconContext } from "react-icons";
 
 
 export default function Flashlight() {
@@ -45,7 +45,11 @@ export default function Flashlight() {
     <>  
     <Wrapper>
     <FlashlightButton onClick={ () => {setIsOn(!isOn)} }>
-    <img src={flashlight} />
+     <IconContext.Provider value={{ size: "19px"}}>
+    <RotatedIcon />
+    </IconContext.Provider>
+
+    {/* <img src={flashlight} /> */}
     <motion.div
        className={isOn? "off" : "on"}
        variants={variants}
