@@ -74,7 +74,7 @@ h1 {
 }
 
 
-${'' /* @media (prefers-color-scheme: light) {
+@media (prefers-color-scheme: light) {
   :root {
     color: #213547;
     background-color: #d0d0d0;
@@ -85,7 +85,7 @@ ${'' /* @media (prefers-color-scheme: light) {
   button {
     background-color: #f9f9f9;
   }
-} */}
+}
 
 
 * {
@@ -110,7 +110,7 @@ ${'' /* @media (prefers-color-scheme: light) {
 }
 /* Button Styles */
 
-${'' /* .dark-mode-toggle {
+.dark-mode-toggle {
   width: 50px;
   height: 23px;
   border-radius: 45px;
@@ -119,7 +119,7 @@ ${'' /* .dark-mode-toggle {
 }
 .dark-mode-toggle svg {
   fill: #964141;
-} */}
+}
 
 .nameDiv > p {
   font-size: calc(30rem + 0.25 * (100vw - 80em) / 40);

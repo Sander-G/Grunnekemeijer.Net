@@ -17,11 +17,9 @@ export default function Navbar() {
     <>
       <Container>
         <LeftContainer>
-        <MuteContext.Provider value={{ isMuted, toggleMute }}>
           <DarkModeBtn />
           <Flashlight />
           <MuteBtn />
-          </MuteContext.Provider>
         </LeftContainer>
         <RightContainer>
 
