@@ -13,4 +13,12 @@ export const Container = styled.div`
     & img {
     margin: 0.5rem;
     }
+ 
+
+  & a{
+      filter: drop-shadow(1px 1px 0.5px hotpink);
+    }
+  
+
+
 `
