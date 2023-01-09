@@ -10,12 +10,7 @@ export const MenuLabel = styled.label`
   cursor: pointer;
   z-index: 100;
   user-select: none;
-
-
-
 `;
-
-
 
 export const Icon = styled.span`
 position: relative;
@@ -23,10 +18,10 @@ background-color: ${(props) => (props.clicked ? "transparent" : "#525252")};
 width: 35px;
 height: 7px;
 display: inline-block;
-
 transition: all 0.3s;
 border-radius: 6px;
 border: ${(props) => (props.clicked ? "1px solid transparent" : "1px solid hotpink")};
+
 &::before,
 &::after {
   content: "";
@@ -38,18 +33,27 @@ border: ${(props) => (props.clicked ? "1px solid transparent" : "1px solid hotpi
   left: -1px;
   top:-1px;
   border-radius: 6px;
-  border: 1px solid hotpink; 
+  border: ${(props) => (props.clicked ? "1px solid skyblue" : "1px solid hotpink")};
+  &:hover {
+  border: ${(props) => (props.clicked ? "1px solid transparent" : "1px solid skyblue")};
+  }
+  
   transition: all 0.3s;
+  
 }
+
+
+
+
 &::before {
   top: ${(props) => (props.clicked ? "0" : "-0.9rem")};
   transform: ${(props) => (props.clicked ? "rotate(135deg)" : "rotate(0)")};
+  
 }
+
 &::after {
   top: ${(props) => (props.clicked ? "0" : "0.8rem")};
   transform: ${(props) => (props.clicked ? "rotate(-135deg)" : "rotate(0)")};
 }
-
-
 
 `;
