@@ -1,11 +1,13 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import { Wrapper, MuteButton } from './muteBtn.styled'
+import { MuteContext } from '../../context/MuteContext';
 
 
 
 
 export default function MuteBtn() {
     const [isMuted, setIsMuted] = useState(true);
+
 
     useEffect(() => {
       // Retrieve the state from local storage when the component mounts
@@ -24,6 +26,10 @@ export default function MuteBtn() {
     function handleClick() {
       setIsMuted(!isMuted);
     }
+
+    const contextValue = useContext(MuteContext)
+    contextValue.isMuted = isMuted;
+    contextValue.setIsMuted = setIsMuted;
 
     return (
         <>

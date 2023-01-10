@@ -5,11 +5,13 @@ import Home from './pages/Home'
 import Info from './pages/Info'
 import Portfolio from './pages/Portfolio'
 import NotFound from './pages/NotFound'
+import { MuteProvider } from './context/MuteContext'
 
 
 const App = () => {
 
   return (
+    <MuteProvider>
     <div className="App">
       <GlobalStyle />
       <Navbar />
@@ -22,6 +24,7 @@ const App = () => {
       </Routes>
 
     </div>
+    </MuteProvider>
   )
 }
 
