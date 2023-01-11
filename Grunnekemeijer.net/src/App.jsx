@@ -11,8 +11,9 @@ import { MuteProvider } from './context/MuteContext'
 const App = () => {
 
   return (
-    <MuteProvider>
+    
     <div className="App">
+    <MuteProvider>
       <GlobalStyle />
       <Navbar />
 
@@ -22,9 +23,9 @@ const App = () => {
         <Route path='/portfolio' element={<Portfolio />} />
         <Route path='*' element={<NotFound />} />
       </Routes>
-
+      </MuteProvider>
     </div>
-    </MuteProvider>
+   
   )
 }
 

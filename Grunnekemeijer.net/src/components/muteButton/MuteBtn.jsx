@@ -6,7 +6,8 @@ import { MuteContext } from '../../context/MuteContext';
 
 
 export default function MuteBtn() {
-    const [isMuted, setIsMuted] = useState(true);
+  const [isMuted, setIsMuted] = useState(true);
+  const { audio } = useContext(MuteContext);
 
 
     useEffect(() => {
@@ -25,11 +26,17 @@ export default function MuteBtn() {
   
     function handleClick() {
       setIsMuted(!isMuted);
+      useEffect(() => {
+        audio.muted = isMuted;
+      }, [isMuted, audio]);
     }
 
-    const contextValue = useContext(MuteContext)
-    contextValue.isMuted = isMuted;
-    contextValue.setIsMuted = setIsMuted;
+    useEffect(() => {
+      if (!isMuted) {
+        audio.play();
+      }
+}, [isMuted,audio]);
+    
 
     return (
         <>
