@@ -6,37 +6,20 @@ import { MuteContext } from '../../context/MuteContext';
 
 
 export default function MuteBtn() {
-  const [isMuted, setIsMuted] = useState(true);
-  const { audio } = useContext(MuteContext);
+  const { audio, isMuted, toggleMute } = useContext(MuteContext);
 
 
-    useEffect(() => {
-      // Retrieve the state from local storage when the component mounts
-      const storedState = localStorage.getItem('mute-btn-state');
-      if (storedState !== null) {
-        setIsMuted(storedState === 'true');
-      }
-
-    }, []);
-
-        useEffect(() => {
-      // Save the state to local storage when the component updates
-      localStorage.setItem('mute-btn-state', isMuted);
-    }, [isMuted]);
-  
-    function handleClick() {
-      setIsMuted(!isMuted);
-      useEffect(() => {
-        audio.muted = isMuted;
-      }, [isMuted, audio]);
+  useEffect(() => {
+    if (audio) {
+      audio.muted = isMuted;
     }
+  }, [isMuted, audio]);
 
-    useEffect(() => {
-      if (!isMuted) {
-        audio.play();
-      }
-}, [isMuted,audio]);
-    
+  function handleClick() {
+   toggleMute();    
+  }
+
+
 
     return (
         <>
