@@ -22,7 +22,12 @@ export default function NameDiv() {
     
       <Container className='nameDiv'>
         <G className='G' onMouseEnter={() => {console.log(audio);console.log(isMuted);!isMuted && audio.play();}}>G</G>
-        <R className='R' onMouseEnter={() => !isMuted && audio.play()}>R</R>
+        <R className='R' onMouseEnter={() => {if(!isMuted) {
+          setTimeout(() => {
+          audio.play();
+        }, 100);
+        }
+}}>R</R>
         <U className='U' onMouseEnter={() => !isMuted && audio.play()}>U</U>
         <N className='N1' onMouseEnter={() => !isMuted && audio.play()}>N</N>
         <N className='N2' onMouseEnter={() => !isMuted && audio.play()}>N</N>

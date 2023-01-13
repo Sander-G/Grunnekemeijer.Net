@@ -13,7 +13,6 @@ export const shakeAnimation = keyframes`
 
 export const Container = styled.div`
 display: flex;
-max-width: 100%;
 max-height: 100%;
 flex-wrap: wrap;
 margin: 0rem 1rem;
