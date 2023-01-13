@@ -137,8 +137,8 @@ h1 {
   font-size: calc(3000% + 0.25 * (100vw - 8000%) / 40);
 
   @media (max-width: 1024px) {
-    font-size: calc(25rem + 0.25 * (100vw - 80em) / 40);
-  font-size: -webkit-calc(2500% + 0.25 * (100vw - 8000%) / 40);
+    ${'' /* font-size: calc(25rem + 0.25 * (100vw - 80em) / 40); */}
+  font-size: calc(2500% + 0.25 * (100vw - 8000%) / 40);
 
   }
 
