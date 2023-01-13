@@ -13,7 +13,7 @@ export const shakeAnimation = keyframes`
 
 export const Container = styled.div`
 display: flex;
-max-width: 100vw;
+max-width: 100%;
 max-height: 100%;
 flex-wrap: wrap;
 margin: 0rem 1rem;
@@ -69,17 +69,6 @@ text-shadow: -1px 0 hotpink, 0 1px hotpink, 1px 0 hotpink, 0 -1px hotpink;
 
 		
 `
-// export const R = styled.div`
-// display: flex;
-// height: auto;
-// min-width: fit-content;
-// writing-mode: vertical-lr;
-// font-size: 6rem;
-// letter-spacing: 0.03em;
-// font-weight: 800;
-// justify-content: center ;
-// border: 0.5px solid hotpink;
-// `
 
 export const R = styled(G)`
 `
