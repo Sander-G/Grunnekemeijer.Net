@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react'
+import React,{ useContext } from 'react'
 import { Wrapper, MuteButton } from './muteBtn.styled'
 import { MuteContext } from '../../context/MuteContext';
 
@@ -6,14 +6,10 @@ import { MuteContext } from '../../context/MuteContext';
 
 
 export default function MuteBtn() {
-  const { audio, isMuted, toggleMute } = useContext(MuteContext);
+  const { isMuted, toggleMute } =
+   useContext(MuteContext);
 
 
-  useEffect(() => {
-    if (audio) {
-      audio.muted = isMuted;
-    }
-  }, [isMuted, audio]);
 
   function handleClick() {
    toggleMute();    
