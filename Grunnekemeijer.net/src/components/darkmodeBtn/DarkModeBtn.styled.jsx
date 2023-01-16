@@ -8,7 +8,7 @@ justify-content: flex-start;
 align-items: center;
 `
 export const DmButton = styled.div`
-margin: 0.5rem 1rem;
+margin-left: 0.75rem;
 cursor: pointer;
 
 `

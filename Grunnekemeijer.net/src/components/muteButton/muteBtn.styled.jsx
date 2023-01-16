@@ -8,7 +8,7 @@ align-items: center;
 `
 
 export const MuteButton = styled.div`
-margin: 0.5rem 1rem;
 cursor: pointer;
+margin-left: 0.75rem;
 
 `
