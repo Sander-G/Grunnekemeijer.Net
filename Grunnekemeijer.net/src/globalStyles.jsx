@@ -121,7 +121,7 @@ h1 {
 }
 /* Button Styles */
 
-.dark-mode-toggle {
+${'' /* .dark-mode-toggle {
   width: 50px;
   height: 23px;
   border-radius: 45px;
@@ -130,7 +130,7 @@ h1 {
 }
 .dark-mode-toggle svg {
   fill: #de2626;
-}
+} */}
 
 .nameDiv > p {
   ${'' /* font-size: calc(30rem + 0.25 * (100vmin - 80em) / 40); */}

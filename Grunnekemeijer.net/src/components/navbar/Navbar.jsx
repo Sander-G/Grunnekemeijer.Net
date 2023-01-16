@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { Container, LeftContainer, RightContainer, Button } from './Navbar.styled'
 import DarkModeBtn from '../darkmodeBtn/DarkModeBtn'
 import Flashlight from '../flashlight/flashlight'
@@ -8,7 +8,7 @@ import { Menu } from '../menu/Menu'
 
 
 export default function Navbar() {
-  const [darkMode, setDarkMode] = useState(true);
+  const [darkMode, setDarkMode] = useState(false);
   const [menuActive, setMenuActive] = useState(false)
   const onToggle = () => {
     setDarkMode(!darkMode)
@@ -18,14 +18,16 @@ export default function Navbar() {
   }
   const handleDarkModeToggle = () => {
     setDarkMode(!darkMode);
+    document.body.classList.toggle('dark', darkMode);
   }
 
   return (
     <>
       <Container>
         <LeftContainer>
-        <DarkModeBtn darkMode={darkMode} onToggle={handleDarkModeToggle} />
-          {!darkMode ? <Flashlight /> : null }
+          <DarkModeBtn darkMode={darkMode} onToggle=
+          {handleDarkModeToggle} />
+          {!darkMode && <Flashlight />}
           <MuteBtn />
         </LeftContainer>
         <RightContainer>
