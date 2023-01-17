@@ -133,16 +133,118 @@ ${'' /* .dark-mode-toggle {
 } */}
 
 .nameDiv > p {
-  ${'' /* font-size: calc(30rem + 0.25 * (100vmin - 80em) / 40); */}
+  
   font-size: calc(3000% + 0.25 * (100vw - 8000%) / 40);
 
-  @media (max-width: 1024px) {
-    ${'' /* font-size: calc(25rem + 0.25 * (100vw - 80em) / 40); */}
-  font-size: calc(2500% + 0.25 * (100vw - 8000%) / 40);
+  
+  @media (min-width: 768px) and (max-width: 1024px) and (min-height: 1281px) and (orientation: portrait) {
+    
+    font-size: calc(4100% + 0.25 * (100vw - 8000%) / 40);
+  
+    }
+  @media (min-width: 768px) and (max-width: 1024px) and (max-height: 1280px) and (orientation: portrait) {
+    
+  font-size: calc(3500% + 0.25 * (100vw - 8000%) / 40);
 
   }
+  @media (min-width: 768px) and (max-width: 1024px) and (max-height: 1024px) and (orientation: portrait) {
+    
+    font-size: calc(2950% + 0.25 * (100vw - 8000%) / 40);
+  
+    }
+  @media (min-width: 500px) and (max-width: 767px) and (max-height: 1100px) and (orientation: portrait) {
+   
+  font-size: calc(3000% + 0.25 * (100vw - 8000%) / 40);
 
+  }
+  @media (min-width: 500px) and (max-width: 768px) and (min-height: 668px) and (max-height: 900px) and (orientation: portrait) {
+   
+  font-size: calc(2030% + 0.25 * (100vw - 8000%) / 40);
+
+  }
+  @media (min-width: 400px) and (max-width: 500px) and (max-height: 1024px) and (orientation: portrait) {
+   
+  font-size: calc(2050% + 0.25 * (100vw - 8000%) / 40);
+
+  }
+  @media (min-width) and (max-width: 500px) and (max-height: 667px) and (orientation: portrait) {
+    
+  font-size: calc(1760% + 0.25 * (100vw - 8000%) / 40);
+
+  }
+   @media (max-width: 400px) and (max-height: 667px) and (orientation: portrait) {
+    
+  font-size: calc(1760% + 0.25 * (100vw - 8000%) / 40);
+
+  }
+  @media (max-width: 400px) and (min-height: 668px) and (orientation: portrait) {
+    
+  font-size: calc(1730% + 0.25 * (100vw - 8000%) / 40);
+
+  }
+  @media (max-width: 400px) and (min-height: 768px) and (max-height:900px) and (orientation: portrait) {
+    
+    font-size: calc(1920% + 0.25 * (100vw - 8000%) / 40);
+  
+    }
+  @media (max-width: 300px) and (max-height: 667px) and (orientation: portrait) {
+    
+    font-size: calc(1430% + 0.25 * (100vw - 8000%) / 40);
+  
+    }
+  //landscape
+
+ 
+
+  
+  @media (min-width: 500px) and (max-width: 768px) and (max-height: 300px) and (orientation: landscape) {
+    
+    font-size: calc(1000% + 0.25 * (100vw - 8000%) / 40);
+  }
+
+@media (min-width: 500px) and (max-width: 768px) and (min-height:300px) and (max-height: 550px) and (orientation: landscape) {
+    
+    font-size: calc(1575% + 0.25 * (100vw - 8000%) / 40);
+  }
+  
+  @media (min-width: 769px) and (max-width: 1024px) and (min-height:901px) and (orientation: landscape) {
+    
+  font-size: calc(2680% + 0.25 * (100vw - 8000%) / 40);
+
+  }
+  @media (min-width: 769px) and (max-width: 1024px) and (max-height: 768px) and (orientation: landscape) {
+    
+    font-size: calc(2700% + 0.25 * (100vw - 8000%) / 40);
+  
+    }
+  @media (min-width: 769px) and (max-width: 1024px) and (max-height: 450px) and (orientation: landscape) {
+    
+    font-size: calc(1900% + 0.25 * (100vw - 8000%) / 40);
+  
+    }
+    @media (min-width: 769px) and (max-width: 1024px) and (max-height: 400px) and (orientation: landscape) {
+    
+    font-size: calc(1700% + 0.25 * (100vw - 8000%) / 40);
+  
+    }
+  @media (min-width: 1025px) and (max-width: 1280px) and (orientation: landscape) {
+    
+  font-size: calc(3350% + 0.25 * (100vw - 8000%) / 40);
+
+  }
+  @media (min-width: 1025px) and (max-width: 1280px) and (max-height: 900px) and (orientation: landscape) {
+    
+    font-size: calc(3100% + 0.25 * (100vw - 8000%) / 40);
+  
+    }
+
+    @media (min-width: 1281px) and (max-height: 950px) and (orientation: landscape) {
+    
+    font-size: calc(3612% + 0.25 * (100vw - 8000%) / 40);
+  
+    }
 }
+
  /* scale namediv here with media queries: .. 
 
  
