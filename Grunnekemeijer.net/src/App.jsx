@@ -20,8 +20,9 @@ const App = () => {
 
         <Routes>
           <Route path='/' element={<Home />} />
-          <Route path='/info' element={<Info />} />
-          <Route path='/portfolio' element={<Portfolio />} />
+          <Route path='/Home' element={<Home />} />
+          <Route path='/Info' element={<Info />} />
+          <Route path='/Portfolio' element={<Portfolio />} />
           <Route path='*' element={<NotFound />} />
         </Routes>
       </MuteProvider>
