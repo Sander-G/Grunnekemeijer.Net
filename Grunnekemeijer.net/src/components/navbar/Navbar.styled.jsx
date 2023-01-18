@@ -14,13 +14,16 @@ margin: 0rem 1rem;
 
 export const LeftContainer = styled.div`
 display: flex;
+@media screen and (max-width:1024px) {
+    scale: 0.8;
+}
 `
 
 export const RightContainer = styled.div`
 display: flex;
 flex-direction: row;
 align-items: center;
-justify-content: center;
+justify-content: flex-end;
 gap: 0.5rem;
 padding-right: 1rem; 
 

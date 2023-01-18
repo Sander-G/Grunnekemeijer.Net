@@ -8,8 +8,14 @@ display: flex;
 & ul {
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: flex-start;
     margin-right: 1rem;
+    @media screen and (max-width:1024px) {
+        margin-right: 0rem;
+        
+    
+}
+   
 }
 & li {
     list-style-type: none;
@@ -19,6 +25,11 @@ display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    @media screen and (max-width:1024px) {
+        font-size: 1.1rem;
+        margin-inline: 0.3rem;
+    
+}
    
   
     

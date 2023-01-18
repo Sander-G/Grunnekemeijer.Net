@@ -21,6 +21,9 @@ display: inline-block;
 transition: all 0.3s;
 border-radius: 6px;
 border: ${(props) => (props.clicked ? "1px solid transparent" : "1px solid hotpink")};
+@media screen and (max-width:1024px) {
+    scale: 0.75;
+}
 
 &::before,
 &::after {
