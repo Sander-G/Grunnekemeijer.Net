@@ -3,7 +3,10 @@ import Howler from 'howler';
 
 const soundFiles = [
     'src/assets/tick.mp3',
-    'src/assets/tick1.mp3',
+    'src/assets/clickTone.mp3',
+    'src/assets/interfaceTap.mp3',
+    'src/assets/staticBuzz.mp3'
+    
     /// meer mp3's hier
 ]
 

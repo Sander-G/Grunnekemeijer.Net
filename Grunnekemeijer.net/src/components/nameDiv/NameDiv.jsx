@@ -20,22 +20,35 @@ export default function NameDiv() {
 
   return (
 
-    <Container className='nameDiv'>
+    <Container className='nameDiv' 
+    onMouseEnter={() => {
+      if (!isMuted) { 
+      sounds[3].loop(true);
+      sounds[3].volume(0.5);
+      sounds[3].play();
+      }
+    }
+    }
+    onMouseLeave={() => {
+      sounds[3].stop();
+    }
+    }
+    >
       <G className='G' onMouseEnter={() => { console.log(sounds[0]); console.log(isMuted); !isMuted && sounds[0].play()}}>G</G>
-      <R className='R' onMouseEnter={() => !isMuted && sounds[0].play()}>R</R>
-      <U className='U' onMouseEnter={() => !isMuted && sounds[1].play()}>U</U>
+      <R className='R' onMouseEnter={() => !isMuted && sounds[1].play()}>R</R>
+      <U className='U' onMouseEnter={() => !isMuted && sounds[2].play()}>U</U>
       <N className='N1' onMouseEnter={() => !isMuted && sounds[0].play()}>N</N>
-      <N className='N2' onMouseEnter={() => !isMuted && sounds[0].play()}>N</N>
-      <E className='E' onMouseEnter={() => !isMuted && sounds[1].play()}>E</E>
+      <N className='N2' onMouseEnter={() => !isMuted && sounds[1].play()}>N</N>
+      <E className='E' onMouseEnter={() => !isMuted && sounds[2].play()}>E</E>
       <K className='K' onMouseEnter={() => !isMuted && sounds[0].play()}>K</K>
       <E className='E' onMouseEnter={() => !isMuted && sounds[1].play()}>E</E>
-      <M className='M' onMouseEnter={() => !isMuted && sounds[0].play()}>M</M>
-      <E className='E' onMouseEnter={() => !isMuted && sounds[1].play()}>E</E>
-      <I className='I' onMouseEnter={() => !isMuted && sounds[0].play()}>I</I>
-      <J className='J' onMouseEnter={() => !isMuted && sounds[1].play()}>J</J>
+      <M className='M' onMouseEnter={() => !isMuted && sounds[2].play()}>M</M>
+      <E className='E' onMouseEnter={() => !isMuted && sounds[0].play()}>E</E>
+      <I className='I' onMouseEnter={() => !isMuted && sounds[1].play()}>I</I>
+      <J className='J' onMouseEnter={() => !isMuted && sounds[2].play()}>J</J>
       <E className='E' onMouseEnter={() => !isMuted && sounds[0].play()}>E</E>
       <R className='R' onMouseEnter={() => !isMuted && sounds[1].play()}>R</R>
-      <DotNet onMouseEnter={() => !isMuted && sounds[0].play()}>.NET</DotNet>
+      <DotNet onMouseEnter={() => !isMuted && sounds[2].play()}>.NET</DotNet>
 
     </Container>
 
