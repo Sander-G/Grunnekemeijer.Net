@@ -13,7 +13,7 @@ export const shakeAnimation = keyframes`
 
 export const Container = styled.div`
 display: flex;
-padding-top: 1rem;
+
 max-height: 100%;
 flex-wrap: wrap;
 margin: 0rem 1rem;
@@ -50,7 +50,7 @@ transition: all 0.6s ease;
 `
 export const G = styled.p`
 display:flex;
-line-height: 0.8;
+line-height: 0.75;
 letter-spacing: 0.1rem;
 font-weight: 800;
 margin-top: 1rem;
@@ -96,7 +96,7 @@ margin-top: 1rem;
 min-width: fit-content;
 align-self: flex-end;
 writing-mode: vertical-lr;
-line-height: 0.8;
+line-height: 0.75;
 letter-spacing: -0.2rem;
 font-weight: 800;
 justify-content: center ;

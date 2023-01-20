@@ -15,9 +15,9 @@ export const Container = styled.div`
 
   & a {
       filter: drop-shadow(1px 1px 0.5px hotpink);
-      margin-inline: 0.5rem;
+      margin-inline: 1rem;
       @media screen and (max-width:1024px) {
-        margin-inline: 0rem;
+        margin-inline: 0.5rem;
     }
   }
 
