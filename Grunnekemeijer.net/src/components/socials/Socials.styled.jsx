@@ -7,7 +7,7 @@ export const Container = styled.div`
     place-self: flex-end;
     align-items: center;
     justify-content: flex-end;
-    margin: 0rem 1rem;
+    margin: 0.25rem 1.25rem;
    
    
    
