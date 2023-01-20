@@ -8,7 +8,7 @@ justify-content: space-between;
 height: 4rem;
 max-width: 100vw;
 background-color: transparent;
-border: 0.5px solid hotpink;
+border-bottom: 0.5px solid hotpink;
 margin: 0rem 1rem;
 `
 

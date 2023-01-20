@@ -13,7 +13,7 @@ export const shakeAnimation = keyframes`
 
 export const Container = styled.div`
 display: flex;
-
+padding-top: 1rem;
 max-height: 100%;
 flex-wrap: wrap;
 margin: 0rem 1rem;
@@ -22,6 +22,7 @@ color: #343434;
 cursor: crosshair;
 user-select: none;
 pointer-events: unset;
+
 
 
 /* animation: ${shakeAnimation} 0.8s linear infinite; */
@@ -52,6 +53,8 @@ display:flex;
 line-height: 0.8;
 letter-spacing: 0.1rem;
 font-weight: 800;
+margin-top: 1rem;
+padding-top: -1rem;
 
 max-height: auto;
 width: fit-content;
@@ -89,6 +92,7 @@ export const J = styled(G)`
 export const DotNet = styled.p`
 display: flex;
 height: auto;
+margin-top: 1rem;
 min-width: fit-content;
 align-self: flex-end;
 writing-mode: vertical-lr;
