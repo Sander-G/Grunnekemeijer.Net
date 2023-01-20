@@ -13,11 +13,11 @@ export const shakeAnimation = keyframes`
 
 export const Container = styled.div`
 display: flex;
+
 max-height: 100%;
 flex-wrap: wrap;
 margin: 0rem 1rem;
 justify-content: space-between;
-border: 0.5px solid hotpink;
 color: #343434;
 cursor: crosshair;
 user-select: none;
@@ -49,10 +49,10 @@ transition: all 0.6s ease;
 `
 export const G = styled.p`
 display:flex;
-
+line-height: 0.8;
 letter-spacing: 0.1rem;
 font-weight: 800;
-border: 0.5px solid hotpink;
+
 max-height: auto;
 width: fit-content;
 text-shadow: -1px 0 hotpink, 0 1px hotpink, 1px 0 hotpink, 0 -1px hotpink;
@@ -92,10 +92,10 @@ height: auto;
 min-width: fit-content;
 align-self: flex-end;
 writing-mode: vertical-lr;
+line-height: 0.8;
 letter-spacing: -0.2rem;
 font-weight: 800;
 justify-content: center ;
-border: 0.5px solid hotpink; 
 text-shadow: -1px 0 hotpink, 0 1px hotpink, 1px 0 hotpink, 0 -1px hotpink;
 @media (max-width: 1400px) {
 	writing-mode: inherit;

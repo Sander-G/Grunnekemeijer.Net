@@ -35,7 +35,8 @@ export default function NameDiv() {
     }
     >
       <G className='G' onMouseEnter={() => { console.log(sounds[4]); console.log(isMuted); !isMuted && sounds[4].play()}}>G</G>
-      <R className='R' onMouseEnter={() => !isMuted && sounds[5].play()}>R</R>
+      <R className='R' onMouseEnter={() => !isMuted && sounds[5].play()} onMouseLeave={() => {
+      sounds[5].stop()}}>R</R>
       <U className='U' onMouseEnter={() => !isMuted && sounds[6].play()}>U</U>
       <N className='N1' onMouseEnter={() => !isMuted && sounds[7].play()}>N</N>
       <N className='N2' onMouseEnter={() => !isMuted && sounds[8].play()}>N</N>
