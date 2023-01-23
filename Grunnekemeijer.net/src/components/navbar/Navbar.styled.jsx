@@ -6,10 +6,12 @@ flex-direction: row;
 align-items: center;
 justify-content: space-between;
 height: 4rem;
+
 max-width: 100vw;
 background-color: transparent;
 border-bottom: 0.5px solid hotpink;
 margin: 0rem 1rem;
+
 `
 
 export const LeftContainer = styled.div`
@@ -25,7 +27,7 @@ flex-direction: row;
 align-items: center;
 justify-content: flex-end;
 gap: 0.5rem;
-padding-right: 1rem; 
+padding-right: 0.75rem; 
 
 `
 export const Button = styled.button`

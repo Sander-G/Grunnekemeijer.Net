@@ -15,8 +15,10 @@ export const Container = styled.div`
 display: flex;
 
 max-height: 100%;
+max-width: 100%;
 flex-wrap: wrap;
 margin: 0rem 1rem;
+padding-top: 1rem;
 justify-content: space-between;
 color: #343434;
 cursor: crosshair;
@@ -54,7 +56,7 @@ line-height: 0.75;
 letter-spacing: 0.1rem;
 font-weight: 800;
 margin-top: 1rem;
-padding-top: -1rem;
+
 
 max-height: auto;
 width: fit-content;
@@ -93,7 +95,8 @@ export const DotNet = styled.p`
 display: flex;
 height: auto;
 margin-top: 1rem;
-min-width: fit-content;
+margin-left: 1rem;
+width: fit-content;
 align-self: flex-end;
 writing-mode: vertical-lr;
 line-height: 0.75;
@@ -101,6 +104,10 @@ letter-spacing: -0.2rem;
 font-weight: 800;
 justify-content: center ;
 text-shadow: -1px 0 hotpink, 0 1px hotpink, 1px 0 hotpink, 0 -1px hotpink;
+@media (min-width: 2000px) and (max-width: 2600px) {
+	writing-mode: inherit;
+}
+
 @media (max-width: 1400px) {
 	writing-mode: inherit;
 }
