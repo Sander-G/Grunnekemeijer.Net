@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { MdFlashlightOn } from 'react-icons/md'
+// import { MdFlashlightOff } from 'react-icons/md'
 
 export const Wrapper = styled.div`
 display: flex ;
@@ -16,6 +16,6 @@ margin-left: 0.75rem;
 
 `
 
-export const RotatedIcon = styled(MdFlashlightOn)`
-  transform: rotate(45deg);
-  `;
+// export const RotatedIcon = styled(MdFlashlightOff)`
+//   transform: rotate(45deg);
+//   `;
