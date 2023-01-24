@@ -1,12 +1,13 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
+position:relative;
 display: flex;
 flex-direction: row;
 align-items: center;
 justify-content: space-between;
 height: 4rem;
-
+z-index:1;
 max-width: 100vw;
 background-color: transparent;
 border-bottom: 0.5px solid hotpink;

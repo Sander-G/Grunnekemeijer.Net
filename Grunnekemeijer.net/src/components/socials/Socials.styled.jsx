@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.div`
     display: flex;
+    z-index:2;
     flex-direction: row;
     height: 4rem;
     place-self: flex-end;

@@ -134,7 +134,7 @@ ${'' /* .dark-mode-toggle {
 
 .nameDiv > p {
   
-  font-size: calc(3000% + 0.25 * (100vw - 8000%) / 40);
+  font-size: calc(6500% + 0.25 * (100vw - 8000%) / 40);
 
   
   @media (min-width: 768px) and (max-width: 1024px) and (min-height: 1281px) and (orientation: portrait) {
@@ -227,7 +227,7 @@ ${'' /* .dark-mode-toggle {
     font-size: calc(1700% + 0.25 * (100vw - 8000%) / 40);
   
     }
-  @media (min-width: 1025px) and (max-width: 1280px) and (orientation: landscape) {
+  @media (min-width: 1025px) and (max-width: 1280px) and (max-height: 900px) and (orientation: landscape) {
     
   font-size: calc(3350% + 0.25 * (100vw - 8000%) / 40);
 
@@ -241,6 +241,32 @@ ${'' /* .dark-mode-toggle {
     @media (min-width: 1281px) and (max-height: 950px) and (orientation: landscape) {
     
     font-size: calc(3612% + 0.25 * (100vw - 8000%) / 40);
+  
+    }
+
+    @media (min-width: 1751px) and (max-width: 1880px) and (min-height: 951px) and (orientation: landscape) {
+    
+    font-size: calc(6000% + 0.25 * (100vw - 8000%) / 40);
+  
+    }
+    @media (min-width: 1300px) and (max-width: 1750px) and (min-height: 951px) and (orientation: landscape) {
+    
+    font-size: calc(5000% + 0.25 * (100vw - 8000%) / 40);
+  
+    }
+    @media (min-width: 1025px) and (max-width: 1300px) and (min-height: 951px)  {
+    
+    font-size: calc(4500% + 0.25 * (100vw - 8000%) / 40);
+  
+    }
+    @media (min-width: 769px) and (max-width: 1024px) and (min-height: 951px) {
+    
+    font-size: calc(3500% + 0.25 * (100vw - 8000%) / 40);
+  
+    }
+    @media (min-width: 300px) and (max-width: 768px) and (min-height: 951px) {
+    
+    font-size: calc(2500% + 0.25 * (100vw - 8000%) / 40);
   
     }
 }
