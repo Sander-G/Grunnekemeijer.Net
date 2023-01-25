@@ -18,13 +18,13 @@ export default function NameDiv() {
           sounds[3].volume(0.1);
           sounds[3].play();
           setHoveredLetter(true);
-         
+
         }
       }}
       onMouseLeave={() => {
         sounds[3].stop();
         setHoveredLetter(null);
-        
+
       }}
     >
       <G
@@ -75,7 +75,7 @@ export default function NameDiv() {
         }}
         onMouseLeave={() => {
           sounds[2].stop();
-        setHoveredLetter(null);
+          setHoveredLetter(null);
         }}
       >
         N
@@ -87,109 +87,118 @@ export default function NameDiv() {
           setHoveredLetter('N2')
         }} onMouseLeave={() => {
           sounds[2].stop();
-        setHoveredLetter(null);
+          setHoveredLetter(null);
         }}>
         N
       </N2>
       <E className={hoveredLetter === 'E' ? 'hovered' : ''}
-       onMouseEnter={() => {
-        !isMuted && sounds[2].volume(0.1);
-        sounds[2].play();
-        setHoveredLetter('E')
+        onMouseEnter={() => {
+          !isMuted && sounds[2].volume(0.1);
+          sounds[2].play();
+          setHoveredLetter('E')
 
-      }} onMouseLeave={() => {
-        sounds[2].stop();
-        setHoveredLetter(null);
-      }}>
+        }} onMouseLeave={() => {
+          sounds[2].stop();
+          setHoveredLetter(null);
+        }}>
         E
       </E>
-      <K className={hoveredLetter === 'K' ? 'hovered' : ''} 
-      onMouseEnter={() => {
-        !isMuted && sounds[2].volume(0.1);
-        sounds[2].play();
-        setHoveredLetter('K');
+      <K className={hoveredLetter === 'K' ? 'hovered' : ''}
+        onMouseEnter={() => {
+          !isMuted && sounds[2].volume(0.1);
+          sounds[2].play();
+          setHoveredLetter('K');
         }} onMouseLeave={() => {
-        sounds[2].stop();
-        setHoveredLetter(null);}}>
+          sounds[2].stop();
+          setHoveredLetter(null);
+        }}>
         K
       </K>
-      <E2 className={hoveredLetter === 'E2' ? 'hovered' : ''} 
-      onMouseEnter={() => {
-        !isMuted && sounds[2].volume(0.1);
-        sounds[2].play();
-        setHoveredLetter('E2');
+      <E2 className={hoveredLetter === 'E2' ? 'hovered' : ''}
+        onMouseEnter={() => {
+          !isMuted && sounds[2].volume(0.1);
+          sounds[2].play();
+          setHoveredLetter('E2');
         }} onMouseLeave={() => {
-        sounds[2].stop();
-        setHoveredLetter(null);}}>
+          sounds[2].stop();
+          setHoveredLetter(null);
+        }}>
         E
       </E2>
-      <M className={hoveredLetter === 'M' ? 'hovered' : ''} 
-      onMouseEnter={() => {
-        !isMuted && sounds[2].volume(0.1);
-        sounds[2].play();
-        setHoveredLetter('M');
+      <M className={hoveredLetter === 'M' ? 'hovered' : ''}
+        onMouseEnter={() => {
+          !isMuted && sounds[2].volume(0.1);
+          sounds[2].play();
+          setHoveredLetter('M');
         }} onMouseLeave={() => {
-        sounds[2].stop();
-        setHoveredLetter(null);}}>
+          sounds[2].stop();
+          setHoveredLetter(null);
+        }}>
         M
       </M>
-      <E3 className={hoveredLetter === 'E3' ? 'hovered' : ''} 
-      onMouseEnter={() => {
-        !isMuted && sounds[2].volume(0.1);
-        sounds[2].play();
-        setHoveredLetter('E3');
+      <E3 className={hoveredLetter === 'E3' ? 'hovered' : ''}
+        onMouseEnter={() => {
+          !isMuted && sounds[2].volume(0.1);
+          sounds[2].play();
+          setHoveredLetter('E3');
         }} onMouseLeave={() => {
-        sounds[2].stop();
-        setHoveredLetter(null);}}>
+          sounds[2].stop();
+          setHoveredLetter(null);
+        }}>
         E
       </E3>
-      <I className={hoveredLetter === 'I' ? 'hovered' : ''} 
-      onMouseEnter={() => {
-        !isMuted && sounds[2].volume(0.1);
-        sounds[2].play();
-        setHoveredLetter('I');
+      <I className={hoveredLetter === 'I' ? 'hovered' : ''}
+        onMouseEnter={() => {
+          !isMuted && sounds[2].volume(0.1);
+          sounds[2].play();
+          setHoveredLetter('I');
         }} onMouseLeave={() => {
-        sounds[2].stop();
-        setHoveredLetter(null);}}>
+          sounds[2].stop();
+          setHoveredLetter(null);
+        }}>
         I
       </I>
-      <J className={hoveredLetter === 'J' ? 'hovered' : ''} 
-      onMouseEnter={() => {
-        !isMuted && sounds[2].volume(0.1);
-        sounds[2].play();
-        setHoveredLetter('J');
+      <J className={hoveredLetter === 'J' ? 'hovered' : ''}
+        onMouseEnter={() => {
+          !isMuted && sounds[2].volume(0.1);
+          sounds[2].play();
+          setHoveredLetter('J');
         }} onMouseLeave={() => {
-        sounds[2].stop();
-        setHoveredLetter(null);}}>
+          sounds[2].stop();
+          setHoveredLetter(null);
+        }}>
         J
       </J>
       <E4 className={hoveredLetter === 'E4' ? 'hovered' : ''}
-      onMouseEnter={() => {
-        !isMuted && sounds[2].volume(0.1);
-        sounds[2].play();
-        setHoveredLetter('E4');
+        onMouseEnter={() => {
+          !isMuted && sounds[2].volume(0.1);
+          sounds[2].play();
+          setHoveredLetter('E4');
         }} onMouseLeave={() => {
-        sounds[2].stop();
-        setHoveredLetter(null);}}>
+          sounds[2].stop();
+          setHoveredLetter(null);
+        }}>
         E
       </E4>
-      <R2 className={hoveredLetter === 'R2' ? 'hovered' : ''} onMouseEnter={() => {
-        !isMuted && sounds[2].volume(0.1);
-        sounds[2].play();
-        setHoveredLetter('R2');
+      <R2 className={hoveredLetter === 'R2' ? 'hovered' : ''}
+        onMouseEnter={() => {
+          !isMuted && sounds[2].volume(0.1);
+          sounds[2].play();
+          setHoveredLetter('R2');
         }} onMouseLeave={() => {
-        sounds[2].stop();
-        setHoveredLetter(null);}}>
+          sounds[2].stop();
+          setHoveredLetter(null);
+        }}>
         R
       </R2>
-      <DotNet className={hoveredLetter === 'DotNet' ? 'hovered' : ''} 
-      onMouseEnter={() => {
-        !isMuted && sounds[2].volume(0.1);
-        sounds[2].play();
-        setHoveredLetter('DotNet')
+      <DotNet className={hoveredLetter === 'DotNet' ? 'hovered' : ''}
+        onMouseEnter={() => {
+          !isMuted && sounds[2].volume(0.1);
+          sounds[2].play();
+          setHoveredLetter('DotNet')
         }} onMouseLeave={() => {
-        sounds[2].stop();
-        setHoveredLetter(null);
+          sounds[2].stop();
+          setHoveredLetter(null);
         }}>.NET</DotNet>
     </Container>
   );
