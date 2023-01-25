@@ -34,6 +34,7 @@ transition: all 0.6s ease;
 			transition: all 0.2s ease;
 			text-shadow: var(--x-shadow) var(--y-shadow) 15px #1A1A1A;
 			transform: scaleX(-1);
+			transform: scaleY(-1);
 			text-shadow: -1px 0 skyblue, 0 1px skyblue, 1px 0 skyblue, 0 -1px skyblue;
 		}
 
@@ -44,7 +45,7 @@ line-height: 0.9;
 letter-spacing: 0.1em;
 font-weight: 800;
 margin-top: -0.5rem;
-transform: scaleY(1);
+
 
 max-height: auto;
 width: fit-content;
@@ -56,6 +57,7 @@ text-shadow: -1px 0 hotpink, 0 1px hotpink, 1px 0 hotpink, 0 -1px hotpink;
 transition: all 0.2s ease;
 	&.hovered {
 		transform: scaleY(-1);
+
 			transition: all 0.6s ease;
 			text-shadow: var(--x-shadow) var(--y-shadow) 10px #1A1A1A;
 			animation: ${shakeAnimation} 0.5s linear infinite;
@@ -69,6 +71,7 @@ transition: all 0.2s ease;
 export const R = styled(G)`
 `
 export const U = styled(G)`
+
 `
 export const N = styled(G)`
 `
@@ -111,16 +114,16 @@ text-shadow: -1px 0 hotpink, 0 1px hotpink, 1px 0 hotpink, 0 -1px hotpink;
 
 
 
---x-shadow: 0;
---y-shadow: 0;
+--x-shadow: 50;
+--y-shadow: 50;
 --x:50%;
 --y:50%;
 transition: all 0.2s ease;
 	&:hover{
 			transition: all 0.6s ease;
 			text-shadow: var(--x-shadow) var(--y-shadow) 10px #1A1A1A;
-			animation: ${shakeAnimation} 0.5s linear infinite;
-			text-shadow: -1px 0 skyblue, 0 1px skyblue, 1px 0 skyblue, 0 -1px skyblue;
+			animation: ${shakeAnimation} 0.6s linear infinite;
+		
 		}
 		
 
