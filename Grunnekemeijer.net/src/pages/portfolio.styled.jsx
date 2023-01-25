@@ -50,7 +50,7 @@ export const Text = styled.div`
   grid-column: 2 / 3;
   grid-row: span 1;
   font-size: 16px;
-  text-align: left;
+  text-align: justify;
   @media (max-width: 1024px) {
     grid-column: 1 / 2;
     grid-row: span 1;
