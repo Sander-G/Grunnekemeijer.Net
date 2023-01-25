@@ -11,19 +11,19 @@ export const Header = styled.div`
 `
 export const Container = styled.div`
   display: grid;
+  position: relative;
   grid-template-columns: 1fr 3fr;
   grid-template-rows: repeat(6, minmax(100px, 1fr));
   grid-column-gap: 2rem;
   grid-row-gap: 2rem;
-  margin: 1rem 3rem;
+  margin: 1rem 1rem 1rem 1rem;
   
 
   @media (max-width: 1024px) {
     grid-template-columns: 1fr;
     grid-template-rows: repeat(12, minmax(50px, 1fr));
-    grid-row-gap: 1rem;
-    grid-column-gap: 0;
-  
+    grid-row-gap: 0rem;
+    grid-column-gap: 0rem;
   }
 `;
 
@@ -51,10 +51,12 @@ export const Text = styled.div`
   grid-row: span 1;
   font-size: 16px;
   text-align: justify;
+  margin: 1rem 1rem 1rem 1rem;
   @media (max-width: 1024px) {
     grid-column: 1 / 2;
     grid-row: span 1;
     font-size: 16px;
+   
   }
 `;
 
