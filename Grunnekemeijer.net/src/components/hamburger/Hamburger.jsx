@@ -13,10 +13,10 @@ const { sounds, isMuted } = useContext(MuteContext);
     <>
     <MenuLabel 
      onClick={handleClick}
-     onMouseEnter={() => {!isMuted && sounds[3].volume(0.1);
-     sounds[3].play()}}
+     onMouseEnter={() => {!isMuted && sounds[0].volume(0.1);
+     sounds[0].play()}}
     onMouseLeave={() => {
-      sounds[3].stop()}}>
+      sounds[0].stop()}}>
 
 
     <Icon clicked={click}>&nbsp;</Icon>

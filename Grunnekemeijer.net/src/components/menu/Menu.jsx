@@ -1,7 +1,6 @@
 import React, {useContext} from 'react'
 import { Container } from './Menu.styled'
 import { NavLink } from 'react-router-dom'
-
 import { MuteContext } from '../../context/MuteContext';
 export function Menu() {
     const { sounds, isMuted } = useContext(MuteContext);
@@ -9,20 +8,20 @@ export function Menu() {
         <>
             <Container>    
             <li><NavLink onMouseEnter={() => {
-                !isMuted && sounds[3].volume(0.1);
-                sounds[3].play()}}
+                !isMuted && sounds[0].volume(0.1);
+                sounds[0].play()}}
                 onMouseLeave={() => {
-                sounds[3].stop()}} to='/' alt='Home'>HOME</NavLink></li>
+                sounds[0].stop()}} to='/' alt='Home'>HOME</NavLink></li>
             <li><NavLink onMouseEnter={() => {
-                !isMuted && sounds[3].volume(0.1);
-                sounds[3].play()}}
+                !isMuted && sounds[0].volume(0.1);
+                sounds[0].play()}}
                 onMouseLeave={() => {
-                sounds[3].stop()}} to='/info' alt='Info'>INFO</NavLink></li>
+                sounds[0].stop()}} to='/info' alt='Info'>INFO</NavLink></li>
             <li><NavLink onMouseEnter={() => {
-                !isMuted && sounds[3].volume(0.1);
-                sounds[3].play()}}
+                !isMuted && sounds[0].volume(0.1);
+                sounds[0].play()}}
                 onMouseLeave={() => {
-                sounds[3].stop()}} to='/portfolio' alt='Portfolio'>PORTFOLIO</NavLink></li>
+                sounds[0].stop()}} to='/portfolio' alt='Portfolio'>PORTFOLIO</NavLink></li>
             </Container>
         </>
     )
