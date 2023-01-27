@@ -42,7 +42,7 @@ display: flex;
 & a:hover {
     transition: all 0.4s ease;
 						animation: ${shakeAnimation} 0.6s linear infinite;	
-            color: #171717;
+            color: #343434;
 			text-shadow: -0.95px 0 skyblue, 0 0.95px skyblue, 0.95px 0 skyblue, 0 -0.95px skyblue;
 
 }

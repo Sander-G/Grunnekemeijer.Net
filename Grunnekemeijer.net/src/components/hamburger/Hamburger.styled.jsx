@@ -21,6 +21,16 @@ display: inline-block;
 transition: all 0.3s;
 border-radius: 6px;
 border: ${(props) => (props.clicked ? "1px solid transparent" : "1px solid hotpink")};
+&:hover {
+  background-color: ${(props) => (props.clicked ? "transparent" : "#343434")};
+&:after {
+  background-color: ${(props) => (props.clicked ? "transparent" : "#343434")};
+}
+&:before {
+  background-color: ${(props) => (props.clicked ? "transparent" : "#343434")};
+}
+}
+
 @media screen and (max-width:1024px) {
     scale: 0.75;
 }
@@ -37,15 +47,9 @@ border: ${(props) => (props.clicked ? "1px solid transparent" : "1px solid hotpi
   top:-1px;
   border-radius: 6px;
   border: ${(props) => (props.clicked ? "1px solid skyblue" : "1px solid hotpink")};
-  &:hover {
-  border: ${(props) => (props.clicked ? "1px solid transparent" : "1px solid skyblue")};
-  }
-  
   transition: all 0.3s;
   
 }
-
-
 
 
 &::before {

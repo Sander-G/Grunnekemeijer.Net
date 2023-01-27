@@ -29,7 +29,7 @@ a {
   text-decoration: inherit;
 }
 a:hover {
-  color: #525252;
+  color: #343434;
  
     
     
@@ -83,7 +83,7 @@ h1 {
     background-color: #d0d0d0;
   }
   a:hover {
-    color: #525252;
+    color: #343434;
   }
   button {
     background-color: #f9f9f9;
@@ -119,18 +119,7 @@ h1 {
     color: #343434;
   }
 }
-/* Button Styles */
 
-${'' /* .dark-mode-toggle {
-  width: 50px;
-  height: 23px;
-  border-radius: 45px;
-  top: 0;
-  left: 0;
-}
-.dark-mode-toggle svg {
-  fill: #de2626;
-} */}
 
 .nameDiv > p {
   
@@ -294,17 +283,7 @@ ${'' /* .dark-mode-toggle {
   cursor: none;
   user-select: none;
   z-index: 1979;
- 
 }
-
-
-   /* *,
-*::before,
-*::after {
-  margin: 0;
-  padding: 0;
-  cursor: none;
-} */
 
 .off {
   position: fixed;
@@ -317,10 +296,10 @@ ${'' /* .dark-mode-toggle {
 }
 
 
-.active {
+${'' /* .active {
 color: red;
 
-}
+} */}
 
 `;
 
