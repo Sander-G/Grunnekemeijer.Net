@@ -5,7 +5,7 @@ import { StyledImage, Header, Container, Text} from './Portfolio.styled'
 const data = [
     {
       image: 'src/assets/pix/transformerindex.png',
-      text: 'Text for image 1 Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum perferendis quis nesciunt sapiente sequi consequatur est atque in fugiat quia tenetur reprehenderit provident, cum, ab voluptatibus accusantium illum id, animi a'
+      text: 'Sander for image 1 Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum perferendis quis nesciunt sapiente sequi consequatur est atque in fugiat quia tenetur reprehenderit provident, cum, ab voluptatibus accusantium illum id, animi a'
     },
     {
       image: 'src/assets/pix/pietsweerbericht.png',

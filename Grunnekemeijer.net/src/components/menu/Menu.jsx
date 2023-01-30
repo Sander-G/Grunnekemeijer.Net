@@ -6,22 +6,22 @@ export function Menu() {
     const { sounds, isMuted } = useContext(MuteContext);
     return (
         <>
-            <Container>    
-            <li><NavLink onMouseEnter={() => {
+            <Container >    
+            <NavLink onMouseEnter={() => {
                 !isMuted && sounds[0].volume(0.1);
                 sounds[0].play()}}
                 onMouseLeave={() => {
-                sounds[0].stop()}} to='/' alt='Home'>HOME</NavLink></li>
-            <li><NavLink onMouseEnter={() => {
+                sounds[0].stop()}} to='/' alt='Home'>HOME</NavLink>
+            <NavLink onMouseEnter={() => {
                 !isMuted && sounds[0].volume(0.1);
                 sounds[0].play()}}
                 onMouseLeave={() => {
-                sounds[0].stop()}} to='/info' alt='Info'>INFO</NavLink></li>
-            <li><NavLink onMouseEnter={() => {
+                sounds[0].stop()}} to='/info' alt='Info'>INFO</NavLink>
+            <NavLink onMouseEnter={() => {
                 !isMuted && sounds[0].volume(0.1);
                 sounds[0].play()}}
                 onMouseLeave={() => {
-                sounds[0].stop()}} to='/portfolio' alt='Portfolio'>PORTFOLIO</NavLink></li>
+                sounds[0].stop()}} to='/portfolio' alt='Portfolio'>PORTFOLIO</NavLink>
             </Container>
         </>
     )
