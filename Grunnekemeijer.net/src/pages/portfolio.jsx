@@ -1,11 +1,17 @@
-import React from 'react'
-import { StyledImage, Header, Container, Text} from './Portfolio.styled'
+import React from 'react';
+import { StyledImage, Header, Container, Italics, Text} from './Portfolio.styled';
+
 
 
 const data = [
     {
       image: 'src/assets/pix/transformerindex.png',
-      text: 'Text for image 1 Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum perferendis quis nesciunt sapiente sequi consequatur est atque in fugiat quia tenetur reprehenderit provident, cum, ab voluptatibus accusantium illum id, animi a'
+      text: ( 
+      <div> 
+      De transformer index was 1 van de onderdelen van de javascript eindopdracht die ik tijdens de TechGrounds opleiding heb gemaakt. Het doel van de opdracht was het vinden van een geschikte database met RESTful API data, deze data te fetchen en gestructureerd weer te geven in een zelfgemaakte index. Een veelgebruikte database hiervoor is de Pokédex API, maar aangezien ik een kind ben van een eerdere generatie viel de keuze op deze <a  href='https://github.com/crxssed7/transformers-api' target='_blank' rel='noopener noreferrer'>Transformers Index</a>. Na enig worstelen met endpoints die niet werkten zoals verwacht heb ik de database JSON data gekopieerd en geprobeerd deze data lokaal te fetchen - <Italics> mijn eerste introductie met CORS errors. </Italics> Het resultaat ...    
+      
+      </div>
+      ),
     },
     {
       image: 'src/assets/pix/pietsweerbericht.png',

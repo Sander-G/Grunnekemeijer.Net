@@ -1,5 +1,9 @@
 import styled from 'styled-components'
 
+
+export const Italics = styled.span`
+  font-style: italic;
+`
 export const Header = styled.div`
     display: flex;
     width: auto;
@@ -19,6 +23,7 @@ export const Container = styled.div`
   grid-row-gap: 1rem;
   margin: 2rem 6rem 0rem 6rem;
   line-height: 1.1;
+
 
   @media (max-width: 1024px) {
     grid-template-columns: 1fr;
@@ -63,7 +68,9 @@ export const Text = styled.p`
   line-height: 1;
   font-size: 22px;
   padding: 0.1rem;
-}
+} 
+
+
   @media (max-width: 1024px) {
     grid-column: 1 / 2;
     grid-row: span 1;
