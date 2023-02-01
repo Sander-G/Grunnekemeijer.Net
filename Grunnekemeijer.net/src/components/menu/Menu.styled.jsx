@@ -5,54 +5,41 @@ export const Container = styled.div`
 display: flex;
 
 
-& ul {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    margin-right: 1rem;
-    @media screen and (max-width:1024px) {
-        margin-right: 0rem;
-        
-    
-}
-   
-}
-& li {
-    list-style-type: none;
+& a {
     font-size: 1.75rem;
     margin-inline: 0.5rem;
     display: flex;
+    user-select: none;
+    position: relative;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    color: #171717;
+    text-shadow: -0.95px 0 hotpink, 0 0.95px hotpink, 0.95px 0 hotpink, 0 -0.95px hotpink;
+
     @media screen and (max-width:1024px) {
-        font-size: 1.1rem;
+        font-size: 1.35rem;
         margin-inline: 0.3rem;
+    }
     
-}
-   
-  
-    
-}
+    &:hover {
+      transition: all 0.4s ease;
+      animation: ${shakeAnimation} 0.6s linear infinite;
+      color: #171717;
+      text-shadow: -0.95px 0 skyblue, 0 0.95px skyblue, 0.95px 0 skyblue, 0 -0.95px skyblue;
+    }
 
-& a {    color: #343434;
-  
-    text-shadow: -0.95px 0 hotpink, 0 0.95px hotpink, 0.95px 0 hotpink, 0 -0.95px hotpink;}
+    &.active {
+      color: #171717;
+      text-shadow: -0.95px 0 skyblue, 0 0.95px skyblue, 0.95px 0 skyblue, 0 -0.95px skyblue;
+    }
+  }
 
-& a:hover {
+  &:hover a:not(:hover) {
     transition: all 0.4s ease;
-						animation: ${shakeAnimation} 0.6s linear infinite;	
-            color: #343434;
-			text-shadow: -0.95px 0 skyblue, 0 0.95px skyblue, 0.95px 0 skyblue, 0 -0.95px skyblue;
-
+    text-shadow: -0.95px 0 hotpink, 0 0.95px hotpink, 0.95px 0 hotpink, 0 -0.95px hotpink;
+  
 }
-& .active {
-    /* animation: ${shakeAnimation} 0.6s linear infinite;	
-    color: #171717; */
-			text-shadow: -0.95px 0 skyblue, 0 0.95px skyblue, 0.95px 0 skyblue, 0 -0.95px skyblue;
-
-}
-
 `
 
 

@@ -20,7 +20,11 @@ export default function MuteBtn() {
     return (
         <>
             <Wrapper>
-                    <MuteButton onClick={handleClick} onMouseEnter={() => {
+                    <MuteButton onClick={()=> {
+                      handleClick();
+                      !isMuted && sounds[1].volume(0.1);
+          sounds[1].play();
+                      }} onMouseEnter={() => {
           !isMuted && sounds[0].volume(0.1);
           sounds[0].play();
 
