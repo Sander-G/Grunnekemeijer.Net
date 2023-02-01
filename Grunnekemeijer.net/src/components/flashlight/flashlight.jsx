@@ -43,7 +43,11 @@ export default function Flashlight() {
   return (
     <>
       <Wrapper>
-        <FlashlightButton onClick={() => { setIsOn(!isOn) }} onMouseEnter={() => {
+        <FlashlightButton onClick={() => { 
+          setIsOn(!isOn); 
+          !isMuted && sounds[1].volume(0.1);
+          sounds[1].play();
+         }} onMouseEnter={() => {
           !isMuted && sounds[0].volume(0.1);
           sounds[0].play();
 

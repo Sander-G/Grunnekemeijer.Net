@@ -35,8 +35,15 @@ export default function Navbar() {
     <>
       <Container>
         <LeftContainer>
-          <DarkModeBtn darkMode={darkMode} onToggle=
-          {handleDarkModeToggle}
+          <DarkModeBtn darkMode={darkMode} onToggle={ () => {
+            handleDarkModeToggle ();
+            if (!isMuted) {
+              sounds[1].volume(0.1);
+              sounds[1].play();
+            }
+          }
+          }
+          
           
            />
           {!darkMode && <Flashlight />}
