@@ -2,7 +2,7 @@ import React from 'react'
 
 import NameDiv from '../components/nameDiv/NameDiv'
 import Socials from '../components/socials/Socials'
-import {Container} from '../pages/home.styled'
+import {Container} from './Home.styled'
 
 export default function Home() {
     return (

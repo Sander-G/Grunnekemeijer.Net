@@ -26,10 +26,10 @@ export const Container = styled.div`
   position: relative;
   grid-template-columns: 1fr 3fr;
   grid-template-rows: repeat(5, minmax(100px, 1fr));
-  grid-column-gap: 1rem;
+  grid-column-gap: 3rem;
   grid-row-gap: 1rem;
-  margin: 2rem 6rem 0rem 6rem;
-  line-height: 1.1;
+  margin: 2rem 3rem 0rem 3rem;
+  line-height: 1.05;
 
 
   @media (max-width: 1024px) {

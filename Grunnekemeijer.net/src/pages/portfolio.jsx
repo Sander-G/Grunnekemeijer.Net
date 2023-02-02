@@ -17,7 +17,9 @@ const data = [
     {
       image: 'src/assets/pix/pietsweerbericht.png',
       text: (
-        <div> Piets weerbericht.. eerste React project, openweathermap, api data onderzoeken met postman, geolocatie, huidige weer, weersvoorspelling 7 dagen, windvaan richting kloppend, svg animaties
+        <div> Piets weerbericht.. eerste React project, openweathermap, api data onderzoeken met postman, geolocatie, huidige weer, weersvoorspelling 7 dagen, windvaan richting kloppend, svg animaties, 
+        <a href='https://sander-g.github.io/WeatherApp/' target='_blank' rel='noopener noreferrer'><TextShadow>gedeployde versie</TextShadow></a>.
+
         </div>
       ),
     },

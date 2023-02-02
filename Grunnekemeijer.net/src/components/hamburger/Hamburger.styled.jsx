@@ -17,6 +17,7 @@ position: relative;
 background-color: ${(props) => (props.clicked ? "transparent" : "#525252")};
 width: 35px;
 height: 7px;
+user-select: none;
 display: inline-block;
 transition: all 0.3s;
 border-radius: 6px;
