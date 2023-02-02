@@ -4,6 +4,13 @@ import styled from 'styled-components'
 export const Italics = styled.span`
   font-style: italic;
 `
+
+export const TextShadow = styled.span`
+  color: hotpink;
+  &:hover {
+    color: skyblue;
+  }
+`
 export const Header = styled.div`
     display: flex;
     width: auto;
@@ -56,7 +63,7 @@ export const StyledImage = styled.img`
     max-height: 200px;
   }
 `;
-export const Text = styled.p`
+export const Text = styled.span`
   grid-column: 2 / 3;
   grid-row: span 1;
   font-size: 17px;

@@ -1,0 +1,180 @@
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+@font-face {
+    font-family: transformerFont;
+    src: url("./files/transformerFont.ttf");
+}
+
+body {
+    background: #091921;
+    /* bijna zwart #091921 */
+    color: whitesmoke;
+}
+/* top nav */
+.topnav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #091921;
+    opacity: 85%;
+    overflow: hidden;
+    padding: 4px;
+    z-index:10;
+    font-family: Arial, Helvetica, sans-serif;
+
+ 
+  }
+  
+  .topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 4px 15px 4px 15px;
+    text-decoration: none;
+    font-size: 15px;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+
+  .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+    border: 1px transparent;
+    border-radius: 20px;
+  }
+
+  .topnav a.active {
+    background-color: #04AA6D;
+    color: white;
+    border: 1px transparent;
+    border-radius: 20px;
+  }
+
+
+
+
+.logo {
+    height: 150px;
+    margin: 2rem 1rem 1rem 1rem;
+}
+.logo__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.title {
+    font-family: 'transformerFont', sans-serif;
+    font-weight: 700;
+    font-size: 40px;
+    color: whitesmoke;
+    margin-top: 2rem;
+}
+
+.card__wrapper {
+    background-color: rgb(96, 2, 4);                    /* achtergrondkleur per allegiance maken via JS */
+    border: 2px solid rgb(217, 214, 202);
+    text-align: center;
+    border-radius: 5px;
+    overflow: hidden;
+    object-fit: cover;
+    display: grid;
+    place-items: center;
+    transition: 0.3s all ease;
+    width: fit-content;
+}
+
+.card__wrapper img {
+    margin-bottom: -2px;
+    margin-left: -2px;
+    margin-right: -2px;
+    position: inherit;
+    cursor: pointer;
+
+}
+
+.card__wrapper:hover {
+    transform: scale(0.98);
+}
+
+h2 {
+    font-family: 'helvetica neue', sans-serif;
+    font-stretch: extra-expanded;
+    font-size: 20px;
+    font-weight: light;
+    color: whitesmoke;
+    margin-top: 5px;
+    text-transform: uppercase;
+}
+
+h3 {
+    font-family: 'helvetica neue', sans-serif;
+    font-size: 14px;
+    color: whitesmoke;
+    font-weight: light;
+    margin-top: 2px;
+}
+
+p {
+    font-family: 'helvetica neue', sans-serif;
+    font-size: 12px;
+    color: whitesmoke;
+    font-weight: light;
+    margin-bottom: 5px;
+}
+
+#container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    padding: 1rem;
+    gap: 1rem;
+}
+
+.modal {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: rgb(217, 214, 202);
+    overflow: auto;
+    pointer-events: all;
+
+}
+
+.modal__content {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal__pic {
+    max-width: 90vw;
+    max-height: 90vh;
+    padding-top: 1rem;
+
+}
+
+.close {
+    position: absolute;
+    top: 1em;
+    right: 1.5em;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+.close:hover {
+    transform: scale(1.2);
+}
+
+
+/* nog mediaquery toevoegen voor kleine schermen */
