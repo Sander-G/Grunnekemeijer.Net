@@ -25,10 +25,10 @@ border: ${(props) => (props.clicked ? "1px solid transparent" : "1px solid hotpi
 &:hover {
   background-color: ${(props) => (props.clicked ? "transparent" : "#343434")};
 &:after {
-  background-color: ${(props) => (props.clicked ? "transparent" : "#343434")};
+  background-color: ${(props) => (props.clicked ? "#343434" : "#343434")};
 }
 &:before {
-  background-color: ${(props) => (props.clicked ? "transparent" : "#343434")};
+  background-color: ${(props) => (props.clicked ? "#343434" : "#343434")};
 }
 }
 

@@ -4,31 +4,23 @@ const GlobalStyle = createGlobalStyle`
 
   :root {
 
-
-  color-scheme: dark light; 
-color: rgba(255, 255, 255, 0.87); 
-   background-color: #1A1A1A;
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 
-
-
+  ${'' /* typeIt cursor styling */}
   --ti-cursor-color: green;
   --ti-cursor-line-height: normal;
   --ti-cursor-font-size: 1.2rem;
  
 }
 
-
-
 a {
   font-weight: 500;
   color: #343434;
-  text-decoration: inherit;
+  text-decoration: initial;
 }
 a:hover {
   color: #343434;
@@ -62,36 +54,8 @@ h1 {
     
     font-size: 1.5rem;
     color: green;
-    font-family: clacon2;
+    ${'' /* font-family: clacon2; */}
 }
-
-@media screen and (max-width: 768px) {
-    .largeTxt {font-size: 1rem;
-        color: green;
-     }
-
-}
-
-@media screen and (max-width: 450px) {
-    .largeTxt {font-size: 0.8rem;
-    font-family: 'Terminal' }
-
-}
-
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #d0d0d0;
-  }
-  a:hover {
-    color: #343434;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-}
-
 
 * {
   margin: 0;
@@ -106,6 +70,13 @@ h1 {
   color: #1A1A1A;
   background-color: #e6e5e5;
   transition: all 0.3s ease;
+  & a {
+    color: #525252;
+  }
+ 
+  & a:hover {
+    color: #525252;
+  }
 }
 .dark,
 .dark .App {
@@ -296,13 +267,6 @@ h1 {
   user-select: none;
   z-index: 1979;
 }
-
-
-${'' /* .active {
-color: red;
-
-} */}
-
 `;
 
 

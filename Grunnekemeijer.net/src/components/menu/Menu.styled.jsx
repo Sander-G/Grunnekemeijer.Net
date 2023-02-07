@@ -14,7 +14,7 @@ display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    color: #171717;
+    color: #343434;
     text-shadow: -1px 0 hotpink, 0 1px hotpink, 1px 0 hotpink, 0 -1px hotpink;
 
     @media screen and (max-width:1024px) {
@@ -30,7 +30,7 @@ display: flex;
     }
 
     &.active {
-      color: #171717;
+      color: #343434;
       text-shadow: -1px 0 skyblue, 0 1px skyblue, 1px 0 skyblue, 0 -1px skyblue;
     }
   }

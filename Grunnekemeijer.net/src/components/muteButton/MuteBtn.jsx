@@ -26,6 +26,7 @@ export default function MuteBtn() {
           sounds[1].play();
                       }} onMouseEnter={() => {
           !isMuted && sounds[0].volume(0.1);
+          sounds[1].volume(0.1);
           sounds[0].play();
 
         }} onMouseLeave={() => {
