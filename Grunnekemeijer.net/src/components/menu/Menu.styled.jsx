@@ -15,7 +15,7 @@ display: flex;
     align-items: center;
     justify-content: space-between;
     color: #171717;
-    text-shadow: -0.95px 0 hotpink, 0 0.95px hotpink, 0.95px 0 hotpink, 0 -0.95px hotpink;
+    text-shadow: -1px 0 hotpink, 0 1px hotpink, 1px 0 hotpink, 0 -1px hotpink;
 
     @media screen and (max-width:1024px) {
         font-size: 1.35rem;
@@ -26,18 +26,18 @@ display: flex;
       transition: all 0.4s ease;
       animation: ${shakeAnimation} 0.6s linear infinite;
       color: #171717;
-      text-shadow: -0.95px 0 skyblue, 0 0.95px skyblue, 0.95px 0 skyblue, 0 -0.95px skyblue;
+      text-shadow: -1px 0 skyblue, 0 1px skyblue, 1px 0 skyblue, 0 -1px skyblue;
     }
 
     &.active {
       color: #171717;
-      text-shadow: -0.95px 0 skyblue, 0 0.95px skyblue, 0.95px 0 skyblue, 0 -0.95px skyblue;
+      text-shadow: -1px 0 skyblue, 0 1px skyblue, 1px 0 skyblue, 0 -1px skyblue;
     }
   }
 
   &:hover a:not(:hover) {
     transition: all 0.4s ease;
-    text-shadow: -0.95px 0 hotpink, 0 0.95px hotpink, 0.95px 0 hotpink, 0 -0.95px hotpink;
+    text-shadow: -1px 0 hotpink, 0 1px hotpink, 1px 0 hotpink, 0 -1px hotpink;
   
 }
 `

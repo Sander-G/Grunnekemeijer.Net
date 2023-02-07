@@ -15,6 +15,8 @@ color: rgba(255, 255, 255, 0.87);
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 
+
+
   --ti-cursor-color: green;
   --ti-cursor-line-height: normal;
   --ti-cursor-font-size: 1.2rem;
@@ -58,7 +60,7 @@ h1 {
 
 .terminal  {
     
-    font-size: 1rem;
+    font-size: 1.5rem;
     color: green;
     font-family: clacon2;
 }

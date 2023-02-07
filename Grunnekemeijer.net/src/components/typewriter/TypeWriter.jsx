@@ -11,7 +11,7 @@ import { useState, useEffect } from 'react'
 
 
 
-export default function TypeWriter() {
+export function TypeWriter() {
 
   
 
@@ -51,7 +51,7 @@ export default function TypeWriter() {
     // const [ip, setIp] = useState('');
     //creating function to load ip address from the API
     const getData = async () => {
-        const res = await axios.get('https://geolocation-db.com/json/')
+        const res = await axios.get('http://www.geolocation-db.com/json/')
             //  setIp(res.data.IPv4);
             localStorage.setItem("lastIP", JSON.stringify(res.data.IPv4));
        
@@ -72,11 +72,25 @@ export default function TypeWriter() {
                 <span className='terminal'>S:\&nbsp; </span>
                 <TypeIt className="terminal"
                     getBeforeInit={(instance) => {
-                        instance.type("And now for something completely").pause(300).delete(10).pause(800).type("not so completely different.");
+                        instance.type("And now for something completely").pause(300).delete(10).pause(800).type("not so completely different.")
+                        ;
                         return instance;
                     }}
 
                 />
+                </Wrapper>
+                <Wrapper>
+<TypeIt className="terminal"
+        options={{
+          strings: ["Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae at dignissimos veritatis qui veniam temporibus velit placeat! Suscipit libero laudantium commodi vel excepturi non, reiciendis delectus velit expedita deleniti cum. Vero debitis aliquam amet possimus repellat ut, odio accusantium eos nisi molestias laudantium. Veritatis molestias eveniet vel neque molestiae nostrum ipsum omnis voluptates facere quo animi, doloribus, dignissimos dolore quidem eligendi error necessitatibus. Corrupti assumenda provident delectus placeat quasi tenetur voluptate cupiditate ut explicabo, exercitationem soluta id sed nisi ullam."],
+          speed: 10,
+          waitUntilVisible: true,
+        }}
+      />
+
+
+
+
 
             </Wrapper>
 
