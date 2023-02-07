@@ -27,6 +27,9 @@ const data = [
       image: 'src/assets/pix/skippyskateboards.png',
       text: (
         <div> Skippy's vintage skateboards
+
+<a href='https://skippysskateboards.netlify.app' target='_blank' rel='noopener noreferrer'><TextShadow>gedeployde versie hier!</TextShadow></a>.
+
         </div>
       ),
     },
@@ -34,6 +37,10 @@ const data = [
       image: 'src/assets/pix/nepflix.png',
       text: (
         <div> Nepflix project
+<a href='https://tg-nepflix.vercel.app' target='_blank' rel='noopener noreferrer'><TextShadow>gedeployde versie hier!</TextShadow></a>.
+
+
+
         </div>
       ),
     },
@@ -41,6 +48,10 @@ const data = [
       image: 'src/assets/pix/lottayoga.png',
       text: (
         <div> Lotta Yoga
+
+<a href='https://lottayoga.nl' target='_blank' rel='noopener noreferrer'><TextShadow>Link naar de site</TextShadow></a>.
+
+
         </div>
       ),
     }
