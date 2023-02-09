@@ -5,6 +5,8 @@ import { StyledImage, Header, Container, Italics, Text, TextShadow} from './Port
 
 const data = [
     {
+      id: 1,
+      link: '../../JSeindopdracht/JSON_Cards/index.html',
       image: 'src/assets/pix/transformerindex.png',
       text: ( 
       <div> 
@@ -15,6 +17,8 @@ const data = [
       ),
     },
     {
+      id: 2,
+      link: 'https://sander-g.github.io/WeatherApp/',
       image: 'src/assets/pix/pietsweerbericht.png',
       text: (
         <div> Piets weerbericht.. eerste React project, openweathermap, api data onderzoeken met postman, geolocatie, huidige weer, weersvoorspelling 7 dagen, windvaan richting kloppend, svg animaties, 
@@ -24,6 +28,8 @@ const data = [
       ),
     },
     {
+      id: 3,
+      link: 'https://skippysskateboards.netlify.app',
       image: 'src/assets/pix/skippyskateboards.png',
       text: (
         <div> Skippy's vintage skateboards
@@ -34,6 +40,8 @@ const data = [
       ),
     },
     {
+      id: 4,
+      link: 'https://tg-nepflix.vercel.app',
       image: 'src/assets/pix/nepflix.png',
       text: (
         <div> Nepflix project
@@ -44,7 +52,9 @@ const data = [
         </div>
       ),
     },
-    {
+    { 
+      id: 5,
+      link: 'https://lottayoga.nl',
       image: 'src/assets/pix/lottayoga.png',
       text: (
         <div> Lotta Yoga
@@ -60,21 +70,20 @@ const data = [
 
 
 export default function Portfolio() {
-
-
     return (
         <>
         <Header><h2>Portfolio</h2></Header>
         <Container>
-        {data.map((item, i) => (
-         <React.Fragment key={i}>
-            <StyledImage src={item.image} alt={`Image ${i + 1}`} index={i}/>
-            <Text index={i}>{item.text}</Text>
+        {data.map((item) => (
+         <React.Fragment key={item.id}>
+         <a href={item.link} target="_blank" rel="noopener noreferrer">
+            <StyledImage src={item.image} alt={`Image ${item.id}`}/>
+            </a>
+            <Text index={item.id}>{item.text}</Text>
          </React.Fragment>
        ))}
 
-                </Container>
-
+        </Container>
         </>
     )
 }
