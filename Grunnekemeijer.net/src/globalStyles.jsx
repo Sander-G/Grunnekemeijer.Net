@@ -96,7 +96,11 @@ h1 {
 
 .nameDiv > p {
   
-  font-size: calc(6500% + 0.25 * (100vw - 8000%) / 40);
+  font-size: calc(6200% + 0.25 * (100vw - 8000%) / 40);
+
+   @media (min-width: 1080px) {
+    font-size: calc(6000% + 0.25 * (100vh - 8000%) / 40);
+  }
 
   
   @media (min-width: 768px) and (max-width: 1024px) and (min-height: 1281px) and (orientation: portrait) {
@@ -203,6 +207,8 @@ h1 {
     @media (min-width: 1281px) and (max-height: 950px) and (orientation: landscape) {
     
     font-size: calc(3612% + 0.25 * (100vw - 8000%) / 40);
+
+
   
     }
 

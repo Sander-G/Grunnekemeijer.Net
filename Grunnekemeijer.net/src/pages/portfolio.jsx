@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyledImage, Header, Container, Italics, Text, TextShadow} from './Portfolio.styled';
+import { StyledImage, Container, ImageWrapper,  Italics, Text, TextShadow} from './Portfolio.styled';
 
 
 
@@ -72,13 +72,15 @@ const data = [
 export default function Portfolio() {
     return (
         <>
-        <Header><h2>Portfolio</h2></Header>
-        <Container>
+              <Container>
         {data.map((item) => (
          <React.Fragment key={item.id}>
+            <ImageWrapper>
          <a href={item.link} target="_blank" rel="noopener noreferrer">
+           
             <StyledImage src={item.image} alt={`Image ${item.id}`}/>
             </a>
+            </ImageWrapper>
             <Text index={item.id}>{item.text}</Text>
          </React.Fragment>
        ))}
