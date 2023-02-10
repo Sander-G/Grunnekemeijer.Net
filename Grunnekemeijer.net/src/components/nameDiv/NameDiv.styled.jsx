@@ -12,33 +12,43 @@ export const shakeAnimation = keyframes`
    `;
 
 export const Container = styled.div`
-display: flex;
-z-index: 0;
-position: static;
-max-height: 100%;
-max-width: 100%;
-flex-wrap: wrap;
-margin: 0rem 1rem;
-/* padding-top: 1rem; */
-justify-content: space-between;
-color: #343434;
-cursor: crosshair;
-user-select: none;
-pointer-events: unset;
-animation: ${shakeAnimation} 3s linear infinite;
-/* animate whole container..? */
---x-shadow: 20;
---y-shadow: 20;
-transition: all 0.6s ease;
-&:hover > p {
-			transition: all 0.2s ease;
-			text-shadow: var(--x-shadow) var(--y-shadow) 15px #1A1A1A;
-			transform: scaleX(-1);
-			transform: scaleY(-1);
-			text-shadow: -1px 0 skyblue, 0 1px skyblue, 1px 0 skyblue, 0 -1px skyblue;
-		}
+  display: flex;
+  overflow: none;
+  z-index: 1;
+  position: fixed;
+  max-height: calc(100vh - 3rem);
+  max-width: 100vw;
+  flex-wrap: wrap;
+  margin: 0rem 1rem;
+  /* padding-top: 1rem; */
+  justify-content: space-between;
+  color: #343434;
+  cursor: crosshair;
+  user-select: none;
+  pointer-events: unset;
+  animation: ${shakeAnimation} 3s linear infinite;
+  /* animate whole container..? */
+  --x-shadow: 20;
+  --y-shadow: 20;
+  transition: all 0.6s ease;
+  &:hover > p {
+    transition: all 0.2s ease;
+    text-shadow: var(--x-shadow) var(--y-shadow) 15px #1a1a1a;
+    transform: scaleX(-1);
+    transform: scaleY(-1);
+    text-shadow: -1px 0 skyblue, 0 1px skyblue, 1px 0 skyblue, 0 -1px skyblue;
+  }
 
-`
+  > p {
+    font-size: max(
+      80px,
+      min(
+        calc(105px + (500 - 20) * (90vw - 320px) / (2550 - 320)),
+        calc(105px + (500 - 20) * (90vh - 500px) / (1440 - 500))
+      )
+    );
+  }
+`;
 export const G = styled.p`
 display:flex;
 line-height: 0.9;
