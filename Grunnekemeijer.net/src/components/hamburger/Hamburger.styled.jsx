@@ -47,7 +47,7 @@ border: ${(props) => (props.clicked ? "1px solid transparent" : "1px solid hotpi
   left: -1px;
   top:-1px;
   border-radius: 6px;
-  border: ${(props) => (props.clicked ? "1px solid skyblue" : "1px solid hotpink")};
+  border: ${(props) => (props.clicked ? "1px solid hotpink" : "1px solid hotpink")};
   transition: all 0.3s;
   
 }
