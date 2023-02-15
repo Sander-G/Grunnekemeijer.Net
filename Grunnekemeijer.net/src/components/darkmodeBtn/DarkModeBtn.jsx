@@ -10,22 +10,22 @@ export default function DarkModeBtn(props) {
     const { darkMode, handleToggle } = useContext(DarkModeContext);
   
 
-    useEffect(() => {
-        const storedDarkMode = localStorage.getItem('darkMode');
-        if (storedDarkMode !== null) {
-              document.body.classList.toggle(
-                "dark",
-                JSON.parse(storedDarkMode)
-              );
-        }
+    // useEffect(() => {
+    //     const storedDarkMode = localStorage.getItem('darkMode');
+    //     if (storedDarkMode !== null) {
+    //           document.body.classList.toggle(
+    //             "dark",
+    //             JSON.parse(storedDarkMode)
+    //           );
+    //     }
 
-    }, []);
+    // }, []);
     
-    useEffect(() => {
-      document.body.classList.toggle('dark' , darkMode);
-      localStorage.setItem('darkMode', JSON.stringify(darkMode));
+    // useEffect(() => {
+    //   document.body.classList.toggle('dark' , darkMode);
+    //   localStorage.setItem('darkMode', JSON.stringify(darkMode));
 
-    }, [darkMode]);
+    // }, [darkMode]);
     return (
         <>
             <Wrapper>
