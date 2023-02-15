@@ -5,16 +5,28 @@ export const DarkModeContext = createContext();
 export const DarkModeProvider = ({ children }) => {
   const [darkMode, setDarkMode] = useState(true);
 
-  const handleToggle = () => {
-    setDarkMode(!darkMode);
-    document.body.classList.toggle("dark", !darkMode);
-  };
+   useEffect(() => {
+     const isDarkMode = localStorage.getItem("darkMode") === "false";
+     setDarkMode(isDarkMode);
+     document.body.classList.toggle("dark", isDarkMode);
+   }, []);
+
+   const handleToggle = () => {
+     const newMode = !darkMode;
+     setDarkMode(newMode);
+     localStorage.setItem("darkMode", newMode);
+     document.body.classList.toggle("dark", newMode);
+   };
 
    useEffect(() => {
-     document.body.classList.add("dark");
-     return () => {
-       document.body.classList.remove("dark");
-     };
+     const storedDarkMode = localStorage.getItem("darkMode");
+     if (storedDarkMode === "true" || storedDarkMode === "false") {
+       const isDarkMode = storedDarkMode === "true";
+       setDarkMode(isDarkMode);
+       document.body.classList.toggle("dark", isDarkMode);
+     } else {
+       document.body.classList.add("dark");
+     }
    }, []);
 
   return (
