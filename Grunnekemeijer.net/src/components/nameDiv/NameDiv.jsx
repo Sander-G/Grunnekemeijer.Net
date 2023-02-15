@@ -30,7 +30,7 @@ export default function NameDiv() {
       <G
         className={hoveredLetter === 'G' ? 'hovered' : ''}
         onMouseEnter={() => {
-          !isMuted && sounds[2].volume(0.1);
+          !isMuted && 
           sounds[2].play();
           setHoveredLetter('G');
         }} onMouseLeave={() => {
@@ -43,12 +43,13 @@ export default function NameDiv() {
       <R
         className={hoveredLetter === 'R' ? 'hovered' : ''}
         onMouseEnter={() => {
-          !isMuted && sounds[2].volume(0.1);
+          !isMuted && 
           sounds[2].play();
           setHoveredLetter('R');
         }}
         onMouseLeave={() => {
           sounds[2].stop();
+          setHoveredLetter(null);
         }}
       >
         R
@@ -56,12 +57,13 @@ export default function NameDiv() {
       <U
         className={hoveredLetter === 'U' ? 'hovered' : ''}
         onMouseEnter={() => {
-          !isMuted && sounds[2].volume(0.1);
+          !isMuted && 
           sounds[2].play();
           setHoveredLetter('U')
         }}
         onMouseLeave={() => {
           sounds[2].stop();
+          setHoveredLetter(null);
         }}
       >
         U
@@ -69,7 +71,7 @@ export default function NameDiv() {
       <N
         className={hoveredLetter === 'N' ? 'hovered' : ''}
         onMouseEnter={() => {
-          !isMuted && sounds[2].volume(0.1);
+          !isMuted && 
           sounds[2].play();
           setHoveredLetter('N')
         }}
@@ -82,7 +84,7 @@ export default function NameDiv() {
       </N>
       <N2 className={hoveredLetter === 'N2' ? 'hovered' : ''}
         onMouseEnter={() => {
-          !isMuted && sounds[2].volume(0.1);
+          !isMuted && 
           sounds[2].play();
           setHoveredLetter('N2')
         }} onMouseLeave={() => {
@@ -93,7 +95,7 @@ export default function NameDiv() {
       </N2>
       <E className={hoveredLetter === 'E' ? 'hovered' : ''}
         onMouseEnter={() => {
-          !isMuted && sounds[2].volume(0.1);
+          !isMuted && 
           sounds[2].play();
           setHoveredLetter('E')
 
@@ -105,7 +107,7 @@ export default function NameDiv() {
       </E>
       <K className={hoveredLetter === 'K' ? 'hovered' : ''}
         onMouseEnter={() => {
-          !isMuted && sounds[2].volume(0.1);
+          !isMuted && 
           sounds[2].play();
           setHoveredLetter('K');
         }} onMouseLeave={() => {
@@ -116,7 +118,7 @@ export default function NameDiv() {
       </K>
       <E2 className={hoveredLetter === 'E2' ? 'hovered' : ''}
         onMouseEnter={() => {
-          !isMuted && sounds[2].volume(0.1);
+          !isMuted && 
           sounds[2].play();
           setHoveredLetter('E2');
         }} onMouseLeave={() => {
@@ -127,7 +129,7 @@ export default function NameDiv() {
       </E2>
       <M className={hoveredLetter === 'M' ? 'hovered' : ''}
         onMouseEnter={() => {
-          !isMuted && sounds[2].volume(0.1);
+          !isMuted && 
           sounds[2].play();
           setHoveredLetter('M');
         }} onMouseLeave={() => {
@@ -138,7 +140,7 @@ export default function NameDiv() {
       </M>
       <E3 className={hoveredLetter === 'E3' ? 'hovered' : ''}
         onMouseEnter={() => {
-          !isMuted && sounds[2].volume(0.1);
+          !isMuted && 
           sounds[2].play();
           setHoveredLetter('E3');
         }} onMouseLeave={() => {
@@ -149,7 +151,7 @@ export default function NameDiv() {
       </E3>
       <I className={hoveredLetter === 'I' ? 'hovered' : ''}
         onMouseEnter={() => {
-          !isMuted && sounds[2].volume(0.1);
+          !isMuted && 
           sounds[2].play();
           setHoveredLetter('I');
         }} onMouseLeave={() => {
@@ -160,7 +162,7 @@ export default function NameDiv() {
       </I>
       <J className={hoveredLetter === 'J' ? 'hovered' : ''}
         onMouseEnter={() => {
-          !isMuted && sounds[2].volume(0.1);
+          !isMuted && 
           sounds[2].play();
           setHoveredLetter('J');
         }} onMouseLeave={() => {
@@ -171,7 +173,7 @@ export default function NameDiv() {
       </J>
       <E4 className={hoveredLetter === 'E4' ? 'hovered' : ''}
         onMouseEnter={() => {
-          !isMuted && sounds[2].volume(0.1);
+          !isMuted && 
           sounds[2].play();
           setHoveredLetter('E4');
         }} onMouseLeave={() => {
@@ -182,7 +184,7 @@ export default function NameDiv() {
       </E4>
       <R2 className={hoveredLetter === 'R2' ? 'hovered' : ''}
         onMouseEnter={() => {
-          !isMuted && sounds[2].volume(0.1);
+          !isMuted && 
           sounds[2].play();
           setHoveredLetter('R2');
         }} onMouseLeave={() => {
@@ -193,7 +195,7 @@ export default function NameDiv() {
       </R2>
       <DotNet className={hoveredLetter === 'DotNet' ? 'hovered' : ''}
         onMouseEnter={() => {
-          !isMuted && sounds[2].volume(0.1);
+          !isMuted && 
           sounds[2].play();
           setHoveredLetter('DotNet')
         }} onMouseLeave={() => {

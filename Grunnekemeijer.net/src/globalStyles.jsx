@@ -52,8 +52,8 @@ h1 {
 
 .terminal  {
     
-    font-size: 1.5rem;
-    color: green;
+    font-size: 2rem;
+    color: currentColor;
     ${"" /* font-family: clacon2; */}
 }
 

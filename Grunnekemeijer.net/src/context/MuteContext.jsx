@@ -1,4 +1,4 @@
-import React, { createContext, useState } from 'react';
+import React, { createContext, useState, useEffect } from 'react';
 import Howler from 'howler';
 
 const soundFiles = [
@@ -6,7 +6,6 @@ const soundFiles = [
     'src/assets/clickTone.mp3',
     'src/assets/interfaceTap.mp3',
     'src/assets/staticBuzz.mp3'
-    /// meer mp3's hier
 ]
 
 export const MuteContext = createContext();
@@ -18,16 +17,25 @@ export function MuteProvider(props) {
                 src,
                 autoplay: false,
                 loop: false,
-                volume: 1
+                volume: 0.1
             }))
     );
 
     const [isMuted, setIsMuted] = useState(true);
     sounds.forEach((sound) => sound.mute(isMuted));
 
+    useEffect(() => {
+        const storedIsMuted = localStorage.getItem('isMuted');
+        if (storedIsMuted !== null) { 
+            setIsMuted(storedIsMuted === "true");
+    }
+    },[]);
+
     const toggleMute = () => {
-        setIsMuted(!isMuted);
-        sounds.forEach((sound) => sound.mute(isMuted));
+        const newIsMuted = !isMuted;
+        setIsMuted(newIsMuted);
+        localStorage.setItem('isMuted' , newIsMuted);
+         sounds.forEach((sound) => sound.mute(newIsMuted));
     };
 
 
