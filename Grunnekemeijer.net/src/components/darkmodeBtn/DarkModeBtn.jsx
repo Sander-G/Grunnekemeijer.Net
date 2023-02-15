@@ -1,13 +1,13 @@
 import React, { useEffect, useContext } from 'react'
 import { Wrapper, DmButton } from './DarkModeBtn.styled'
 import { MuteContext } from "../../context/MuteContext";
-import { useDarkMode } from '../../context/DarkModeContext';
+import { DarkModeContext } from '../../context/DarkModeContext';
 
 
 
 export default function DarkModeBtn(props) {
     const { sounds, isMuted } = useContext(MuteContext);
-    const { darkMode, toggleDarkMode } = useDarkMode();
+    const { darkMode, handleToggle } = useContext(DarkModeContext);
   
 
     useEffect(() => {
@@ -30,7 +30,7 @@ export default function DarkModeBtn(props) {
         <>
             <Wrapper>
                 <DmButton onClick={ () => {
-            toggleDarkMode ();
+            handleToggle ();
             if (!isMuted) {
               sounds[1].play();
             }

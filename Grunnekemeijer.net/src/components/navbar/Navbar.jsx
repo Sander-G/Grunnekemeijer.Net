@@ -6,12 +6,12 @@ import MuteBtn from '../muteButton/MuteBtn'
 import Hamburger from '../hamburger/Hamburger'
 import { Menu } from '../menu/Menu'
 import { MuteContext } from '../../context/MuteContext'
-import { useDarkMode } from "../../context/DarkModeContext";
+import { DarkModeContext } from "../../context/DarkModeContext";
 
 
 export default function Navbar() {
     const { sounds, isMuted } = useContext(MuteContext);
-     const { darkMode, handleToggle } = useDarkMode();
+     const { darkMode, handleToggle } = useContext(DarkModeContext);
   const [menuActive, setMenuActive] = useState(false);
   
   const handleMenuToggle = () => {
