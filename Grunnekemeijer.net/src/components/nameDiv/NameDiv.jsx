@@ -15,7 +15,6 @@ export default function NameDiv() {
       onMouseEnter={() => {
         if (!isMuted) {
           sounds[3].loop(true);
-          sounds[3].volume(0.1);
           sounds[3].play();
           setHoveredLetter(true);
 

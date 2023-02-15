@@ -6,66 +6,53 @@ import MuteBtn from '../muteButton/MuteBtn'
 import Hamburger from '../hamburger/Hamburger'
 import { Menu } from '../menu/Menu'
 import { MuteContext } from '../../context/MuteContext'
+import { useDarkMode } from "../../context/DarkModeContext";
+
 
 export default function Navbar() {
-  const [darkMode, setDarkMode] = useState(false);
-  const [menuActive, setMenuActive] = useState(false)
-  const onToggle = () => {
-    setDarkMode(!darkMode)
-  }
+    const { sounds, isMuted } = useContext(MuteContext);
+     const { darkMode, handleToggle } = useDarkMode();
+  const [menuActive, setMenuActive] = useState(false);
+  
   const handleMenuToggle = () => {
     setMenuActive(!menuActive);
   }
-  const handleDarkModeToggle = () => {
-    setDarkMode(!darkMode);
-    document.body.classList.toggle('dark', darkMode);
-  }
+ 
 
 
-  const { sounds, isMuted } = useContext(MuteContext);
-    
-
-
-
-    console.log(sounds);
-    console.log(isMuted);
   return (
-
-   
     <>
       <Container>
         <LeftContainer>
-          <DarkModeBtn darkMode={darkMode} onToggle={ () => {
-            handleDarkModeToggle ();
-            if (!isMuted) {
-              sounds[1].volume(0.1);
-              sounds[1].play();
-            }
-          }
-          }
-          
-          
-           />
-          {!darkMode && <Flashlight />}
+          <DarkModeBtn
+            onClick={() => {
+              handleToggle();
+              if (!isMuted) {
+                sounds[1].volume(0.1);
+                sounds[1].play();
+              }
+            }}
+            darkMode={darkMode}
+          />
+          {darkMode && <Flashlight />}
           <MuteBtn />
         </LeftContainer>
-        
-        <RightContainer>
-          {menuActive && (
-            <Menu />)}
-          <Button onClick={ () => {
-            handleMenuToggle ();
-            if (!isMuted) {
-              sounds[1].volume(0.1);
-              sounds[1].play();
-              
 
-            }
-          }}>
-            <Hamburger /></Button>
+        <RightContainer>
+          {menuActive && <Menu />}
+          <Button
+            onClick={() => {
+              handleMenuToggle();
+              if (!isMuted) {
+                sounds[1].volume(0.1);
+                sounds[1].play();
+              }
+            }}
+          >
+            <Hamburger />
+          </Button>
         </RightContainer>
       </Container>
-
     </>
-  )
+  );
 }

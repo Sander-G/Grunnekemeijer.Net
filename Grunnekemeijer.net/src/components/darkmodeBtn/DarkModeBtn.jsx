@@ -1,30 +1,40 @@
-import React, { useEffect, useState, useContext } from 'react'
+import React, { useEffect, useContext } from 'react'
 import { Wrapper, DmButton } from './DarkModeBtn.styled'
 import { MuteContext } from "../../context/MuteContext";
+import { useDarkMode } from '../../context/DarkModeContext';
 
 
 
-export default function DarkModeBtn({ darkMode, onToggle }) {
+export default function DarkModeBtn(props) {
     const { sounds, isMuted } = useContext(MuteContext);
-    const [isDarkMode, setIsDarkMode] = useState(darkMode);
+    const { darkMode, toggleDarkMode } = useDarkMode();
+  
 
     useEffect(() => {
         const storedDarkMode = localStorage.getItem('darkMode');
         if (storedDarkMode !== null) {
-            setIsDarkMode(JSON.parse(storedDarkMode));
+              document.body.classList.toggle(
+                "dark",
+                JSON.parse(storedDarkMode)
+              );
         }
 
     }, []);
     
     useEffect(() => {
-      document.body.classList.toggle('dark' , isDarkMode);
-      localStorage.setItem('darkMode', JSON.stringify(isDarkMode));
+      document.body.classList.toggle('dark' , darkMode);
+      localStorage.setItem('darkMode', JSON.stringify(darkMode));
 
-    }, [isDarkMode]);
+    }, [darkMode]);
     return (
         <>
             <Wrapper>
-                <DmButton onClick={onToggle} onMouseEnter={() => {
+                <DmButton onClick={ () => {
+            toggleDarkMode ();
+            if (!isMuted) {
+              sounds[1].play();
+            }
+          }} onMouseEnter={() => {
                     !isMuted && 
                     sounds[0].play()
                 }}
