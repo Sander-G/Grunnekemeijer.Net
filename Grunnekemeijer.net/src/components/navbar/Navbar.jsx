@@ -9,6 +9,7 @@ import { MuteContext } from '../../context/MuteContext'
 import { DarkModeContext } from "../../context/DarkModeContext";
 
 
+
 export default function Navbar() {
     const { sounds, isMuted } = useContext(MuteContext);
      const { darkMode, handleToggle } = useContext(DarkModeContext);
@@ -18,8 +19,6 @@ export default function Navbar() {
     setMenuActive(!menuActive);
   }
  
-
-
   return (
     <>
       <Container>

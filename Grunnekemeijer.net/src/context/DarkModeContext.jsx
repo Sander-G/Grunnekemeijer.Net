@@ -1,33 +1,34 @@
-import React, { createContext, useState, useEffect } from 'react';
+import React, { createContext, useState, useEffect } from "react";
 
 export const DarkModeContext = createContext();
 
 export const DarkModeProvider = ({ children }) => {
-  const [darkMode, setDarkMode] = useState(true);
+  const [darkMode, setDarkMode] = useState(() => {
+    const isDarkMode = localStorage.getItem("darkMode") === "false";
+    document.body.classList.toggle("dark", isDarkMode);
+    return isDarkMode;
+  });
 
-   useEffect(() => {
-     const isDarkMode = localStorage.getItem("darkMode") === "false";
-     setDarkMode(isDarkMode);
-     document.body.classList.toggle("dark", isDarkMode);
-   }, []);
+  const handleToggle = () => {
+    const newMode = !darkMode;
+    setDarkMode(newMode);
+    localStorage.setItem("darkMode", newMode);
+    document.body.classList.toggle("dark", newMode);
+  };
 
-   const handleToggle = () => {
-     const newMode = !darkMode;
-     setDarkMode(newMode);
-     localStorage.setItem("darkMode", newMode);
-     document.body.classList.toggle("dark", newMode);
-   };
-
-   useEffect(() => {
-     const storedDarkMode = localStorage.getItem("darkMode");
-     if (storedDarkMode === "true" || storedDarkMode === "false") {
-       const isDarkMode = storedDarkMode === "true";
-       setDarkMode(isDarkMode);
-       document.body.classList.toggle("dark", isDarkMode);
-     } else {
-       document.body.classList.add("dark");
-     }
-   }, []);
+  useEffect(() => {
+    const storedDarkMode = localStorage.getItem("darkMode");
+    if (storedDarkMode === "true" || storedDarkMode === "false") {
+      const isDarkMode = storedDarkMode === "true";
+      setDarkMode(isDarkMode);
+      document.body.classList.toggle("dark", isDarkMode);
+    } else {
+      const isDarkMode = false;
+      setDarkMode(isDarkMode);
+      localStorage.setItem("darkMode", isDarkMode);
+      document.body.classList.add("dark");
+    }
+  }, []);
 
   return (
     <DarkModeContext.Provider value={{ darkMode, handleToggle }}>
