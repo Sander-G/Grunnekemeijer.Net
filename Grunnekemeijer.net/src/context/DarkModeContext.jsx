@@ -23,7 +23,7 @@ export const DarkModeProvider = ({ children }) => {
       setDarkMode(isDarkMode);
       document.body.classList.toggle("dark", isDarkMode);
     } else {
-      const isDarkMode = false;
+      const isDarkMode = true;
       setDarkMode(isDarkMode);
       localStorage.setItem("darkMode", isDarkMode);
       document.body.classList.add("dark");
