@@ -17,13 +17,10 @@ export default function Flashlight() {
   const [cursorVariant, setCursorVariant] = useState("default");
   const variants = {
     default: {
-      x: mousePosition.x - 75,
-      y: mousePosition.y - 75
+      x: mousePosition.x,
+      y: mousePosition.y,
     },
-    text: {
-      x: 0,
-      y: 0
-    }
+   
   };
 
   useEffect(() => {
@@ -103,7 +100,7 @@ export default function Flashlight() {
             className={isOn ? "off" : "on"}
             variants={variants}
             animate={cursorVariant}
-          ></motion.div>
+          />
         </FlashlightButton>
       </Wrapper>
     </>
