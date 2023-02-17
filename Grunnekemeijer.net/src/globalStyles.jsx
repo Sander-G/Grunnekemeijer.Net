@@ -115,6 +115,7 @@ h1 {
   top: 0;
   left: 0;
   pointer-events: none;
+  background-blend-mode: difference;
   cursor: none;
   user-select: none;
   z-index: 1979;
