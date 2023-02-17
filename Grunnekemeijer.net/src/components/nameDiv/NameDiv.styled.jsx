@@ -1,5 +1,4 @@
 import styled, { keyframes } from "styled-components";
-import texture from "../../assets/texture_alpha.png";
 export const shakeAnimation = keyframes`  
 	0% { transform: translateX(0)}
 	13% {transform: translateY(-0.25px) }
