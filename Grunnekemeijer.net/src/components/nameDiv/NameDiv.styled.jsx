@@ -21,7 +21,7 @@ export const Container = styled.div`
   margin: 0rem 1rem;
   justify-content: space-between;
   color: #343434;
-  cursor: crosshair;
+  cursor: inherit;
   user-select: none;
   pointer-events: unset;
   animation: ${shakeAnimation} 3s linear infinite;

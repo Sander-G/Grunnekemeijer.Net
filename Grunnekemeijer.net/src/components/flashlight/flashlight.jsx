@@ -5,6 +5,9 @@ import { Wrapper, FlashlightButton, } from './flashlight.styled'
 import { MuteContext } from '../../context/MuteContext';
 
 
+
+
+
 export default function Flashlight() {
   const { sounds, isMuted } = useContext(MuteContext);
   const [isOn, setIsOn] = useState('false');
@@ -122,7 +125,9 @@ const cursorYSpring = useSpring(cursorY, springConfig);
             style={{
               translateX: cursorXSpring,
               translateY: cursorYSpring,
-            }}
+              
+              
+               }}
           />
         </FlashlightButton>
       </Wrapper>

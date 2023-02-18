@@ -1,6 +1,7 @@
 import { createGlobalStyle, keyframes } from 'styled-components';
 import clacon2 from './assets/clacon2.woff2'
 
+
 export const flicker = keyframes`
   0% {
     opacity: 1
@@ -154,10 +155,12 @@ h1 {
   top: 0;
   left: 0;
   pointer-events: none;
-  cursor: none;
-  user-select: none;
+  cursor: url(/flashlightcursor.png), auto;
+  ${'' /* user-select: none; */}
   z-index: 1979;
-  animation: ${flicker} 0.3s infinite alternate;
+  animation: ${flicker} 0.1s infinite alternate;
+  transition: all 50ms;
+
 
 }
 
