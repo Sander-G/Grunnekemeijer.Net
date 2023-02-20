@@ -1,5 +1,45 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle, keyframes } from 'styled-components';
 import clacon2 from './assets/clacon2.woff2'
+
+
+export const flicker = keyframes`
+  0% {
+    opacity: 1
+  }
+  5% {
+    opacity: 0.9
+  }
+  10% {
+    opacity: 1
+  }
+  20% {
+    opacity: 0.95
+  }
+  30% {
+    opacity: 1
+  }
+  40% {
+    opacity: 0.9
+  }
+  50% {
+    opacity: 1
+  }
+  60% {
+    opacity: 0.95
+  }
+  70% {
+    opacity: 1
+  }
+  80% {
+    opacity: 0.9
+  }
+  90% {
+    opacity: 1
+  }
+  100% {
+    opacity: 1
+  }
+`;
 const GlobalStyle = createGlobalStyle`
 
   :root {
@@ -105,20 +145,27 @@ h1 {
 
 // flashlight cursor
 .on {
-  height: 175px;
-  width: 175px;
+    height: 200px;
+  width: 200px;
   border-radius: 50%;
   position: fixed;
-  background: radial-gradient(
+    background: radial-gradient(
     rgba(0, 0, 0, 0) 0%,
     rgba(223, 237, 24, 0.1) 99%);
   top: 0;
   left: 0;
   pointer-events: none;
-  cursor: none;
-  user-select: none;
+  cursor: url(/flashlightcursor.png), auto;
+  ${'' /* user-select: none; */}
   z-index: 1979;
+  animation: ${flicker} 0.1s infinite alternate;
+  transition: all 50ms;
+
+
 }
+
+
+
 
 .off {
   position: fixed;

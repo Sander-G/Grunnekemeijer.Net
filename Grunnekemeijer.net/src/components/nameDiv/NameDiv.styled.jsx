@@ -1,5 +1,4 @@
 import styled, { keyframes } from "styled-components";
-import texture from "../../assets/texture_alpha.png";
 export const shakeAnimation = keyframes`  
 	0% { transform: translateX(0)}
 	13% {transform: translateY(-0.25px) }
@@ -22,7 +21,7 @@ export const Container = styled.div`
   margin: 0rem 1rem;
   justify-content: space-between;
   color: #343434;
-  cursor: crosshair;
+  cursor: inherit;
   user-select: none;
   pointer-events: unset;
   animation: ${shakeAnimation} 3s linear infinite;
