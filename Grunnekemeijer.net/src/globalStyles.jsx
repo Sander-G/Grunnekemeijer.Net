@@ -92,9 +92,10 @@ h1 {
 
 .terminal  {
     
-    font-size: 2rem;
+    font-size: 1rem;
     color: currentColor;
-    ${"" /* font-family: clacon2; */}
+    font-family: clacon2;
+    color: green;
 }
 
 * {
@@ -156,7 +157,7 @@ h1 {
   left: 0;
   pointer-events: none;
   cursor: url(/flashlightcursor.png), auto;
-  ${'' /* user-select: none; */}
+  user-select: none;
   z-index: 1979;
   animation: ${flicker} 0.1s infinite alternate;
   transition: all 50ms;
