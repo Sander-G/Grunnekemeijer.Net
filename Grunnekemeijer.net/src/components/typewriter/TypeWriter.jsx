@@ -39,13 +39,13 @@ export function TypeWriter() {
           const res = await axios.get("http://www.geolocation-db.com/json/");
           setIp(res.data.IPv4);
           setDataLoaded(true);
-            localStorage.setItem("lastCheck", JSON.stringify(currentDate));
+            localStorage.setItem("lastVisit", JSON.stringify(currentDate));
             localStorage.setItem("lastIp", JSON.stringify(res.data.IPv4));
        
         };
 
 
-      const lastVisitDate = JSON.parse(localStorage.getItem('lastCheck'));
+      const lastVisitDate = JSON.parse(localStorage.getItem('lastVisit'));
       const lastIpAddress = JSON.parse(localStorage.getItem('lastIp'));
 
       if (lastVisitDate) {
