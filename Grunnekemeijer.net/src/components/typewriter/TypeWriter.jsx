@@ -29,14 +29,13 @@ export function TypeWriter() {
        }
      };
 
-     useEffect(() => {
+  
+
+    useEffect(() => {
        const storedVisitCount = localStorage.getItem("visitCount");
        if (storedVisitCount) {
          setVisitCount(parseInt(storedVisitCount));
        }
-     }, []);
-
-    useEffect(() => {
         const d = new Date();
         const day = weekDay[d.getDay()];
         const m = new Date();
@@ -54,9 +53,7 @@ export function TypeWriter() {
             + ' ' + hours + ':' + minutes + ':' + seconds
         ) ;
        
-    }, []);
-
-    useEffect(() => {
+   
         const lastVisitDate = JSON.parse(localStorage.getItem("lastVisit"));
         const lastIpAddress = JSON.parse(localStorage.getItem("lastIp"));
 
@@ -70,25 +67,22 @@ export function TypeWriter() {
           setIp(lastIpAddress);
         }
 
-    
-        const storedVisitCount = localStorage.getItem("visitCount");
-        if (storedVisitCount) {
-          setVisitCount(parseInt(storedVisitCount));
-        }
         const getData = async (count) => {
           const res = await axios.get("http://www.geolocation-db.com/json/");
           setIp(res.data.IPv4);
           setDataLoaded(true);
-            localStorage.setItem("lastVisit", JSON.stringify(currentDate));
-            localStorage.setItem("lastIp", JSON.stringify(res.data.IPv4));
-            setVisitCount((count) => count + 1);
-            localStorage.setItem("visitCount", count + 1);
+          localStorage.setItem("lastVisit", JSON.stringify(currentDate));
+          localStorage.setItem("lastIp", JSON.stringify(res.data.IPv4));
+          setVisitCount(count + 1);
+          localStorage.setItem("visitCount", count + 1);
         };
 
-      if (!lastVisitDate) {
-        getData(visitCount);
-      }
-    }, [currentDate, visitCount]);
+        if (!lastVisitDate) {
+          getData(visitCount);
+        }
+      }, []);
+
+
     return (
       <>
         <Wrapper>
