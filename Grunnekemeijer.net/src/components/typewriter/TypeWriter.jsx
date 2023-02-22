@@ -11,31 +11,11 @@ export function TypeWriter() {
     const [currentDate, setCurrentDate] = useState('');
     const [lastVisit, setLastVisit] = useState('');
     const [ip, setIp] = useState('');
-    const [dataLoaded, setDataLoaded] = useState(false);
-    const [visitCount, setVisitCount] = useState(0);
-     
-    const getOrdinal = (n) => {
-       const visitString = n.toString();
-       const lastDigit = parseInt(visitString[visitString.length - 1]);
-       switch (lastDigit) {
-         case 1:
-           return visitString + "st";
-         case 2:
-           return visitString + "nd";
-         case 3:
-           return visitString + "rd";
-         default:
-           return visitString + "th";
-       }
-     };
-
   
-
+ 
     useEffect(() => {
-       const storedVisitCount = localStorage.getItem("visitCount");
-       if (storedVisitCount) {
-         setVisitCount(parseInt(storedVisitCount));
-       }
+
+      
         const d = new Date();
         const day = weekDay[d.getDay()];
         const m = new Date();
@@ -49,44 +29,41 @@ export function TypeWriter() {
        
 
         setCurrentDate(
-            day + ' ' + month + ' ' + date 
-            + ' ' + hours + ':' + minutes + ':' + seconds
-        ) ;
+      day + ' ' + month + ' ' + date + ' ' + hours + ':' + minutes + ':' + seconds
+    );
+  }, []);
        
-   
-        const lastVisitDate = JSON.parse(localStorage.getItem("lastVisit"));
-        const lastIpAddress = JSON.parse(localStorage.getItem("lastIp"));
 
-        if (lastVisitDate) {
-          setLastVisit(lastVisitDate);
-        } else {
-          setLastVisit("");
-        }
+         useEffect(() => {
+           const lastVisitDate = JSON.parse(localStorage.getItem("lastVisit"));
+           const lastIpAddress = JSON.parse(localStorage.getItem("lastIp"));
+           console.log(lastVisitDate);
+           if (lastVisitDate) {
+             setLastVisit(lastVisitDate);
+           }
 
-        if (lastIpAddress) {
-          setIp(lastIpAddress);
-        }
+           if (lastIpAddress) {
+             setIp(lastIpAddress);
+           }
 
-        const getData = async (count) => {
-          const res = await axios.get("http://www.geolocation-db.com/json/");
-          setIp(res.data.IPv4);
-          setDataLoaded(true);
-          localStorage.setItem("lastVisit", JSON.stringify(currentDate));
-          localStorage.setItem("lastIp", JSON.stringify(res.data.IPv4));
-          setVisitCount(count + 1);
-          localStorage.setItem("visitCount", count + 1);
-        };
+           const getData = async () => {
+             const res = await axios.get("http://www.geolocation-db.com/json/");
+             setIp(res.data.IPv4);
 
-        if (!lastVisitDate) {
-          getData(visitCount);
-        }
-      }, []);
+             localStorage.setItem("lastVisit", JSON.stringify(currentDate));
+             console.log(lastVisit);
+             localStorage.setItem("lastIp", JSON.stringify(res.data.IPv4));
+             
+           };
+
+           getData();
+         }, [currentDate]);
 
 
     return (
       <>
         <Wrapper>
-        {dataLoaded && (lastVisit ? (
+        { (lastVisit ? (
 
           
             <span className="terminal">
