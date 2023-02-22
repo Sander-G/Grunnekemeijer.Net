@@ -1,4 +1,4 @@
-import styled, { keyframes } from "styled-components";
+import styled, { keyframes } from 'styled-components';
 export const shakeAnimation = keyframes`  
 	0% { transform: translateX(0)}
 	13% {transform: translateY(-0.25px) }
@@ -21,7 +21,7 @@ export const Container = styled.div`
   margin: 0rem 1rem;
   justify-content: space-between;
   color: #343434;
-  cursor: inherit;
+  cursor: crosshair;
   user-select: none;
   pointer-events: unset;
   animation: ${shakeAnimation} 3s linear infinite;
@@ -35,13 +35,7 @@ export const Container = styled.div`
   }
 
   > p {
-    font-size: max(
-      80px,
-      min(
-        calc(105px + (500 - 20) * (90vw - 320px) / (2550 - 320)),
-        calc(105px + (500 - 20) * (90vh - 500px) / (1440 - 500))
-      )
-    );
+    font-size: max(80px, min(calc(105px + (500 - 20) * (90vw - 320px) / (2550 - 320)), calc(105px + (500 - 20) * (90vh - 500px) / (1440 - 500))));
   }
 `;
 export const G = styled.p`

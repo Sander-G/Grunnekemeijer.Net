@@ -1,6 +1,5 @@
 import { createGlobalStyle, keyframes } from 'styled-components';
-import clacon2 from './assets/clacon2.woff2'
-
+import clacon2 from './assets/clacon2.woff2';
 
 export const flicker = keyframes`
   0% {
@@ -50,10 +49,6 @@ const GlobalStyle = createGlobalStyle`
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 
-  ${"" /* typeIt cursor styling */}
-  --ti-cursor-color: green;
-  --ti-cursor-line-height: normal;
-  --ti-cursor-font-size: 1.2rem;
  
 }
 
@@ -64,8 +59,6 @@ a {
 }
 a:hover {
   color: #343434;
- 
-    
     
 }
 
@@ -90,13 +83,7 @@ h1 {
     src: url(${clacon2}) format('woff2');
 }
 
-.terminal  {
-    
-    font-size: 1rem;
-    color: currentColor;
-    font-family: clacon2;
-    color: green;
-}
+
 
 * {
   margin: 0;
@@ -156,7 +143,7 @@ h1 {
   top: 0;
   left: 0;
   pointer-events: none;
-  cursor: url(/flashlightcursor.png), auto;
+  cursor: none;
   user-select: none;
   z-index: 1979;
   animation: ${flicker} 0.1s infinite alternate;
@@ -178,18 +165,5 @@ h1 {
   z-index: 1979;
 }
 `;
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 export default GlobalStyle;

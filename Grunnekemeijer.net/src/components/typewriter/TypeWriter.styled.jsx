@@ -11,4 +11,16 @@ export const Wrapper = styled.div`
   text-align: left;
   line-height: 1;
   letter-spacing: 0.8;
+
+  ${'' /* typeIt cursor styling */}
+  --ti-cursor-color: green;
+  --ti-cursor-line-height: normal;
+  --ti-cursor-font-size: 1rem;
+
+  & .terminal {
+    font-size: 1rem;
+    color: currentColor;
+    font-family: clacon2;
+    color: green;
+  }
 `;
