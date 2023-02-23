@@ -1,13 +1,8 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect,  } from 'react';
 import TypeIt from 'typeit-react';
 import axios from 'axios';
 import { Wrapper } from './TypeWriter.styled';
-
-
-
-
-
-
+import { useVisitCounter } from '../visitcounter/useVisitCounter';
 
 
 
@@ -18,8 +13,32 @@ export function TypeWriter() {
   const [currentDate, setCurrentDate] = useState('');
   const [lastVisit, setLastVisit] = useState('');
   const [ip, setIp] = useState('');
-  const [count, setCount] = useState(0);
-  const visitCountRef = useRef(parseInt(localStorage.getItem('visitCount') ?? '0'));
+  const visitCount = useVisitCounter();
+
+    const getOrdinal = (n) => {
+      const visitString = n.toString();
+      const lastTwoDigits = parseInt(visitString.slice(-2));
+      const lastDigit = parseInt(visitString[visitString.length - 1]);
+
+      // Add exception for 11, 12, and 13
+      if (lastTwoDigits === 11 || lastTwoDigits === 12 || lastTwoDigits === 13) {
+        return visitString + 'th';
+      }
+      switch (lastDigit) {
+        case 1:
+          return visitString + 'st';
+        case 2:
+          return visitString + 'nd';
+        case 3:
+          return visitString + 'rd';
+        default:
+          return visitString + 'th';
+      }
+    };
+
+
+  // const [count, setCount] = useState(0);
+  // const visitCountRef = useRef(parseInt(localStorage.getItem('visitCount') ?? '0'));
 
 
   useEffect(() => {
@@ -59,19 +78,21 @@ export function TypeWriter() {
       localStorage.setItem('lastIp', JSON.stringify(res.data.IPv4));
       console.log(lastVisit);
       console.log('after fetch', lastIpAddress);
-      console.log('after fetch', visitCountRef);
+  
+       
+      
     };
     getData();
-  }, [ currentDate]);
+  }, [ currentDate ]);
 
 
-  useEffect(() => {
-    visitCountRef.current +=1;
-    localStorage.setItem('visitCount', visitCountRef.current);
+  // useEffect(() => {
+  //   visitCountRef.current +=1;
+  //   localStorage.setItem('visitCount', visitCountRef.current);
    
-  }, []); 
+  // }, []); 
 
-  const VisitCount = localStorage.getItem('visitCount');
+  // const VisitCount = localStorage.getItem('visitCount');
   
 
   return (
@@ -79,7 +100,7 @@ export function TypeWriter() {
       <Wrapper>
         {lastVisit ? (
           <span className='terminal'>
-            You were last here on {lastVisit} from {ip}, this is your {VisitCount} time here.
+            You were last here on {lastVisit} from {ip}, this is your {getOrdinal(visitCount)} visit.
           </span>
         ) : (
           <span className='terminal'>This is your first visit, your IP number is: {ip}</span>
