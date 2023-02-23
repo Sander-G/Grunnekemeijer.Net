@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 export const useVisitCounter = () => {
   const [visitCount, setVisitCount] = useState(parseInt(localStorage.getItem('visitCount')) || 1);
   const [lastVisitTime, setLastVisitTime] = useState(localStorage.getItem('lastVisitTime'));
-  const oneHour = 60 * 60 * 1000;
+  const oneHour = 1000;
 
   useEffect(() => {
     const lastVisit = localStorage.getItem('lastVisitTime');
