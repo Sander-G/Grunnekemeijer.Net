@@ -1,5 +1,5 @@
 import React,{ useContext } from 'react'
-import { Wrapper, MuteButton } from './muteBtn.styled'
+import { MuteButton } from './muteBtn.styled'
 import { MuteContext } from '../../context/MuteContext';
 
 
@@ -19,7 +19,7 @@ export default function MuteBtn() {
 
     return (
         <>
-            <Wrapper>
+            
                     <MuteButton onClick={()=> {
                       handleClick();
                       !isMuted && 
@@ -40,7 +40,7 @@ export default function MuteBtn() {
                         )}
                     </MuteButton>
              
-            </Wrapper>
+            
         </>
     )
 }

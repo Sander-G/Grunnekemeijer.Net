@@ -40,16 +40,12 @@ export const flicker = keyframes`
   }
 `;
 const GlobalStyle = createGlobalStyle`
-
   :root {
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
-
- 
+  -webkit-text-size-adjust: 100%; 
 }
 
 a {
@@ -58,8 +54,7 @@ a {
   text-decoration: initial;
 }
 a:hover {
-  color: #343434;
-    
+  color: #525252;
 }
 
 body {
@@ -83,13 +78,12 @@ h1 {
     src: url(${clacon2}) format('woff2');
 }
 
-
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 .App {
   height: 100vh;
   width: auto;
@@ -106,6 +100,7 @@ h1 {
     color: #525252;
   }
 }
+
 .dark,
 .dark .App {
   color: #e6e5e5;
@@ -121,15 +116,12 @@ h1 {
   }
 }
 
-
 .nameDiv > p {
    font-size: max(80px, min(
     calc(105px + (500 - 20) * (90vw - 320px) / (2550 - 320)),
     calc(105px + (500 - 20) * (90vh - 500px) / (1400 - 500))
   ));
 };
-
-
 
 // flashlight cursor
 .on {
@@ -148,12 +140,7 @@ h1 {
   z-index: 1979;
   animation: ${flicker} 0.1s infinite alternate;
   transition: all 50ms;
-
-
 }
-
-
-
 
 .off {
   position: fixed;

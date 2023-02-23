@@ -1,26 +1,26 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-position:relative;
-display: flex;
-flex-direction: row;
-align-items: center;
-justify-content: space-between;
-height: 4rem;
-z-index:1;
-max-width: 100vw;
-background-color: transparent;
-border-bottom: 0.5px solid hotpink;
-margin: 0rem 1rem;
-
-`
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: 4rem;
+  z-index: 1;
+  max-width: 100vw;
+  background-color: transparent;
+  border-bottom: 0.5px solid hotpink;
+  margin: 0rem 1rem;
+  user-select: none;
+`;
 
 export const LeftContainer = styled.div`
-display: flex;
-@media screen and (max-width:1024px) {
+  display: flex;
+  @media screen and (max-width: 1024px) {
     scale: 0.8;
-}
-`
+  }
+`;
 
 export const RightContainer = styled.div`
 display: flex;
