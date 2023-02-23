@@ -4,8 +4,6 @@ import axios from 'axios';
 import { Wrapper } from './TypeWriter.styled';
 import { useVisitCounter } from '../visitcounter/useVisitCounter';
 
-
-
 export function TypeWriter() {
   const weekDay = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
   const monthName = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
@@ -19,8 +17,7 @@ export function TypeWriter() {
       const visitString = n.toString();
       const lastTwoDigits = parseInt(visitString.slice(-2));
       const lastDigit = parseInt(visitString[visitString.length - 1]);
-
-      // Add exception for 11, 12, and 13
+      //exception for 11, 12, and 13
       if (lastTwoDigits === 11 || lastTwoDigits === 12 || lastTwoDigits === 13) {
         return visitString + 'th';
       }
@@ -35,11 +32,6 @@ export function TypeWriter() {
           return visitString + 'th';
       }
     };
-
-
-  // const [count, setCount] = useState(0);
-  // const visitCountRef = useRef(parseInt(localStorage.getItem('visitCount') ?? '0'));
-
 
   useEffect(() => {
     const d = new Date();
@@ -59,9 +51,8 @@ export function TypeWriter() {
   useEffect(() => {
     const lastVisitDate = JSON.parse(localStorage.getItem('lastVisit'));
     const lastIpAddress = JSON.parse(localStorage.getItem('lastIp'));
-     console.log('onload', lastVisitDate);
-     console.log('onload', lastIpAddress);
-   
+     console.log('onload', lastIpAddress, lastVisit, visitCount);
+
     if (lastVisitDate) {
       setLastVisit(lastVisitDate);
     }
@@ -69,15 +60,13 @@ export function TypeWriter() {
       setIp(lastIpAddress);
     }
 
-
     const getData = async () => {
       const res = await axios.get('http://www.geolocation-db.com/json/');
       setIp(res.data.IPv4);
-     
       localStorage.setItem('lastVisit', JSON.stringify(currentDate));
       localStorage.setItem('lastIp', JSON.stringify(res.data.IPv4));
-      console.log(lastVisit);
-      console.log('after fetch', lastIpAddress);
+  
+      console.log('after fetch', lastIpAddress, lastVisit, visitCount);
   
        
       
@@ -86,13 +75,7 @@ export function TypeWriter() {
   }, [ currentDate ]);
 
 
-  // useEffect(() => {
-  //   visitCountRef.current +=1;
-  //   localStorage.setItem('visitCount', visitCountRef.current);
-   
-  // }, []); 
-
-  // const VisitCount = localStorage.getItem('visitCount');
+ 
   
 
   return (
