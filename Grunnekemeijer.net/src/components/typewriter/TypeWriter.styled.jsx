@@ -22,5 +22,7 @@ export const Wrapper = styled.div`
     color: currentColor;
     font-family: clacon2;
     color: green;
+    line-height: 1;
+    margin-right: -0.3em;
   }
 `;
