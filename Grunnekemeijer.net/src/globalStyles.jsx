@@ -93,7 +93,7 @@ h1 {
   background-color: #e6e5e5;
   transition: all 0.3s ease;
   & a {
-    color: #525252;
+    color: #343434;
   }
  
   & a:hover {
@@ -108,11 +108,11 @@ h1 {
   transition: all 0.3s ease;
 
   & a {
-    color: #525252;
+    color: #343434;
   }
 
   & a:hover {
-    color: #343434;
+    color: #525252;
   }
 }
 

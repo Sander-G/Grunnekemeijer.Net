@@ -14,7 +14,7 @@ export const MenuLabel = styled.label`
 
 export const Icon = styled.span`
 position: relative;
-background-color: ${(props) => (props.clicked ? "transparent" : "#525252")};
+background-color: ${(props) => (props.clicked ? "transparent" : "#343434")};
 width: 35px;
 height: 7px;
 user-select: none;
@@ -23,12 +23,12 @@ transition: all 0.3s;
 border-radius: 6px;
 border: ${(props) => (props.clicked ? "1px solid transparent" : "1px solid hotpink")};
 &:hover {
-  background-color: ${(props) => (props.clicked ? "transparent" : "#343434")};
+  background-color: ${(props) => (props.clicked ? "transparent" : "#525252")};
 &:after {
-  background-color: ${(props) => (props.clicked ? "#343434" : "#343434")};
+  background-color: #525252;
 }
 &:before {
-  background-color: ${(props) => (props.clicked ? "#343434" : "#343434")};
+  background-color: #525252;
 }
 }
 
@@ -39,7 +39,7 @@ border: ${(props) => (props.clicked ? "1px solid transparent" : "1px solid hotpi
 &::before,
 &::after {
   content: "";
-  background-color: #525252;
+  background-color: #343434;
   width: 40px;
   height: 6px;
   display: inline-block;

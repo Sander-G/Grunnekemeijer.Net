@@ -2,7 +2,7 @@ import React, { useState, useEffect,  } from 'react';
 import TypeIt from 'typeit-react';
 import axios from 'axios';
 import { Wrapper } from './TypeWriter.styled';
-import { useVisitCounter } from '../visitcounter/useVisitCounter';
+import { useVisitCounter } from '../../hooks/useVisitCounter';
 
 export function TypeWriter() {
   const [currentDate, setCurrentDate] = useState('');

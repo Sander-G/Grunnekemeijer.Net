@@ -28,10 +28,11 @@ export const Container = styled.div`
 
   transition: all 0.6s ease;
   &:hover > p {
-    transition: all 0.2s ease;
+    transition: all 0.3s ease;
     transform: scaleX(-1);
     transform: scaleY(-1);
     text-shadow: -1px 0 skyblue, 0 1px skyblue, 1px 0 skyblue, 0 -1px skyblue;
+   
   }
 
   > p {
