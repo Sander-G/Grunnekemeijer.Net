@@ -61,14 +61,17 @@ export function TypeWriter() {
     }
 
     const getData = async () => {
-      const res = await axios.get('http://www.geolocation-db.com/json/');
-      setIp(res.data.IPv4);
-      localStorage.setItem('lastVisit', JSON.stringify(currentDate));
-      localStorage.setItem('lastIp', JSON.stringify(res.data.IPv4));
-  
-      console.log('after fetch', lastIpAddress, lastVisit, visitCount);
+      try {
+        const res = await axios.get('http://www.geolocation-db.com/json/');
+        setIp(res.data.IPv4);
+        localStorage.setItem('lastVisit', JSON.stringify(currentDate));
+        localStorage.setItem('lastIp', JSON.stringify(res.data.IPv4));
+      } catch (error) {
+        console.log('Error fetching IP address:', error);
+      }
     };
     getData();
+    console.log('after fetch', lastIpAddress, lastVisit, visitCount);
   }, [currentDate]);
 
   return (
