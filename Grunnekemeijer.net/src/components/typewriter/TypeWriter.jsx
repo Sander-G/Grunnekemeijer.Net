@@ -1,7 +1,7 @@
 import React, { useState, useEffect,  } from 'react';
 import TypeIt from 'typeit-react';
 import axios from 'axios';
-import { Wrapper } from './TypeWriter.styled';
+import { Wrapper, PromptWrapper, Text1, Text2 } from './TypeWriter.styled';
 import { useVisitCounter } from '../../hooks/useVisitCounter';
 
 export function TypeWriter() {
@@ -85,22 +85,16 @@ export function TypeWriter() {
           <span className='terminal'>This is your first visit, your IP number is: {ip}.</span>
         )}
       </Wrapper>
-      <Wrapper>
+      <PromptWrapper>
         <span className='terminal'>S:\&nbsp; </span>
-        {/* <TypeIt
-          className='terminal'
-          options={{
-            strings: ['load info.bat '],
-            speed: 1,
-            waitUntilVisible: true,
-          }}
-        /> */}
+
         <TypeIt
           className='terminal'
           options={{
             speed: 1,
             lifeLike: true,
             waitUntilVisible: true,
+            startDelay: 2500,
           }}
           getBeforeInit={(instance) => {
             instance
@@ -129,9 +123,11 @@ export function TypeWriter() {
               .type('a')
               .pause(144)
               .type('t')
-              .pause(432)
+              .pause(2500)
               .break()
+              .empty()
               .go();
+             
             return instance;
           }}
         />
@@ -155,7 +151,60 @@ export function TypeWriter() {
             waitUntilVisible: true,
           }}
         /> */}
-      </Wrapper>
+
+        {/* <TypeIt
+          className='terminal'
+          options={{
+            strings: ['load info.bat '],
+            speed: 1,
+            waitUntilVisible: true,
+          }}
+        /> */}
+      </PromptWrapper>
+      <Wrapper>
+         
+        <TypeIt
+          className='terminal'
+          options={{
+             startDelay: 7000,
+            speed: 100,
+            lifeLike: true,
+            waitUntilVisible: true,
+          }}
+          getBeforeInit={(instance) => {
+            instance
+              .type('This is the first text.')
+              .pause(500)
+              .break()
+              
+              .go();
+
+            return instance;
+          }}
+        />
+     
+
+     
+        <TypeIt
+          className='terminal'
+          options={{
+            startDelay: 13000,
+            speed: 100,
+            lifeLike: true,
+            waitUntilVisible: true,
+          }}
+          getBeforeInit={(instance) => {
+            instance
+              .type('This is the second text.')
+              .pause(500)
+             
+              .go();
+
+            return instance;
+          }}
+        />
+     
+    </Wrapper>
     </>
   );
 }
