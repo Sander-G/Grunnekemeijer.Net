@@ -34,7 +34,7 @@ export const LeftContainer = styled.div`
 
 export const RightContainer = styled.div`
 display: flex;
-padding-right: 0.5rem;
+padding-right: 1rem;
 /* flex-direction: row;
 align-items: center;
 justify-content: flex-end; */
@@ -53,6 +53,7 @@ export const Button = styled.button`
   width: 40px;
   margin-top: 0.4rem;
   background: transparent;
+ 
 
   @media screen and (max-width: 600px) {
     margin-left: -0.2rem;
