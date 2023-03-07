@@ -1,8 +1,8 @@
 import React, { useState, useEffect,  } from 'react';
 import TypeIt from 'typeit-react';
-import axios from 'axios';
 import { Wrapper, PromptWrapper, Text1, Text2 } from './TypeWriter.styled';
 import { useVisitCounter } from '../../hooks/useVisitCounter';
+
 
 export function TypeWriter() {
   const [currentDate, setCurrentDate] = useState('');
@@ -47,6 +47,7 @@ export function TypeWriter() {
    }
  };
 
+ 
   useEffect(() => {
     const lastVisitDate = JSON.parse(localStorage.getItem('lastVisit'));
     const lastIpAddress = JSON.parse(localStorage.getItem('lastIp'));
@@ -59,19 +60,20 @@ export function TypeWriter() {
     if (lastIpAddress) {
       setIp(lastIpAddress);
     }
-
+    
     const getData = async () => {
       try {
-        const res = await axios.get('http://www.geolocation-db.com/json/');
-        setIp(res.data.IPv4);
+        const response = await fetch('https://api.ipify.org');
+        const ipAddress = await response.text();
+        setIp(ipAddress);
         localStorage.setItem('lastVisit', JSON.stringify(currentDate));
-        localStorage.setItem('lastIp', JSON.stringify(res.data.IPv4));
+        localStorage.setItem('lastIp', JSON.stringify(ipAddress));
       } catch (error) {
         console.log('Error fetching IP address:', error);
       }
     };
     getData();
-    console.log('after fetch', lastIpAddress, lastVisit, visitCount);
+    console.log('after fetch', lastIpAddress, ip, lastVisit, visitCount);
   }, [currentDate]);
 
   return (
