@@ -11,31 +11,50 @@ export const Container = styled.div`
   max-width: 100vw;
   background-color: transparent;
   border-bottom: 0.5px solid hotpink;
-  margin: 0rem 1rem;
+
+  
   user-select: none;
+
+  @media screen and (max-width: 600px) {
+    height: 3rem;
+  }
 `;
 
 export const LeftContainer = styled.div`
   display: flex;
+
   @media screen and (max-width: 1024px) {
-    scale: 0.8;
+    scale: 0.7;
+  }
+  @media screen and (max-width: 600px) {
+  
+    gap: 0.2rem;
   }
 `;
 
 export const RightContainer = styled.div`
 display: flex;
-flex-direction: row;
+padding-right: 0.5rem;
+/* flex-direction: row;
 align-items: center;
-justify-content: flex-end;
-gap: 0.5rem;
-padding-right: 0.75rem; 
+justify-content: flex-end; */
+gap: 0.3rem;
+@media screen and (max-width:600px) {
+  gap:0.2rem;
+  
+
+}
+
 
 `
 export const Button = styled.button`
-border: 0;
-height: 40px;
-width: 40px;
-margin-top:0.4rem;
-background: transparent;
+  border: 0;
+  height: 40px;
+  width: 40px;
+  margin-top: 0.4rem;
+  background: transparent;
 
-`
+  @media screen and (max-width: 600px) {
+    margin-left: -0.2rem;
+  }
+`;
