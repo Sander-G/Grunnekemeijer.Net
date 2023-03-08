@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { motion, useMotionValue, useSpring } from 'framer-motion';
-import { FlashlightButton } from './flashlight.styled';
+import { FlashlightButton } from './Flashlight.styled';
 import { MuteContext } from '../../context/MuteContext';
 
 export default function Flashlight() {
