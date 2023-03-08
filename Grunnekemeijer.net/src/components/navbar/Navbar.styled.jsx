@@ -11,8 +11,9 @@ export const Container = styled.div`
   max-width: 100vw;
   background-color: transparent;
   border-bottom: 0.5px solid hotpink;
-
+  margin: 0rem 0.5rem;
   
+
   user-select: none;
 
   @media screen and (max-width: 600px) {
@@ -22,12 +23,13 @@ export const Container = styled.div`
 
 export const LeftContainer = styled.div`
   display: flex;
+  
 
   @media screen and (max-width: 1024px) {
-    scale: 0.7;
+    scale: 0.8;
+    margin-left: -0.5rem;
   }
   @media screen and (max-width: 600px) {
-  
     gap: 0.2rem;
   }
 `;
@@ -53,6 +55,7 @@ export const Button = styled.button`
   width: 40px;
   margin-top: 0.4rem;
   background: transparent;
+  margin-right: -0.5rem;
  
 
   @media screen and (max-width: 600px) {
