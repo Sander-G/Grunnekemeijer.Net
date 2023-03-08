@@ -53,17 +53,22 @@ export const StyledImage = styled.img`
     margin-top: 1rem;
   }
 `;
-export const Text = styled.span`
+export const Text = styled.p`
   grid-column: 2 / 3;
   grid-row: span 1;
   font-size: 17px;
   text-align: justify;
   margin: 0rem 0.5rem 0rem 0rem;
   &:first-letter {
-    initial-letter: 4.5 4;
-    font-weight: bold;
-    line-height: 1;
-    font-size: 22px;
+    float: left;
+    font-size: 32px;
+    line-height: 28px;
+    padding-top: 1px;
+    padding-right: 3px;
+    padding-left: 1px;
+    font-weight: 600;
+   
+    
   }
 
   @media (max-width: 800px) {
