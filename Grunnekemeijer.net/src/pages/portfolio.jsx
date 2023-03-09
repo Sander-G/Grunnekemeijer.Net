@@ -78,10 +78,9 @@ const data = [
     image: 'src/assets/pix/lottayoga.png',
     text: (
       <div>
-       
-        Lotta Yoga
+      De Lotta Yoga website heb ik voor Lotte (mijn vrouw) gemaakt met HTML, (Sass) CSS en een klein beetje JavaScript voor de hamburger, nav menu, een modal en mail/telefoon obfuscatie. De site is responsive en bestaat uit fullpage achtergrondfoto's van Lotte in verschillende yoga houdingen tegen een blauwe lucht. De verschillende secties van de site heeft een achtergrond parallax effect dat (eerst niet.. maar nu wel) ook werkt in safari mobile. Voor SEO doeleinden heb ik o.a. Structured Data en een sitemap toegevoegd. Woon je in Enschede en wil je yoga gaan doen? Neem contact op met Lotte!       
         <a href='https://lottayoga.nl' target='_blank' rel='noopener noreferrer'>
-          <TextShadow>Link naar de site</TextShadow>
+          <TextShadow> https://lottayoga.nl</TextShadow>
         </a>
         .
       </div>
