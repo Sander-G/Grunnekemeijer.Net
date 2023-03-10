@@ -23,6 +23,7 @@ export const Wrapper = styled.div`
     line-height: 1;
     margin-right: -0.3em;
   }
+
 `;
 
 export const PromptWrapper = styled.div`
@@ -36,7 +37,7 @@ export const PromptWrapper = styled.div`
   line-height: 1;
   letter-spacing: 0.8;
 
-  & .terminal {
+  & .prompt, .terminal {
     font-size: 1rem;
     color: currentColor;
     font-family: clacon2;

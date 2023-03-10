@@ -1,6 +1,6 @@
-import React, { useState, useEffect,  } from 'react';
+import React, { useState, useEffect, } from 'react';
 import TypeIt from 'typeit-react';
-import { Wrapper, PromptWrapper, Text1, Text2 } from './TypeWriter.styled';
+import { Wrapper, PromptWrapper } from './TypeWriter.styled';
 import { useVisitCounter } from '../../hooks/useVisitCounter';
 
 
@@ -76,6 +76,14 @@ export function TypeWriter() {
     console.log('after fetch', lastIpAddress, ip, lastVisit, visitCount);
   }, [currentDate]);
 
+
+
+  
+
+
+
+   
+
   return (
     <>
       <Wrapper>
@@ -87,126 +95,14 @@ export function TypeWriter() {
           <span className='terminal'>This is your first visit, your IP number is: {ip}.</span>
         )}
       </Wrapper>
+
+      
       <PromptWrapper>
-        <span className='terminal'>S:\&nbsp; </span>
-
-        <TypeIt
-          className='terminal'
-          options={{
-            speed: 1,
-            lifeLike: true,
-            waitUntilVisible: true,
-            startDelay: 2500,
-          }}
-          getBeforeInit={(instance) => {
-            instance
-              .type('l')
-              .pause(111)
-              .type('o')
-              .pause(144)
-              .type('a')
-              .pause(160)
-              .type('d')
-              .pause(204)
-              .type(' ')
-              .pause(160)
-              .type('i')
-              .pause(128)
-              .type('n')
-              .pause(184)
-              .type('f')
-              .pause(96)
-              .type('o')
-              .pause(176)
-              .type('.')
-              .pause(132)
-              .type('b')
-              .pause(160)
-              .type('a')
-              .pause(144)
-              .type('t')
-              .pause(2500)
-              .break()
-              .empty()
-              .go();
-             
-            return instance;
-          }}
-        />
-
-        {/* <TypeIt className='terminal'
-                    getBeforeInit={(instance) => {
-                        instance.type('And now for something completely').pause(300).delete(10).pause(800).type('not so completely different.')
-                        ;
-                        return instance;
-                    }}
-
-                /> */}
-
-        {/* <TypeIt
-          className='terminal'
-          options={{
-            strings: [
-              'Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae at dignissimos veritatis qui veniam temporibus velit placeat! Suscipit libero laudantium commodi vel excepturi non, reiciendis delectus velit expedita deleniti cum. Vero debitis aliquam amet possimus repellat ut, odio accusantium eos nisi molestias laudantium. Veritatis molestias eveniet vel neque molestiae nostrum ipsum omnis voluptates facere quo animi, doloribus, dignissimos dolore quidem eligendi error necessitatibus. Corrupti assumenda provident delectus placeat quasi tenetur voluptate cupiditate ut explicabo, exercitationem soluta id sed nisi ullam.',
-            ],
-            speed: 1,
-            waitUntilVisible: true,
-          }}
-        /> */}
-
-        {/* <TypeIt
-          className='terminal'
-          options={{
-            strings: ['load info.bat '],
-            speed: 1,
-            waitUntilVisible: true,
-          }}
-        /> */}
+        <span className='terminal'>S:\ </span>
+        
       </PromptWrapper>
-      <Wrapper>
-         
-        <TypeIt
-          className='terminal'
-          options={{
-             startDelay: 7000,
-            speed: 100,
-            lifeLike: true,
-            waitUntilVisible: true,
-          }}
-          getBeforeInit={(instance) => {
-            instance
-              .type('This is the first text.')
-              .pause(500)
-              .break()
-              
-              .go();
 
-            return instance;
-          }}
-        />
-     
-
-     
-        <TypeIt
-          className='terminal'
-          options={{
-            startDelay: 13000,
-            speed: 100,
-            lifeLike: true,
-            waitUntilVisible: true,
-          }}
-          getBeforeInit={(instance) => {
-            instance
-              .type('This is the second text.')
-              .pause(500)
-             
-              .go();
-
-            return instance;
-          }}
-        />
-     
-    </Wrapper>
+      <Wrapper></Wrapper>
     </>
   );
 }
