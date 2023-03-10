@@ -1,7 +1,5 @@
 import React from 'react';
-import { StyledImage, Container, ImageWrapper,  Italics, Text, TextShadow} from './Portfolio.styled';
-
-
+import { StyledImage, Container, ImageWrapper, Italics, Text, TextShadow } from './Portfolio.styled';
 
 const data = [
   {
@@ -9,7 +7,7 @@ const data = [
     link: '../../JSeindopdracht/JSON_Cards/index.html',
     image: 'src/assets/pix/transformerindex.png',
     text: (
-      <div>
+      <>
         De transformer index was een onderdeel van de Javascript eindopdracht die ik tijdens de TechGrounds opleiding heb gemaakt. Het doel van de opdracht was het vinden van een geschikte database
         met RESTful API data, deze data op te halen en gestructureerd weer te geven in een zelfgemaakte index. Een veelgebruikte database hiervoor is de Pokédex API, maar omdat ik kind ben van een
         eerdere generatie viel de keuze op een Transformer Index (
@@ -20,8 +18,9 @@ const data = [
         <Italics>- introductie met CORS errors.</Italics> Het resultaat is een pagina met 1st Gen. Transformers gemapped vanuit een JSON bestand, met een modal voor grotere weergave.
         <a href='../../JSeindopdracht/JSON_Cards/index.html' target='_blank' rel='noopener noreferrer'>
           <TextShadow> Hier </TextShadow>
-        </a>een live versie van de Transformer Index en een paar andere Javascript opdrachten die ik heb gemaakt (een image carousel, een analoge klok en een searchbar).
-      </div>
+        </a>
+        een live versie van de Transformer Index en een paar andere Javascript opdrachten die ik heb gemaakt.
+      </>
     ),
   },
   {
@@ -29,17 +28,19 @@ const data = [
     link: 'https://sander-g.github.io/WeatherApp/',
     image: 'src/assets/pix/pietsweerbericht.png',
     text: (
-      <div>
+      <>
         My first React App: Piets weerbericht, een ode aan weerman Piet Paulusma (1956-2022). Deze weather App heb is gemaakt met create react app, styled components. Op basis van de
         <a href='https://openweathermap.com' target='_blank' rel='noopener noreferrer'>
           <TextShadow> OpenWeatherMap </TextShadow>
         </a>
-        API. Nadat ik eerst endpoints heb onderzocht met Postman, ben ik begonnen met het bouwen van de componenten, De App maakt API calls voor geolocatie obv. ingevoerde Plaatsnaam en geeft vervolgens het weer & zevendaagse voorspelling voor de gezochte locatie. Nog niet geheel responsive maar extra trots op de windvaan met kloppende windrichting. Hier de gedeployde versie van de App:
+        API. Nadat ik eerst endpoints heb onderzocht met Postman, ben ik begonnen met het bouwen van de componenten, De App maakt API calls voor geolocatie obv. ingevoerde Plaatsnaam en geeft
+        vervolgens het weer & zevendaagse voorspelling voor de gezochte locatie. Nog niet geheel responsive maar extra trots op de windvaan met kloppende windrichting. Hier de gedeployde versie van de
+        App:
         <a href='https://sander-g.github.io/WeatherApp/' target='_blank' rel='noopener noreferrer'>
           <TextShadow> Piet's Weerbericht</TextShadow>
-        </a>.
-        
-      </div>
+        </a>
+        .
+      </>
     ),
   },
   {
@@ -47,14 +48,20 @@ const data = [
     link: 'https://skippysskateboards.netlify.app',
     image: 'src/assets/pix/skippyskateboards.png',
     text: (
-      <div>
-       
-        Skippy's vintage skateboards
-        <a href='https://skippysskateboards.netlify.app' target='_blank' rel='noopener noreferrer'>
-          <TextShadow>gedeployde versie hier!</TextShadow>
+      <>
+        Skippy's vintage skateboards. Create React App project, eerste volledig zelf ontwikkelde webshop met verschillende product categorieën, winkelwagentje, user account login, state management en
+        Routing. In enkele weken gebouwd vanaf user stories en wireframe tot gedeployde webshop. De webshop maakt gebruik van React Router voor pagina Routing, user account/login met Google Firebase
+        (inmiddels verwijderd), state management met Redux toolkit, Express server backend voor de product database. Styling is gedaan met styled-components, de pagina is responsive en de producten
+        uit de database worden gefetched als de pagina voor het eerst wordt geladen. Winkelwagentje en favoriete producten worden in local storage bewaard. Het product database JSON bestand wordt
+        <a href='https://skippysexpressserver.netlify.app/.netlify/functions/api/products' target='_blank' rel='noopener noreferrer'>
+          <TextShadow> gehost </TextShadow>
         </a>
-        .
-      </div>
+        met Netlify serverless functions. De toast berichten hadden iets minder gekund.. Laatst gedeployde versie
+        <a href='https://skippysskateboards.netlify.app' target='_blank' rel='noopener noreferrer'>
+          <TextShadow> hier</TextShadow>
+        </a>
+        !
+      </>
     ),
   },
   {
@@ -62,14 +69,20 @@ const data = [
     link: 'https://tg-nepflix.vercel.app',
     image: 'src/assets/pix/nepflix.png',
     text: (
-      <div>
-       
-        Nepflix project
+      <>
+        Het Nepflix project was de eindopdracht van de TechGrounds opleiding, waarbij we als groep beginnende developers als scrum team in 3 sprints van 2 weken een Netfix clone hebben gebouwd in
+        React met Vite als Toolchain, React Router, Redux Toolkit, React-Icons, Styled Components. Het team bestond uit een front-end en een backend groep. Er was een scrum master, een productowner en
+        planning en voortgang werd bijgehouden in een Jira board. De front-end groep was vooral gericht op het nauwkeurig nabouwen van de Netflix site en de functionele componenten zoals de carousels, players and modals. De backend groep was gericht op het aanleveren van API data voor de frontend obv de gebruikte databases (TMDB, FanArt TV). Er waren dagelijkse stand-up meetings en sprint reviews na afloop van de sprints. De phishing waarschuwing die de landingpage
+        veroorzaakte accepteerden we als bewijs van een geslaagde kopie :) Het Github
+        <a href='https://github.com/tg-netflix' target='_blank' rel='noopener noreferrer'>
+          <TextShadow> project</TextShadow>
+        </a>{' '}
+        en de laatste versie van de site vind je hier:
         <a href='https://tg-nepflix.vercel.app' target='_blank' rel='noopener noreferrer'>
-          <TextShadow>gedeployde versie hier!</TextShadow>
+          <TextShadow> Nepflix</TextShadow>
         </a>
         .
-      </div>
+      </>
     ),
   },
   {
@@ -77,36 +90,32 @@ const data = [
     link: 'https://lottayoga.nl',
     image: 'src/assets/pix/lottayoga.png',
     text: (
-      <div>
-      De Lotta Yoga website heb ik voor Lotte (mijn vrouw) gemaakt met HTML, (Sass) CSS en een klein beetje JavaScript voor de hamburger, nav menu, een modal en mail/telefoon obfuscatie. De site is responsive en bestaat uit fullpage achtergrondfoto's van Lotte in verschillende yoga houdingen tegen een blauwe lucht. De verschillende secties van de site heeft een achtergrond parallax effect dat (eerst niet.. maar nu wel) ook werkt in safari mobile. Voor SEO doeleinden heb ik o.a. Structured Data en een sitemap toegevoegd. Woon je in Enschede en wil je yoga gaan doen? Neem contact op met Lotte!       
+      <>
+        De Lotta Yoga website heb ik voor Lotte (mijn vrouw) gemaakt met HTML, (Sass) CSS en een klein beetje JavaScript voor de hamburger & nav menu, een modal en mail/telefoon obfuscatie. De site is responsive en bestaat uit fullpage achtergrondfoto's van Lotte in verschillende yoga houdingen tegen een blauwe lucht. De foto's worden in verschillende resoluties aangeboden op basis van scherm grootte om lange laadtijden te voorkomen. De verschillende secties van de site heeft een achtergrond parallax effect dat (eerst niet.. maar nu wel) ook werkt in safari mobile. Voor SEO doeleinden heb ik o.a. Structured Data en een sitemap toegevoegd. Woon je in Enschede en overweeg je yoga te gaan doen? Neem contact op met Lotte!
         <a href='https://lottayoga.nl' target='_blank' rel='noopener noreferrer'>
           <TextShadow> https://lottayoga.nl</TextShadow>
         </a>
         .
-      </div>
+      </>
     ),
   },
 ];
 
-
-
 export default function Portfolio() {
-    return (
-        <>
-              <Container>
+  return (
+    <>
+      <Container>
         {data.map((item) => (
-         <React.Fragment key={item.id}>
+          <React.Fragment key={item.id}>
             <ImageWrapper>
-         <a href={item.link} target="_blank" rel="noopener noreferrer">
-           
-            <StyledImage src={item.image} alt={`Image ${item.id}`}/>
-            </a>
+              <a href={item.link} target='_blank' rel='noopener noreferrer'>
+                <StyledImage src={item.image} alt={`Image ${item.id}`} />
+              </a>
             </ImageWrapper>
             <Text index={item.id}>{item.text}</Text>
-         </React.Fragment>
-       ))}
-
-        </Container>
-        </>
-    )
+          </React.Fragment>
+        ))}
+      </Container>
+    </>
+  );
 }

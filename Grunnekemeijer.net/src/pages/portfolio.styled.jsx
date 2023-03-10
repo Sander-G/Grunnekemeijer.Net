@@ -15,18 +15,18 @@ export const Container = styled.div`
   display: grid;
   position: relative;
   grid-template-columns: 2fr 3fr;
-  grid-template-rows: repeat(5, minmax(200px, 1fr));
-  grid-row-gap: 2rem;
-  grid-column-gap: 2rem;
-  padding: 1rem 1rem 0rem 0rem;
+  grid-template-rows: repeat(5, minmax( 1fr));
+  grid-row-gap: 1.5rem;
+  grid-column-gap: 1rem;
+  padding: 1.5rem 1rem 0rem 0rem;
   line-height: 1.1;
 
   @media (max-width: 800px) {
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(10, minmax(100px, 1fr));
+    grid-template-rows: repeat(10, minmax( 1fr));
     grid-row-gap: 0.5rem;
     margin: 0rem 2rem 0rem 2rem;
-    padding: 0rem 0rem 0rem 0rem;
+    padding: 1.5rem 0rem 0rem 0rem;
     line-height: 1.2;
   }
 `;
@@ -35,7 +35,7 @@ export const ImageWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 1rem 1rem 0rem 0rem;
+  margin: 0rem 1rem 1rem 0rem;
   padding-left: 2rem;
 `;
 export const StyledImage = styled.img`
