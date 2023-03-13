@@ -1,7 +1,7 @@
 import React, { useState, useEffect, } from 'react';
-import { Wrapper, PromptWrapper } from './TypeWriter.styled';
+import { Wrapper, PromptWrapper, Container, TextBlock, Button } from './TypeWriter.styled';
 import { useVisitCounter } from '../../hooks/useVisitCounter';
-import TypeWriterEffect from 'react-typewriter-effect'
+import { Typewriter } from 'react-simple-typewriter';
 
 
 
@@ -77,10 +77,14 @@ export function TypeWriter() {
     console.log('after fetch', lastIpAddress, ip, lastVisit, visitCount);
   }, [currentDate]);
 
+  const [showLine1, setShowLine1] = useState(false);
+  const [showLine2, setShowLine2] = useState(false);
+  const [showLine3, setShowLine3] = useState(false);
+  const [showAllText, setShowAllText] = useState(false);
 
-
-  
-
+useEffect(() => {
+  setShowLine1(true);
+}, []);
 
 
    
@@ -101,9 +105,46 @@ export function TypeWriter() {
         <span className='terminal'>S:\ </span>
       </PromptWrapper>
 
-
-
-  
+      <Container>
+        <TextBlock>
+          <Typewriter words={['Line 1 text']} loop={false} cursor={true} cursorStyle='_' typeSpeed={70} onTypingEnd={() => setShowLine1(true)} />
+          {showLine1 && (
+            <>
+              <div>
+                <Typewriter words={['Line 2 text']} loop={false} cursor={true} cursorStyle='_' typeSpeed={70} onTypingEnd={() => setShowLine2(true)} />
+              </div>
+            </>
+          )}
+          {showLine2 && (
+            <>
+              <div>
+                <Typewriter words={['Line 3 text']} loop={false} cursor={true} cursorStyle='_' typeSpeed={70} onTypingEnd={() => setShowLine3(true)} />
+              </div>
+            </>
+          )}
+          {showLine3 && (
+            <>
+              <div>
+                This is the end of the typing.
+                <span style={{ visibility: 'hidden' }}>_</span>
+              </div>
+            </>
+          )}
+          {!showAllText && showLine3 && (
+            <div>
+              <button onClick={() => setShowAllText(true)}>Show all text</button>
+            </div>
+          )}
+          {showAllText && (
+            <>
+              <div>Line 1 text</div>
+              <div>Line 2 text</div>
+              <div>Line 3 text</div>
+            </>
+          )}
+        </TextBlock>
+      </Container>
+      <Button onClick={() => setShowLine3(true)}>Show All</Button>
     </>
   );
 }

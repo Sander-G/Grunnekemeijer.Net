@@ -11,10 +11,7 @@ export const Wrapper = styled.div`
   line-height: 1;
   letter-spacing: 0.8;
 
-  ${'' /* typeIt cursor styling */}
-  --ti-cursor-color: currentColor;
-  --ti-cursor-line-height: normal;
-  --ti-cursor-font-size: 1rem;
+ 
 
   & .terminal {
     font-size: 1rem;
@@ -42,15 +39,37 @@ export const PromptWrapper = styled.div`
     color: currentColor;
     font-family: clacon2;
     line-height: 1;
-    margin-right: -0.3em;
+   
   }
 `;
 
-export const Text1 = styled.div`
-    color: #ff0000;
-  `;
+export const Container = styled.div`
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 20px;
 
-export const Text2 = styled.div`
-  color: #0000ff;
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
+export const TextBlock = styled.div`
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  display: inline-block;
+`;
+
+
+
+
+export const Button = styled.button`
+  background-color: #0077b6;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  font-size: 18px;
+  margin-top: 20px;
+`;
