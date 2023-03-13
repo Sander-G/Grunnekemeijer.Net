@@ -55,7 +55,7 @@ export const Container = styled.div`
   }
 `;
 
-export const TextBlock = styled.div`
+export const Block = styled.div`
   font-size: 2rem;
   text-align: center;
   margin-bottom: 2rem;

@@ -1,7 +1,31 @@
 import React, { useState, useEffect, } from 'react';
-import { Wrapper, PromptWrapper, Container, TextBlock, Button } from './TypeWriter.styled';
+import { Wrapper, PromptWrapper, Container, Block } from './TypeWriter.styled';
 import { useVisitCounter } from '../../hooks/useVisitCounter';
-import { Typewriter } from 'react-simple-typewriter';
+import Typist from 'react-typist'
+
+const TextBlock = ({ text, onFinish }) => {
+  const [isTyping, setIsTyping] = useState(true);
+
+  const handleTypingDone = () => {
+    setIsTyping(false);
+    onFinish();
+  };
+
+  return (
+    <Typist onTypingDone={handleTypingDone} cursor={{ show: false }}>
+      {isTyping ? (
+        <p>
+          {text}
+          <Typist.Delay ms={500} />
+        </p>
+      ) : (
+        <p>{text}</p>
+      )}
+    </Typist>
+  );
+};
+
+
 
 
 
@@ -77,16 +101,14 @@ export function TypeWriter() {
     console.log('after fetch', lastIpAddress, ip, lastVisit, visitCount);
   }, [currentDate]);
 
-  const [showLine1, setShowLine1] = useState(false);
-  const [showLine2, setShowLine2] = useState(false);
-  const [showLine3, setShowLine3] = useState(false);
-  const [showAllText, setShowAllText] = useState(false);
+  const [showAll, setShowAll] = useState(false);
+  const [text1Finished, setText1Finished] = useState(false);
+  const [text2Finished, setText2Finished] = useState(false);
 
-useEffect(() => {
-  setShowLine1(true);
-}, []);
+  const handleShowAll = () => setShowAll(true);
 
-
+  const handleText1Finish = () => setText1Finished(true);
+  const handleText2Finish = () => setText2Finished(true);
    
 
   return (
@@ -105,46 +127,25 @@ useEffect(() => {
         <span className='terminal'>S:\ </span>
       </PromptWrapper>
 
-      <Container>
-        <TextBlock>
-          <Typewriter words={['Line 1 text']} loop={false} cursor={true} cursorStyle='_' typeSpeed={70} onTypingEnd={() => setShowLine1(true)} />
-          {showLine1 && (
-            <>
-              <div>
-                <Typewriter words={['Line 2 text']} loop={false} cursor={true} cursorStyle='_' typeSpeed={70} onTypingEnd={() => setShowLine2(true)} />
-              </div>
-            </>
-          )}
-          {showLine2 && (
-            <>
-              <div>
-                <Typewriter words={['Line 3 text']} loop={false} cursor={true} cursorStyle='_' typeSpeed={70} onTypingEnd={() => setShowLine3(true)} />
-              </div>
-            </>
-          )}
-          {showLine3 && (
-            <>
-              <div>
-                This is the end of the typing.
-                <span style={{ visibility: 'hidden' }}>_</span>
-              </div>
-            </>
-          )}
-          {!showAllText && showLine3 && (
-            <div>
-              <button onClick={() => setShowAllText(true)}>Show all text</button>
-            </div>
-          )}
-          {showAllText && (
-            <>
-              <div>Line 1 text</div>
-              <div>Line 2 text</div>
-              <div>Line 3 text</div>
-            </>
-          )}
-        </TextBlock>
-      </Container>
-      <Button onClick={() => setShowLine3(true)}>Show All</Button>
+      <div>
+      <TextBlock text="First block of text" onFinish={handleText1Finish} />
+      {text1Finished && (
+        <TextBlock text="Second block of text" onFinish={handleText2Finish} />
+      )}
+      {text2Finished && (
+        <TextBlock text="Third block of text" onFinish={() => {}} />
+      )}
+      {!showAll && (
+        <button onClick={handleShowAll}>Show all text</button>
+      )}
+      {showAll && (
+        <>
+          <p>First block of text</p>
+          <p>Second block of text</p>
+          <p>Third block of text</p>
+        </>
+      )}
+    </div>
     </>
   );
 }
