@@ -1,7 +1,8 @@
 import React, { useState, useEffect, } from 'react';
-import TypeIt from 'typeit-react';
 import { Wrapper, PromptWrapper } from './TypeWriter.styled';
 import { useVisitCounter } from '../../hooks/useVisitCounter';
+import TypeWriterEffect from 'react-typewriter-effect'
+
 
 
 export function TypeWriter() {
@@ -96,13 +97,13 @@ export function TypeWriter() {
         )}
       </Wrapper>
 
-      
       <PromptWrapper>
         <span className='terminal'>S:\ </span>
-        
       </PromptWrapper>
 
-      <Wrapper></Wrapper>
+
+
+  
     </>
   );
 }

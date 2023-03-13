@@ -17,8 +17,8 @@
     "react-dom": "^18.2.0",
     "react-router": "^6.5.0",
     "react-router-dom": "^6.5.0",
-    "styled-components": "^5.3.6",
-    "typeit-react": "^2.6.0"
+    "react-typewriter-effect": "^1.1.0",
+    "styled-components": "^5.3.6"
   },
   "devDependencies": {
     "@types/react": "^18.0.17",
