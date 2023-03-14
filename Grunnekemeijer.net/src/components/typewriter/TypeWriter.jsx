@@ -1,29 +1,10 @@
 import React, { useState, useEffect, } from 'react';
 import { Wrapper, PromptWrapper, Container, Block } from './TypeWriter.styled';
 import { useVisitCounter } from '../../hooks/useVisitCounter';
-import Typist from 'react-typist'
+import Writer from './Writer';
 
-const TextBlock = ({ text, onFinish }) => {
-  const [isTyping, setIsTyping] = useState(true);
 
-  const handleTypingDone = () => {
-    setIsTyping(false);
-    onFinish();
-  };
 
-  return (
-    <Typist onTypingDone={handleTypingDone} cursor={{ show: false }}>
-      {isTyping ? (
-        <p>
-          {text}
-          <Typist.Delay ms={500} />
-        </p>
-      ) : (
-        <p>{text}</p>
-      )}
-    </Typist>
-  );
-};
 
 
 
@@ -101,14 +82,7 @@ export function TypeWriter() {
     console.log('after fetch', lastIpAddress, ip, lastVisit, visitCount);
   }, [currentDate]);
 
-  const [showAll, setShowAll] = useState(false);
-  const [text1Finished, setText1Finished] = useState(false);
-  const [text2Finished, setText2Finished] = useState(false);
-
-  const handleShowAll = () => setShowAll(true);
-
-  const handleText1Finish = () => setText1Finished(true);
-  const handleText2Finish = () => setText2Finished(true);
+  
    
 
   return (
@@ -126,26 +100,9 @@ export function TypeWriter() {
       <PromptWrapper>
         <span className='terminal'>S:\ </span>
       </PromptWrapper>
+      <Writer/>
 
-      <div>
-      <TextBlock text="First block of text" onFinish={handleText1Finish} />
-      {text1Finished && (
-        <TextBlock text="Second block of text" onFinish={handleText2Finish} />
-      )}
-      {text2Finished && (
-        <TextBlock text="Third block of text" onFinish={() => {}} />
-      )}
-      {!showAll && (
-        <button onClick={handleShowAll}>Show all text</button>
-      )}
-      {showAll && (
-        <>
-          <p>First block of text</p>
-          <p>Second block of text</p>
-          <p>Third block of text</p>
-        </>
-      )}
-    </div>
+     
     </>
   );
 }
