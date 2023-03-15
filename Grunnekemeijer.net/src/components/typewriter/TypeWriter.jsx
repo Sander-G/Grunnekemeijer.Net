@@ -103,7 +103,7 @@ export function TypeWriter() {
         <span className='terminal'>S:\&nbsp;</span>
         {showCommand && (
           <span>
-            <Typed strings={['Informatie.exe']} typeSpeed={50} backSpeed={0} startDelay={1500} backDelay={2500} onComplete={handleTypedComplete} cursorChar='|' loop loopCount={0} smartBackspace className='terminal' />
+            <Typed strings={['Informatie.exe']} typeSpeed={50} backSpeed={0} startDelay={2000} backDelay={2500} onComplete={handleTypedComplete} cursorChar='|' loop loopCount={0} smartBackspace className='terminal' />
           </span>
         )}
       </PromptWrapper>

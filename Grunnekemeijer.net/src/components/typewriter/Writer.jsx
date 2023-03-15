@@ -1,23 +1,16 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Typed from 'react-typed';
-import styled from 'styled-components';
-
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  font-size: 1rem;
-  color: currentColor;
-  font-family: clacon2;
-  line-height: 1;
-`;
+import { Container, Button, ButtonWrapper } from './Writer.styled';
 
 
 export default function Writer() {
   const [lines, setLines] = useState(['This is the first line of text.', '', '']);
   const [instantType, setInstantType] = useState(false);
+  const [showButton, setShowButton] = useState(true);
+  const [typingCompleted, setTypingCompleted] = useState(false);
   const typedRef = useRef(null);
   const timeoutIdsRef = useRef([]);
+
 
   useEffect(() => {
     if (typedRef.current) {
@@ -25,7 +18,7 @@ export default function Writer() {
       timeoutIdsRef.current.push(
         setTimeout(() => {
           setLines(['This is the first line of text.', 'This is the second line of text.', '']);
-        }, 5000)
+        }, 4000)
       );
       timeoutIdsRef.current.push(
         setTimeout(() => {
@@ -37,8 +30,14 @@ export default function Writer() {
 
   const handleInstantType = () => {
     setInstantType(true);
+    setShowButton(false);
     setLines(['This is the first line of text.', 'This is the second line of text.', 'This is the third line of text.']);
     timeoutIdsRef.current.forEach(clearTimeout);
+  };
+
+  const handleTypingComplete = () => {
+    setShowButton(false);
+    setTypingCompleted(true);
   };
 
   return (
@@ -53,52 +52,29 @@ export default function Writer() {
         </Container>
       ) : (
         <Container>
-          <Container>
-            <button onClick={handleInstantType}>Cut to the chase</button>
-          </Container>
-        
-            <Typed
-              strings={[lines[0]]}
-              typeSpeed={40}
-              backSpeed={50}
-              loop={false}
-              shuffle={false}
-              backDelay={1500}
-              fadeOut={false}
-              smartBackspace={true}
-              showCursor={false}
-              ref={typedRef}
-           
-            />
-            <br />
-            <Typed
-              strings={[lines[1]]}
-              typeSpeed={40}
-              backSpeed={50}
-              loop={false}
-              shuffle={false}
-              backDelay={1500}
-              fadeOut={false}
-              smartBackspace={true}
-              startDelay={5500}
-              showCursor={false}
-           
-            />
-            <br />
-            <Typed
-              strings={[lines[2]]}
-             
-              typeSpeed={40}
-              backSpeed={50}
-              loop={false}
-              shuffle={false}
-              backDelay={1500}
-              fadeOut={false}
-              smartBackspace={true}
-              startDelay={10500}
-              showCursor={false}
-            />
-        
+          {typingCompleted ? null : (
+            <ButtonWrapper show={showButton}>
+              <Button onClick={handleInstantType}>Cut to the chase</Button>
+            </ButtonWrapper>
+          )}
+
+          <Typed strings={[lines[0]]} typeSpeed={30} backSpeed={50} loop={false} shuffle={false} backDelay={1500} fadeOut={false} smartBackspace={true} showCursor={false} ref={typedRef} />
+
+          <Typed strings={[lines[1]]} typeSpeed={30} backSpeed={50} loop={false} shuffle={false} backDelay={1500} fadeOut={false} smartBackspace={true} startDelay={5500} showCursor={false} />
+
+          <Typed
+            strings={[lines[2]]}
+            typeSpeed={40}
+            backSpeed={50}
+            loop={false}
+            shuffle={false}
+            backDelay={1500}
+            fadeOut={false}
+            smartBackspace={true}
+            startDelay={10500}
+            showCursor={false}
+            onComplete={handleTypingComplete}
+          />
         </Container>
       )}
     </>
