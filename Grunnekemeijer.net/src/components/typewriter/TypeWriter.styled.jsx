@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, {css} from "styled-components";
 
 export const Wrapper = styled.div`
   display: flex;
@@ -34,13 +34,35 @@ export const PromptWrapper = styled.div`
   line-height: 1;
   letter-spacing: 0.8;
 
-  & .prompt, .terminal {
+  & .prompt,
+  .terminal {
     font-size: 1rem;
     color: currentColor;
     font-family: clacon2;
     line-height: 1;
-   
   }
+
+  ${(props) =>
+    props.blink &&
+    css`
+      & .terminal::after {
+        content: '|';
+        opacity: 1;
+        animation: blink 1s infinite;
+      }
+
+      @keyframes blink {
+        0% {
+          opacity: 0;
+        }
+        50% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0;
+        }
+      }
+    `}
 `;
 
 export const Container = styled.div`

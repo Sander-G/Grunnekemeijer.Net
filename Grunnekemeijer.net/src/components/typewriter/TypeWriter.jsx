@@ -1,14 +1,8 @@
-import React, { useState, useEffect, } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Wrapper, PromptWrapper, Container, Block } from './TypeWriter.styled';
 import { useVisitCounter } from '../../hooks/useVisitCounter';
+import Typed from 'react-typed';
 import Writer from './Writer';
-
-
-
-
-
-
-
 
 export function TypeWriter() {
   const [currentDate, setCurrentDate] = useState('');
@@ -39,26 +33,25 @@ export function TypeWriter() {
     const lastDigit = parseInt(visitString.slice(-1));
     //exception for 11, 12, and 13
     if (lastTwoDigits === 11 || lastTwoDigits === 12 || lastTwoDigits === 13) {
-     return visitString + 'th';
-   }
-   switch (lastDigit) {
-     case 1:
-       return visitString + 'st';
-     case 2:
-       return visitString + 'nd';
-     case 3:
-       return visitString + 'rd';
-     default:
-       return visitString + 'th';
-   }
- };
+      return visitString + 'th';
+    }
+    switch (lastDigit) {
+      case 1:
+        return visitString + 'st';
+      case 2:
+        return visitString + 'nd';
+      case 3:
+        return visitString + 'rd';
+      default:
+        return visitString + 'th';
+    }
+  };
 
- 
   useEffect(() => {
     const lastVisitDate = JSON.parse(localStorage.getItem('lastVisit'));
     const lastIpAddress = JSON.parse(localStorage.getItem('lastIp'));
 
-     console.log('onload', lastIpAddress, lastVisit, visitCount);
+    console.log('onload', lastIpAddress, lastVisit, visitCount);
 
     if (lastVisitDate) {
       setLastVisit(lastVisitDate);
@@ -66,7 +59,7 @@ export function TypeWriter() {
     if (lastIpAddress) {
       setIp(lastIpAddress);
     }
-    
+
     const getData = async () => {
       try {
         const response = await fetch('https://api.ipify.org');
@@ -82,9 +75,18 @@ export function TypeWriter() {
     console.log('after fetch', lastIpAddress, ip, lastVisit, visitCount);
   }, [currentDate]);
 
-  
-   
+ 
+    const [showCommand, setShowCommand] = useState(true);
+    const [showWriter, setShowWriter] = useState(false);
 
+    const handleTypedComplete = () => {
+      setTimeout(() => {
+        setShowCommand(false);
+      }, 2000);
+      setTimeout(() => {
+        setShowWriter(true);
+      }, 2500);
+    };
   return (
     <>
       <Wrapper>
@@ -98,11 +100,15 @@ export function TypeWriter() {
       </Wrapper>
 
       <PromptWrapper>
-        <span className='terminal'>S:\ </span>
+        <span className='terminal'>S:\&nbsp;</span>
+        {showCommand && (
+          <span>
+            <Typed strings={['Informatie.exe']} typeSpeed={50} backSpeed={0} startDelay={1500} backDelay={2500} onComplete={handleTypedComplete} cursorChar='|' loop loopCount={0} smartBackspace className='terminal' />
+          </span>
+        )}
       </PromptWrapper>
-      <Writer/>
 
-     
+      {showWriter && <Writer />}
     </>
   );
 }
