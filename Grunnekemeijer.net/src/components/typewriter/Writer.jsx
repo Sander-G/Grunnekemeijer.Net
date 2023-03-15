@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Typed from 'react-typed';
-import { Container, Button, ButtonWrapper } from './Writer.styled';
-
+import { Container, Button, ButtonWrapper, BlinkingCursor, Row } from './Writer.styled';
 
 export default function Writer() {
   const [lines, setLines] = useState(['This is the first line of text.', '', '']);
@@ -10,7 +9,6 @@ export default function Writer() {
   const [typingCompleted, setTypingCompleted] = useState(false);
   const typedRef = useRef(null);
   const timeoutIdsRef = useRef([]);
-
 
   useEffect(() => {
     if (typedRef.current) {
@@ -46,9 +44,10 @@ export default function Writer() {
         <Container>
           <div>{lines[0]}</div>
           <div>{lines[1]}</div>
-          <div>{lines[2]}</div>
-
-          {/* blinking cursor hier toevoegen. */}
+          <Row>
+            <div>{lines[2]}</div>
+            <BlinkingCursor />
+          </Row>
         </Container>
       ) : (
         <Container>
@@ -61,20 +60,22 @@ export default function Writer() {
           <Typed strings={[lines[0]]} typeSpeed={30} backSpeed={50} loop={false} shuffle={false} backDelay={1500} fadeOut={false} smartBackspace={true} showCursor={false} ref={typedRef} />
 
           <Typed strings={[lines[1]]} typeSpeed={30} backSpeed={50} loop={false} shuffle={false} backDelay={1500} fadeOut={false} smartBackspace={true} startDelay={5500} showCursor={false} />
-
-          <Typed
-            strings={[lines[2]]}
-            typeSpeed={40}
-            backSpeed={50}
-            loop={false}
-            shuffle={false}
-            backDelay={1500}
-            fadeOut={false}
-            smartBackspace={true}
-            startDelay={10500}
-            showCursor={false}
-            onComplete={handleTypingComplete}
-          />
+          <Row>
+            <Typed
+              strings={[lines[2]]}
+              typeSpeed={40}
+              backSpeed={50}
+              loop={false}
+              shuffle={false}
+              backDelay={1500}
+              fadeOut={false}
+              smartBackspace={true}
+              startDelay={10500}
+              showCursor={false}
+              onComplete={handleTypingComplete}
+            />
+            {!typingCompleted ? null : <BlinkingCursor />}
+          </Row>
         </Container>
       )}
     </>
