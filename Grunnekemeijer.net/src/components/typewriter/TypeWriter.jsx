@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Wrapper, PromptWrapper, Container, Block } from './TypeWriter.styled';
+import { Wrapper, PromptWrapper } from './TypeWriter.styled';
 import { useVisitCounter } from '../../hooks/useVisitCounter';
 import Typed from 'react-typed';
 import Writer from './Writer';
@@ -75,18 +75,17 @@ export function TypeWriter() {
     console.log('after fetch', lastIpAddress, ip, lastVisit, visitCount);
   }, [currentDate]);
 
- 
-    const [showCommand, setShowCommand] = useState(true);
-    const [showWriter, setShowWriter] = useState(false);
+  const [showCommand, setShowCommand] = useState(true);
+  const [showWriter, setShowWriter] = useState(false);
 
-    const handleTypedComplete = () => {
-      setTimeout(() => {
-        setShowCommand(false);
-      }, 2000);
-      setTimeout(() => {
-        setShowWriter(true);
-      }, 2500);
-    };
+  const handleTypedComplete = () => {
+    setTimeout(() => {
+      setShowCommand(false);
+    }, 2000);
+    setTimeout(() => {
+      setShowWriter(true);
+    }, 2500);
+  };
   return (
     <>
       <Wrapper>
@@ -103,7 +102,19 @@ export function TypeWriter() {
         <span className='terminal'>S:\&nbsp;</span>
         {showCommand && (
           <span>
-            <Typed strings={['Informatie.exe']} typeSpeed={50} backSpeed={0} startDelay={2000} backDelay={2500} onComplete={handleTypedComplete} cursorChar='|' loop loopCount={0} smartBackspace className='terminal' />
+            <Typed
+              strings={['Informatie.exe']}
+              typeSpeed={50}
+              backSpeed={0}
+              startDelay={2000}
+              backDelay={2500}
+              onComplete={handleTypedComplete}
+              cursorChar='|'
+              loop
+              loopCount={0}
+              smartBackspace
+              className='terminal'
+            />
           </span>
         )}
       </PromptWrapper>

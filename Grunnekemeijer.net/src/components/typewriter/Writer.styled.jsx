@@ -8,6 +8,7 @@ export const Container = styled.div`
   color: currentColor;
   font-family: clacon2;
   line-height: 1;
+  margin: 0rem 1rem 0rem 1rem;
 `;
 
 export const Button = styled.button`
