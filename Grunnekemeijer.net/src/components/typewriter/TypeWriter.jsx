@@ -110,9 +110,7 @@ export function TypeWriter() {
               backDelay={2500}
               onComplete={handleTypedComplete}
               cursorChar='|'
-              loop
               loopCount={0}
-              smartBackspace
               className='terminal'
             />
           </span>

@@ -9,6 +9,10 @@ export const Container = styled.div`
   font-family: clacon2;
   line-height: 1;
   margin: 0rem 1rem 0rem 1rem;
+  user-select: none;
+  overflow-y: hidden;
+
+
 `;
 
 export const Button = styled.button`

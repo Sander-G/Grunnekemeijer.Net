@@ -10,20 +10,29 @@ export default function Flashlight() {
   const cursorX = useMotionValue();
   const cursorY = useMotionValue();
 
-  const springConfig = { damping: 90, stiffness: 5000 };
+  const springConfig = { damping: 500, stiffness: 10000 };
   const cursorXSpring = useSpring(cursorX, springConfig);
   const cursorYSpring = useSpring(cursorY, springConfig);
 
+   const handleTouchMove = (e) => {
+     e.preventDefault();
+     cursorX.set(e.touches[0].pageX -50);
+     cursorY.set(e.touches[0].pageY );
+   };
+
+
   useEffect(() => {
     const moveCursor = (e) => {
-      cursorX.set(e.clientX - 100);
-      cursorY.set(e.clientY - 100);
+      cursorX.set(e.pageX );
+      cursorY.set(e.pageY );
     };
 
     window.addEventListener('mousemove', moveCursor);
+     window.addEventListener('touchmove', handleTouchMove, { passive: false });
 
     return () => {
       window.removeEventListener('mousemove', moveCursor);
+            window.removeEventListener('touchmove', handleTouchMove, { passive: false });
     };
   }, []);
 
@@ -101,6 +110,7 @@ export default function Flashlight() {
             translateX: cursorXSpring,
             translateY: cursorYSpring,
           }}
+        
         />
       </FlashlightButton>
     </>
