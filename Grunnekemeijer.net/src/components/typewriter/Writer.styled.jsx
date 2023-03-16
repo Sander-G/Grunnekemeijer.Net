@@ -12,7 +12,8 @@ export const Container = styled.div`
 
 export const Button = styled.button`
   opacity: ${(props) => (props.show ? 0 : 1)};
-  transition: opacity 500ms ease-in-out;
+  transition: opacity 2500ms ease-in-out;
+  
   color: currentColor;
   font-family: clacon2;
   background-color: transparent;
@@ -22,12 +23,14 @@ export const Button = styled.button`
 `;
 
 export const fadeIn = keyframes`
-  from { opacity: 0; }
-  to { opacity: 1; }
+   0% { opacity: 0 }
+  50% { opacity: 0 }
+  100% { opacity: 1 }
 `;
 
 export const ButtonWrapper = styled(Container)`
-  animation: ${fadeIn} 1s ease-in-out;
+  animation: ${fadeIn} 2500ms ease-in-out;
+
 `;
 
 export const blink = keyframes`

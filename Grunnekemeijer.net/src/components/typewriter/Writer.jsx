@@ -57,7 +57,19 @@ export default function Writer() {
             </ButtonWrapper>
           )}
 
-          <Typed strings={[lines[0]]} typeSpeed={30} backSpeed={50} loop={false} shuffle={false} backDelay={1500} fadeOut={false} smartBackspace={true} showCursor={false} ref={typedRef} />
+          <Typed
+            strings={[lines[0]]}
+            typeSpeed={30}
+            backSpeed={50}
+            loop={false}
+            shuffle={false}
+            backDelay={1500}
+            fadeOut={false}
+            smartBackspace={true}
+            showCursor={false}
+            ref={typedRef}
+            startDelay={500}
+          />
 
           <Typed strings={[lines[1]]} typeSpeed={30} backSpeed={50} loop={false} shuffle={false} backDelay={1500} fadeOut={false} smartBackspace={true} startDelay={5500} showCursor={false} />
           <Row>
