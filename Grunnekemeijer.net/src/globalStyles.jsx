@@ -129,7 +129,7 @@ h1 {
   height: 200px;
   width: 200px;
   border-radius: 50%;
-  position: fixed;
+  position: absolute;
   background: radial-gradient(
     rgba(255, 255, 0, 0.4),
     rgba(255, 255, 0, 0.1) 80%

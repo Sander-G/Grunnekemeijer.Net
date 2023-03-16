@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import React from 'react';
 import { StyledImage, Container, ImageWrapper, Italics, Text, TextShadow } from './Portfolio.styled';
 

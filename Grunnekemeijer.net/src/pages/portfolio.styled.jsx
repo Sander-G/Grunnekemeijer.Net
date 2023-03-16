@@ -20,6 +20,8 @@ export const Container = styled.div`
   grid-column-gap: 1rem;
   padding: 1.5rem 1rem 0rem 0rem;
   line-height: 1.1;
+  touch-action: initial;
+  user-select: none;
 
   @media (max-width: 800px) {
     grid-template-columns: 1fr;

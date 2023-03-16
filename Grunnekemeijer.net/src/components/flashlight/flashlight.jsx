@@ -15,9 +15,11 @@ export default function Flashlight() {
   const cursorYSpring = useSpring(cursorY, springConfig);
 
    const handleTouchMove = (e) => {
-     e.preventDefault();
-     cursorX.set(e.touches[0].pageX -50);
-     cursorY.set(e.touches[0].pageY );
+     const rect = e.currentTarget.getBoundingClientRect();
+     const x = e.touches[0].pageX - rect.left - (window.scrollX || window.pageXOffset);
+     const y = e.touches[0].pageY - rect.top - (window.scrollY || window.pageYOffset);
+     cursorX.set(x);
+     cursorY.set(y);
    };
 
 
@@ -26,7 +28,9 @@ export default function Flashlight() {
       cursorX.set(e.pageX );
       cursorY.set(e.pageY );
     };
-
+    
+    
+    
     window.addEventListener('mousemove', moveCursor);
      window.addEventListener('touchmove', handleTouchMove, { passive: false });
 
