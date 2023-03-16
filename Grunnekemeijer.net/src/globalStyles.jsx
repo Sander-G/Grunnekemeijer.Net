@@ -125,22 +125,25 @@ h1 {
 
 // flashlight cursor
 .on {
-    height: 200px;
+  height: 200px;
   width: 200px;
   border-radius: 50%;
   position: fixed;
-    background: radial-gradient(
-    rgba(0, 0, 0, 0) 0%,
-    rgba(223, 237, 24, 0.1) 99%);
+  background: radial-gradient(
+    rgba(255, 255, 0, 0.4),
+    rgba(255, 255, 0, 0.1) 80%
+  );
   top: 0;
   left: 0;
   pointer-events: none;
   cursor: none;
   user-select: none;
   z-index: 1979;
-  animation: ${flicker} 0.1s infinite alternate;
+  box-shadow: 0 0 20px rgba(255, 255, 0, 0.5);
+  animation: ${flicker} 0.01s infinite alternate;
   transition: all 50ms;
 }
+
 
 .off {
   position: fixed;
