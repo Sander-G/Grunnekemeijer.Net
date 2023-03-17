@@ -8,7 +8,7 @@ export const Container = styled.div`
   color: currentColor;
   font-family: clacon2;
   line-height: 1;
-  margin: 0rem 1rem 0rem 1rem;
+  margin: 0rem 1.5rem 0rem 1rem;
   user-select: none;
 max-height: 90vh;
 
@@ -18,16 +18,16 @@ export const Button = styled.button`
   opacity: ${(props) => (props.show ? 0 : 1)};
   transition: opacity 2500ms ease-in-out;
   position: absolute;
-  top:7rem;
-  right: 2rem;
+  top:6.35rem;
+  right: 1rem;
   z-index:2;
-  
+  border-radius: 5px;
   color: currentColor;
   font-family: clacon2;
   background-color: transparent;
   padding: 0.2rem;
   border: 0.5px solid hotpink;
-  box-shadow: 0px 0px 1px 1px hotpink; 
+  box-shadow: 0px 0px 0.5px 0.5px hotpink; 
 `;
 
 export const fadeIn = keyframes`

@@ -29,7 +29,7 @@ export const Container = styled.div`
     grid-template-columns: 1fr;
     grid-template-rows: repeat(10, minmax( 1fr));
     grid-row-gap: 0.5rem;
-    margin: 0rem 2rem 0rem 2rem;
+    margin: 0rem 1.5rem 0rem 1.5rem;
     padding: 1.5rem 0rem 0rem 0rem;
     line-height: 1.2;
   }
