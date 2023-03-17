@@ -10,7 +10,6 @@ export const Container = styled.div`
   line-height: 1;
   margin: 0rem 1rem 0rem 1rem;
   user-select: none;
-  overflow-y: hidden;
 max-height: 90vh;
 
 `;
@@ -18,9 +17,9 @@ max-height: 90vh;
 export const Button = styled.button`
   opacity: ${(props) => (props.show ? 0 : 1)};
   transition: opacity 2500ms ease-in-out;
-  position: relative;
-  top:0px;
-  right: 0px;
+  position: absolute;
+  top:7rem;
+  right: 2rem;
   z-index:2;
   
   color: currentColor;

@@ -17,7 +17,7 @@ export default function Flashlight() {
 
      const handleTouchMove = (e) => {
     
-       const containerRect = containerRef.current.getBoundingClientRect();
+       const containerRef = containerRef.current.getBoundingClientRect();
        const x = e.touches[0].clientX;
        const y = e.touches[0].clientY;
        cursorX.set(x);
