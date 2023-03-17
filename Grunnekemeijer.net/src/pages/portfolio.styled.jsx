@@ -16,12 +16,14 @@ export const Container = styled.div`
   position: relative;
   grid-template-columns: 2fr 3fr;
   grid-template-rows: repeat(5, minmax( 1fr));
-  grid-row-gap: 1.5rem;
+  grid-row-gap: 1rem;
   grid-column-gap: 1rem;
-  padding: 1.5rem 1rem 0rem 0rem;
+  margin: 1rem 1rem 0rem 1rem;
+  padding: 0.5rem;
   line-height: 1.1;
   touch-action: initial;
   user-select: none;
+
 
   @media (max-width: 800px) {
     grid-template-columns: 1fr;
@@ -37,8 +39,7 @@ export const ImageWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0rem 1rem 1rem 0rem;
-  padding-left: 2rem;
+  margin: 1rem 0rem 1rem 0rem;
 `;
 export const StyledImage = styled.img`
   grid-column: 1 / 2;
@@ -52,7 +53,8 @@ export const StyledImage = styled.img`
     grid-column: 1 / 1;
     grid-row: span 1;
     max-height: 200px;
-    margin-top: 1rem;
+    
+    
   }
 `;
 export const Text = styled.p`
@@ -60,7 +62,7 @@ export const Text = styled.p`
   grid-row: span 1;
   font-size: 17px;
   text-align: justify;
-  margin: 0rem 0.5rem 0rem 0rem;
+  margin: 0.8rem 0.5rem 0rem 0rem;
   &:first-letter {
     float: left;
     font-size: 32px;
@@ -78,6 +80,6 @@ export const Text = styled.p`
     grid-row: span 1;
     font-size: 16px;
 
-    margin: 0rem 0rem 0rem 0rem;
+    margin: 0rem 0rem 2rem 0rem;
   }
 `;
