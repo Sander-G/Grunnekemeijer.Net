@@ -11,13 +11,17 @@ export const Container = styled.div`
   margin: 0rem 1rem 0rem 1rem;
   user-select: none;
   overflow-y: hidden;
-
+max-height: 90vh;
 
 `;
 
 export const Button = styled.button`
   opacity: ${(props) => (props.show ? 0 : 1)};
   transition: opacity 2500ms ease-in-out;
+  position: relative;
+  top:0px;
+  right: 0px;
+  z-index:2;
   
   color: currentColor;
   font-family: clacon2;

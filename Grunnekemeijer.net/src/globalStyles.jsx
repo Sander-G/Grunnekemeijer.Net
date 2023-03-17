@@ -143,6 +143,7 @@ h1 {
   box-shadow: 0 0 20px rgba(255, 255, 0, 0.5);
   animation: ${flicker} 0.01s infinite alternate;
   transition: all 50ms;
+
 }
 
 

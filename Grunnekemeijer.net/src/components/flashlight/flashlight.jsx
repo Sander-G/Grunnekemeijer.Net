@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect, useContext, useRef } from 'react';
 import { motion, useMotionValue, useSpring } from 'framer-motion';
 import { FlashlightButton } from './Flashlight.styled';
 import { MuteContext } from '../../context/MuteContext';
@@ -6,22 +6,39 @@ import { MuteContext } from '../../context/MuteContext';
 export default function Flashlight() {
   const { sounds, isMuted } = useContext(MuteContext);
   const [isOn, setIsOn] = useState('false');
+   const containerRef = useRef(null);
 
   const cursorX = useMotionValue();
   const cursorY = useMotionValue();
 
-  const springConfig = { damping: 500, stiffness: 10000 };
+  const springConfig = { damping: 200, stiffness: 7000 };
   const cursorXSpring = useSpring(cursorX, springConfig);
   const cursorYSpring = useSpring(cursorY, springConfig);
 
-   const handleTouchMove = (e) => {
-     const rect = e.currentTarget.getBoundingClientRect();
-     const x = e.touches[0].pageX - rect.left - (window.scrollX || window.pageXOffset);
-     const y = e.touches[0].pageY - rect.top - (window.scrollY || window.pageYOffset);
-     cursorX.set(x);
-     cursorY.set(y);
-   };
+     const handleTouchMove = (e) => {
+    
+       const containerRect = containerRef.current.getBoundingClientRect();
+       const x = e.touches[0].clientX;
+       const y = e.touches[0].clientY;
+       cursorX.set(x);
+       cursorY.set(y);
+     };
 
+
+
+     useEffect(() => {
+       const handleDocumentTouchMove = (e) => {
+         if (isOn) {
+           e.preventDefault();
+         }
+       };
+
+       document.addEventListener('touchmove', handleDocumentTouchMove, { passive: true });
+
+       return () => {
+         document.removeEventListener('touchmove', handleDocumentTouchMove, { passive: false });
+       };
+     }, [isOn]);
 
   useEffect(() => {
     const moveCursor = (e) => {
@@ -38,11 +55,12 @@ export default function Flashlight() {
       window.removeEventListener('mousemove', moveCursor);
             window.removeEventListener('touchmove', handleTouchMove, { passive: false });
     };
-  }, []);
+  }, [handleTouchMove]);
 
   return (
     <>
       <FlashlightButton
+        ref={containerRef}
         onClick={() => {
           setIsOn(!isOn);
           !isMuted && sounds[1].play();
@@ -114,7 +132,6 @@ export default function Flashlight() {
             translateX: cursorXSpring,
             translateY: cursorYSpring,
           }}
-        
         />
       </FlashlightButton>
     </>
