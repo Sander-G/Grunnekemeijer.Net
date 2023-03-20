@@ -19,7 +19,7 @@ export function Menu() {
           onMouseLeave={() => {
             sounds[0].stop();
           }}
-          to="/"
+          to="/Home"
           alt="Home"
         >
           HOME
@@ -36,7 +36,7 @@ export function Menu() {
           onMouseLeave={() => {
             sounds[0].stop();
           }}
-          to="/info"
+          to="/Info"
           alt="Info"
         >
           INFO
@@ -53,7 +53,7 @@ export function Menu() {
           onMouseLeave={() => {
             sounds[0].stop();
           }}
-          to="/portfolio"
+          to="/Portfolio"
           alt="Portfolio"
         >
           PORTFOLIO

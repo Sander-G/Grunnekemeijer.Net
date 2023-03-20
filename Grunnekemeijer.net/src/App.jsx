@@ -1,6 +1,7 @@
+import React, {useEffect} from 'react'
 import GlobalStyle from './globalStyles'
 import Navbar from './components/navbar/Navbar'
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, useLocation } from 'react-router-dom'
 import Home from './pages/Home'
 import Info from './pages/Info'
 import Portfolio from './pages/Portfolio'
@@ -10,7 +11,29 @@ import { DarkModeProvider } from "./context/DarkModeContext";
 
 
 
+
+
+
+
 const App = () => {
+
+
+    const location = useLocation();
+
+    useEffect(() => {
+      const { pathname } = location;
+      console.log(pathname);
+      const noScrolling = pathname === '/' || pathname === '/Home' || pathname === 'Info';
+
+      document.body.style.overflow = noScrolling ? 'hidden' : 'auto';
+      document.body.style.overscrollBehavior = noScrolling ? 'none' : 'auto';
+      document.body.style.position = noScrolling ? 'fixed' : 'static';
+      document.body.style.height = noScrolling ? '100vh' : 'auto';
+      document.body.style.touchAction = noScrolling ? 'none' : 'auto';
+      document.body.style.webkitOverflowScrolling = noScrolling ? 'touch' : 'auto';
+    }, [location]);
+
+   
 
   return (
     <div className="App">
