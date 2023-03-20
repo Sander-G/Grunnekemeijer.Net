@@ -12,7 +12,7 @@ import { DarkModeContext } from "../../context/DarkModeContext";
 
 export default function Navbar() {
     const { sounds, isMuted } = useContext(MuteContext);
-     const { darkMode, handleToggle } = useContext(DarkModeContext);
+     const { darkMode } = useContext(DarkModeContext);
   const [menuActive, setMenuActive] = useState(false);
   
   const handleMenuToggle = () => {
@@ -24,14 +24,8 @@ export default function Navbar() {
       <Container>
         <LeftContainer>
           <DarkModeBtn
-            onClick={() => {
-              handleToggle();
-              if (!isMuted) {
-                sounds[1].volume(0.1);
-                sounds[1].play();
-              }
-            }}
-            darkMode={darkMode}
+           
+          
           />
           {darkMode && <Flashlight />}
           <MuteBtn />

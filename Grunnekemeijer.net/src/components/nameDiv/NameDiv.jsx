@@ -1,50 +1,82 @@
-import React, { useContext, useState } from "react";
-import { MuteContext } from "../../context/MuteContext";
+import React, { useContext, useState, useEffect } from 'react';
+import { MuteContext } from '../../context/MuteContext';
 
-import { Container, G, R, U, N, N2, E, E2, E3, E4, K, M, I, J, R2, DotNet } from "./NameDiv.styled";
+import { Container, G, R, U, N, N2, E, E2, E3, E4, K, M, I, J, R2, DotNet } from './NameDiv.styled';
 
 export default function NameDiv() {
   const { sounds, isMuted } = useContext(MuteContext);
-  const [hoveredLetter, setHoveredLetter] = useState(null)
-
- function handleTouchStart() {
-   if (!hoveredLetter) {
-     setHoveredLetter('G');
-     // play sound or trigger animation for G
-   }
- }
-
-   function handleTouchMove(event) {
-     const { clientX, clientY } = event.touches[0];
-     const element = document.elementFromPoint(clientX, clientY);
-
-     if (element && element.tagName === 'P' && element.textContent === 'G') {
-       if (!hoveredLetter) {
-         setHoveredLetter('G');
-         // play sound or trigger animation for G
-       }
-     } else {
-       setHoveredLetter(null);
-     }
-   }
-   function handleTouchEnd() {
-     setHoveredLetter(null);
-   }
-
- 
+  const [hoveredLetter, setHoveredLetter] = useState(null);
+  
 
 
 
 
+  useEffect(() => {
+    let timeout;
 
+    if (!hoveredLetter) {
+      timeout = setTimeout(() => {
+        setHoveredLetter(null);
+        // reset the animation by setting the hovered letter to null
+      }, 5000);
+    }
 
+    return () => {
+      clearTimeout(timeout);
+    };
+  }, [hoveredLetter, setHoveredLetter]);
+
+  function handleTouchStart() {
+    if (!hoveredLetter) {
+      setHoveredLetter(null);
+      // play sound or trigger animation for G
+    }
+  }
+
+  function handleTouchMove(event) {
+    const { clientX, clientY } = event.touches[0];
+    const element = document.elementFromPoint(clientX, clientY);
 
 
 
 
 
 
+    if (element && element.tagName === 'div' && element.textContent === 'nameDiv') {
+      if (!hoveredLetter) {
+        setHoveredLetter('nameDiv');
+        // play sound or trigger animation for G
+      }
+    } else {
+      if (element && element.tagName === 'P' && element.textContent === 'G') {
+        if (!hoveredLetter) {
+          setHoveredLetter('G');
+          // play sound or trigger animation for G
+        }
+      } else {
+        if (element && element.tagName === 'P' && element.textContent === 'R') {
+          if (!hoveredLetter) {
+            setHoveredLetter('R');
+            // play sound or trigger animation for G
+          }
+        } else {
+          if (element && element.tagName === 'P' && element.textContent === 'U') {
+            if (!hoveredLetter) {
+              setHoveredLetter('U');
+              // play sound or trigger animation for G
+            }
+          } else {
+            setHoveredLetter(null);
+          }
+        }
+      }
+    }
+  }
+  function handleTouchEnd() {
+    
+    setHoveredLetter(null);
 
+  }
 
   console.log(sounds);
   console.log(isMuted);
@@ -52,13 +84,19 @@ export default function NameDiv() {
   return (
     <Container
       className='nameDiv'
-      onTouchStart={handleTouchStart}
+      onTouchStart={() => {
+        if (!isMuted) {
+            sounds[3].play();
+            sounds[3].loop(true);
+        }}}
       onTouchMove={handleTouchMove}
-      onTouchEnd={handleTouchEnd}
+      onTouchEnd={() => {
+        sounds[3].stop();      
+     }}
       onMouseEnter={() => {
         if (!isMuted) {
-          sounds[3].loop(true);
-          sounds[3].play();
+            sounds[3].play();
+            sounds[3].loop(true);
         }
         setHoveredLetter(true);
       }}

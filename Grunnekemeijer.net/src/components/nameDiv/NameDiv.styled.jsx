@@ -27,7 +27,7 @@ export const Container = styled.div`
   animation: ${shakeAnimation} 3s linear infinite;
 
   transition: all 0.6s ease;
-  &:hover > p {
+  &:hover, &:active  > p {
     transition: all 0.3s ease;
     transform: scaleX(-1);
     transform: scaleY(-1);
@@ -53,7 +53,7 @@ export const G = styled.p`
   &.hovered {
     transform: scaleY(-1);
     transition: all 0.6s ease;
-    animation: ${shakeAnimation} 0.5s linear infinite;
+    animation: ${shakeAnimation} 0.3s linear infinite;
     text-shadow: -1px 0 hotpink, 0 1px hotpink, 1px 0 hotpink, 0 -1px hotpink;
   }
 `;
@@ -88,6 +88,6 @@ export const DotNet = styled.p`
   transition: all 0.2s ease;
   &:hover {
     transition: all 0.6s ease;
-    animation: ${shakeAnimation} 0.6s linear infinite;
+    animation: ${shakeAnimation} 0.3s linear infinite;
   }
 `;

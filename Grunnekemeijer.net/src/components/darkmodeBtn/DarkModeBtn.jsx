@@ -1,11 +1,11 @@
-import React, { useEffect, useContext } from 'react'
+import React, { useContext } from 'react'
 import { DmButton } from './DarkModeBtn.styled'
 import { MuteContext } from "../../context/MuteContext";
 import { DarkModeContext } from '../../context/DarkModeContext';
 
 
 
-export default function DarkModeBtn(props) {
+export default function DarkModeBtn() {
     const { sounds, isMuted } = useContext(MuteContext);
     const { darkMode, handleToggle } = useContext(DarkModeContext);
   
