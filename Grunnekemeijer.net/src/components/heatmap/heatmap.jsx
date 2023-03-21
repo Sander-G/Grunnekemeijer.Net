@@ -3,15 +3,21 @@ import moment from 'moment';
 import React, {useEffect, useState} from 'react'
 
 
+
+
+
+
 export function Heatmap (){
 
+
 const [contributions, setContributions] = useState([]);
+const apiKey = process.env.VITE_REACT_APP_GITHUB_TOKEN;
 
 
 useEffect(() => {
   fetch(`https://api.github.com/users/{Sander-G}/events`, {
     headers: {
-      Authorization: `Bearer {process.env.REACT_APP_GITHUB_TOKEN}`,
+      Authorization: `Bearer ${apiKey}`,
     },
   })
     .then((res) => res.json())
