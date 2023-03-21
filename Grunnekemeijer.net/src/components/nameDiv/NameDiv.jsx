@@ -60,16 +60,34 @@ export default function NameDiv() {
             // play sound or trigger animation for G
           }
         } else {
-          if (element && element.tagName === 'P' && element.textContent === 'U') {
+        if (element && element.tagName === 'P' && element.textContent === 'U') {
+          if (!hoveredLetter) {
+            setHoveredLetter('U');
+            // play sound or trigger animation for G
+          }
+        } else {
+        if (element && element.tagName === 'P' && element.textContent === 'N') {
+          if (!hoveredLetter) {
+            setHoveredLetter('N');
+            // play sound or trigger animation for G
+          }
+        } else {
+          if (element && element.tagName === 'P' && element.textContent === 'N2') {
             if (!hoveredLetter) {
-              setHoveredLetter('U');
+              setHoveredLetter('N2');
               // play sound or trigger animation for G
             }
           } else {
+        if (element && element.tagName === 'P' && element.textContent === 'E') {
+          if (!hoveredLetter) {
+            setHoveredLetter('R');
+            // play sound or trigger animation for G
+          }
+        } else {
             setHoveredLetter(null);
           }
         }
-      }
+      }}}}
     }
   }
   function handleTouchEnd() {
@@ -86,17 +104,18 @@ export default function NameDiv() {
       className='nameDiv'
       onTouchStart={() => {
         if (!isMuted) {
-            sounds[3].play();
-            sounds[3].loop(true);
-        }}}
+          sounds[3].play();
+          sounds[3].loop(true);
+        }
+      }}
       onTouchMove={handleTouchMove}
       onTouchEnd={() => {
-        sounds[3].stop();      
-     }}
+        sounds[3].stop();
+      }}
       onMouseEnter={() => {
         if (!isMuted) {
-            sounds[3].play();
-            sounds[3].loop(true);
+          sounds[3].play();
+          sounds[3].loop(true);
         }
         setHoveredLetter(true);
       }}
@@ -155,6 +174,9 @@ export default function NameDiv() {
       </U>
       <N
         className={hoveredLetter === 'N' ? 'hovered' : ''}
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
         onMouseEnter={() => {
           !isMuted && sounds[2].play();
           setHoveredLetter('N');
@@ -168,6 +190,9 @@ export default function NameDiv() {
       </N>
       <N2
         className={hoveredLetter === 'N2' ? 'hovered' : ''}
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
         onMouseEnter={() => {
           !isMuted && sounds[2].play();
           setHoveredLetter('N2');
@@ -181,6 +206,9 @@ export default function NameDiv() {
       </N2>
       <E
         className={hoveredLetter === 'E' ? 'hovered' : ''}
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
         onMouseEnter={() => {
           !isMuted && sounds[2].play();
           setHoveredLetter('E');
@@ -194,6 +222,9 @@ export default function NameDiv() {
       </E>
       <K
         className={hoveredLetter === 'K' ? 'hovered' : ''}
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
         onMouseEnter={() => {
           !isMuted && sounds[2].play();
           setHoveredLetter('K');
@@ -207,6 +238,9 @@ export default function NameDiv() {
       </K>
       <E2
         className={hoveredLetter === 'E2' ? 'hovered' : ''}
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
         onMouseEnter={() => {
           !isMuted && sounds[2].play();
           setHoveredLetter('E2');
@@ -220,6 +254,9 @@ export default function NameDiv() {
       </E2>
       <M
         className={hoveredLetter === 'M' ? 'hovered' : ''}
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
         onMouseEnter={() => {
           !isMuted && sounds[2].play();
           setHoveredLetter('M');
@@ -233,6 +270,9 @@ export default function NameDiv() {
       </M>
       <E3
         className={hoveredLetter === 'E3' ? 'hovered' : ''}
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
         onMouseEnter={() => {
           !isMuted && sounds[2].play();
           setHoveredLetter('E3');
@@ -246,6 +286,9 @@ export default function NameDiv() {
       </E3>
       <I
         className={hoveredLetter === 'I' ? 'hovered' : ''}
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
         onMouseEnter={() => {
           !isMuted && sounds[2].play();
           setHoveredLetter('I');
@@ -259,6 +302,9 @@ export default function NameDiv() {
       </I>
       <J
         className={hoveredLetter === 'J' ? 'hovered' : ''}
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
         onMouseEnter={() => {
           !isMuted && sounds[2].play();
           setHoveredLetter('J');
@@ -272,6 +318,9 @@ export default function NameDiv() {
       </J>
       <E4
         className={hoveredLetter === 'E4' ? 'hovered' : ''}
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
         onMouseEnter={() => {
           !isMuted && sounds[2].play();
           setHoveredLetter('E4');
@@ -285,6 +334,9 @@ export default function NameDiv() {
       </E4>
       <R2
         className={hoveredLetter === 'R2' ? 'hovered' : ''}
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
         onMouseEnter={() => {
           !isMuted && sounds[2].play();
           setHoveredLetter('R2');
@@ -298,6 +350,9 @@ export default function NameDiv() {
       </R2>
       <DotNet
         className={hoveredLetter === 'DotNet' ? 'hovered' : ''}
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
         onMouseEnter={() => {
           !isMuted && sounds[2].play();
           setHoveredLetter('DotNet');

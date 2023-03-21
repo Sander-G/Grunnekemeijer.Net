@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react'
 import GlobalStyle from './globalStyles'
 import Navbar from './components/navbar/Navbar'
-import { Routes, Route, useLocation } from 'react-router-dom'
+import { Routes, Route, Navigate, useLocation } from 'react-router-dom'
 import Home from './pages/Home'
 import Info from './pages/Info'
 import Portfolio from './pages/Portfolio'
@@ -36,7 +36,7 @@ const App = () => {
    
 
   return (
-    <div className="App">
+    <div className='App'>
       <MuteProvider>
         <GlobalStyle />
         <DarkModeProvider>
@@ -44,11 +44,11 @@ const App = () => {
         </DarkModeProvider>
 
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/Home" element={<Home />} />
-          <Route path="/Info" element={<Info />} />
-          <Route path="/Portfolio" element={<Portfolio />} />
-          <Route path="*" element={<NotFound />} />
+          <Route path='/' element={<Navigate to='/Home' />} />
+          <Route path='/Home' element={<Home />} />
+          <Route path='/Info' element={<Info />} />
+          <Route path='/Portfolio' element={<Portfolio />} />
+          <Route path='*' element={<NotFound />} />
         </Routes>
       </MuteProvider>
     </div>

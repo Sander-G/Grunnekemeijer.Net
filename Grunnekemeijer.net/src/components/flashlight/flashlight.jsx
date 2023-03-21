@@ -42,8 +42,8 @@ export default function Flashlight() {
 
   useEffect(() => {
     const moveCursor = (e) => {
-      cursorX.set(e.pageX );
-      cursorY.set(e.pageY );
+      cursorX.set(e.clientX );
+      cursorY.set(e.clientY );
     };
     
     

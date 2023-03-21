@@ -131,17 +131,17 @@ h1 {
   border-radius: 50%;
   position: absolute;
   background: radial-gradient(
-    rgba(255, 255, 0, 0.4),
+    rgba(242, 255, 0, 0.22),
     rgba(255, 255, 0, 0.1) 80%
   );
-  top: 0;
-  left: 0;
+  top: -100px;
+  left: -100px;
   pointer-events: none;
   cursor: none;
   user-select: none;
   z-index: 1979;
-  box-shadow: 0 0 20px rgba(255, 255, 0, 0.5);
-  animation: ${flicker} 0.01s infinite alternate;
+  box-shadow: 0 0 20px rgba(255, 255, 0, 0.386);
+  animation: ${flicker} 0.05s infinite alternate;
   transition: all 50ms;
 
 }
