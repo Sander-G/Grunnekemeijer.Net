@@ -1,28 +1,27 @@
 import React, { useState, useEffect, useContext, useRef } from 'react';
-import { motion, useMotionValue, useSpring } from 'framer-motion';
+import { motion, useMotionValue, useTransform } from 'framer-motion';
 import { FlashlightButton } from './Flashlight.styled';
 import { MuteContext } from '../../context/MuteContext';
 
 export default function Flashlight() {
   const { sounds, isMuted } = useContext(MuteContext);
-  const [isOn, setIsOn] = useState('false');
+  const [isOn, setIsOn] = useState(false);
    const containerRef = useRef(null);
+   
 
   const cursorX = useMotionValue();
   const cursorY = useMotionValue();
-
-  const springConfig = { damping: 200, stiffness: 7000 };
-  const cursorXSpring = useSpring(cursorX, springConfig);
-  const cursorYSpring = useSpring(cursorY, springConfig);
-
-     const handleTouchMove = (e) => {
-    
-       const containerRef = containerRef.current.getBoundingClientRect();
-       const x = e.touches[0].clientX;
-       const y = e.touches[0].clientY;
-       cursorX.set(x);
-       cursorY.set(y);
-     };
+  const mapX = useTransform(cursorX, [0, containerRef.current?.width], [0, window.innerWidth]);
+  const mapY = useTransform(cursorY, [0, containerRef.current?.height], [0, window.innerHeight]);
+   
+  const handleTouchMove = (e) => {
+     e.preventDefault();
+     const containerRect = containerRef.current.getBoundingClientRect();
+     const x = e.touches[0].clientX;
+     const y = e.touches[0].clientY;
+     mapX.set(x - containerRect.left);
+     mapY.set(y - containerRect.top);
+   };
 
 
 
@@ -32,7 +31,7 @@ export default function Flashlight() {
            e.preventDefault();
          }
        };
-
+       
        document.addEventListener('touchmove', handleDocumentTouchMove, { passive: true });
 
        return () => {
@@ -41,21 +40,26 @@ export default function Flashlight() {
      }, [isOn]);
 
   useEffect(() => {
+
+     if (!containerRef.current) return;
     const moveCursor = (e) => {
-      cursorX.set(e.clientX );
-      cursorY.set(e.clientY );
+      if ('ontouchstart' in window) {
+        handleTouchMove(e);
+      } else {
+        const containerRect = containerRef.current.getBoundingClientRect();
+        cursorX.set(e.clientX - containerRect.left);
+        cursorY.set(e.clientY - containerRect.top);
+      }
     };
-    
-    
-    
+
     window.addEventListener('mousemove', moveCursor);
-     window.addEventListener('touchmove', handleTouchMove, { passive: false });
+    window.addEventListener('touchmove', handleTouchMove, { passive: false });
 
     return () => {
       window.removeEventListener('mousemove', moveCursor);
-            window.removeEventListener('touchmove', handleTouchMove, { passive: false });
+      window.removeEventListener('touchmove', handleTouchMove, { passive: false });
     };
-  }, [handleTouchMove]);
+  }, [cursorX, cursorY, containerRef.current]);
 
   return (
     <>
@@ -129,8 +133,8 @@ export default function Flashlight() {
         <motion.div
           className={isOn ? 'off' : 'on'}
           style={{
-            translateX: cursorXSpring,
-            translateY: cursorYSpring,
+            translateX: mapX,
+            translateY: mapY,
           }}
         />
       </FlashlightButton>

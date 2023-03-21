@@ -134,8 +134,8 @@ h1 {
     rgba(242, 255, 0, 0.22),
     rgba(255, 255, 0, 0.1) 80%
   );
-  top: -100px;
-  left: -100px;
+  top: 0px;
+  left: 0px;
   pointer-events: none;
   cursor: none;
   user-select: none;
