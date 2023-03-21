@@ -47,8 +47,8 @@ export default function Flashlight() {
         handleTouchMove(e);
       } else {
         const containerRect = containerRef.current.getBoundingClientRect();
-        cursorX.set(e.clientX - containerRect.left);
-        cursorY.set(e.clientY - containerRect.top);
+        cursorX.set(e.clientX - containerRect.left - 60);
+        cursorY.set(e.clientY - containerRect.top - 75);
       }
     };
 
@@ -133,8 +133,8 @@ export default function Flashlight() {
         <motion.div
           className={isOn ? 'off' : 'on'}
           style={{
-            translateX: mapX,
-            translateY: mapY,
+            translateX: 'ontouchstart' in window ? mapX : cursorX,
+            translateY: 'ontouchstart' in window ? mapY : cursorY,
           }}
         />
       </FlashlightButton>
