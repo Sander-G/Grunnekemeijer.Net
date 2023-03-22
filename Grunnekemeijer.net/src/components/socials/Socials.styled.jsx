@@ -36,14 +36,21 @@ export const Container = styled.div`
 export const EmailLinkStyled = styled.div`
   filter: drop-shadow(1px 1px 0.5px hotpink);
   margin-inline: 1rem;
+  cursor: pointer;
   @media screen and (max-width: 1024px) {
     margin-inline: 0.5rem;
   }
 
   & svg {
+    stroke: #343434;
+    fill: #343434;
     scale: 1.2;
     @media screen and (max-width: 1024px) {
       scale: 1;
+    }
+    &:hover {
+      stroke: #525252 !important;
+      fill: #525252 !important;
     }
   }
 `;
