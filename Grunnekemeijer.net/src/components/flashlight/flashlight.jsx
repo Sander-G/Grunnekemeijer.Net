@@ -131,7 +131,7 @@ export default function Flashlight() {
         )}
 
         <motion.div
-          className={isOn ? 'off' : 'on'}
+          className={isOn ? 'on' : 'off'}
           style={{
             translateX: 'ontouchstart' in window ? mapX : cursorX,
             translateY: 'ontouchstart' in window ? mapY : cursorY,

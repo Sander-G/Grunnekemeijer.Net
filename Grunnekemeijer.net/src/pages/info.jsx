@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react'
 import { TypeWriter } from '../components/typewriter/TypeWriter'
-
+import {Heatmap} from '../components/heatmap/Heatmap'
 
 export default function Info() {
   useEffect(() => {
@@ -20,6 +20,10 @@ export default function Info() {
         <>
       
         <TypeWriter />
+        <Heatmap/>
+
         </>
+
+
     )
 }

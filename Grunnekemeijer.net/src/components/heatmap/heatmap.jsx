@@ -7,13 +7,14 @@ import React, {useEffect, useState} from 'react'
 
 
 
+
 export function Heatmap (){
 
 
 const [contributions, setContributions] = useState([]);
 const apiKey = process.env.VITE_REACT_APP_GITHUB_TOKEN;
 
-
+console.log (apiKey)
 useEffect(() => {
   fetch(`https://api.github.com/users/{Sander-G}/events`, {
     headers: {
