@@ -157,6 +157,20 @@ h1 {
   user-select: none;
   z-index: 1979;
 }
+
+
+// github calendar 
+
+.react-activity-calendar__legend-weekday, .react-activity-calendar__legend-month, .react-activity-calendar__count {
+  font-family: clacon2;
+  font-size: 14px;
+}
+
+
+
 `;
+
+
+
 
 export default GlobalStyle;
