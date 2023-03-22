@@ -1,45 +1,38 @@
-import CalendarHeatmap from 'react-calendar-heatmap';
-import moment from 'moment';
-import React, {useEffect, useState} from 'react'
+import React from 'react';
+import GithubCalendar from 'react-github-calendar';
+import styled from 'styled-components';
 
 
+function Heatmap() {
+  const selectLastHalfYear = (contributions) => {
+    const currentYear = new Date().getFullYear();
+    const currentMonth = new Date().getMonth();
+    const shownMonths = 6;
 
+    return contributions.filter((day) => {
+      const date = new Date(day.date);
+      const monthOfDay = date.getMonth();
 
-
-
-
-export function Heatmap (){
-
-
-const [contributions, setContributions] = useState([]);
-const apiKey = process.env.VITE_REACT_APP_GITHUB_TOKEN;
-
-console.log (apiKey)
-useEffect(() => {
-  fetch(`https://api.github.com/users/{Sander-G}/events`, {
-    headers: {
-      Authorization: `Bearer ${apiKey}`,
-    },
-  })
-    .then((res) => res.json())
-    .then((data) => {
-      const contributions = data
-        .filter((event) => event.type === 'PushEvent')
-        .map((event) => ({
-          date: moment(event.created_at).format('YYYY-MM-DD'),
-          count: event.payload.commits.length,
-        }));
-      setContributions(contributions);
+      return date.getFullYear() === currentYear && monthOfDay > currentMonth - shownMonths && monthOfDay <= currentMonth;
     });
-}, []);
+  };
 
-
-
-
-
-return (
-  <div>
-    <CalendarHeatmap startDate={moment().subtract(1, 'year').toDate()} endDate={new Date()} values={contributions} />
-  </div>
-)
+  return (
+    <Wrapper>
+    
+      <GithubCalendar username='Sander-G' transformData={selectLastHalfYear} hideColorLegend color='Hotpink'  />
+    </Wrapper>
+  );
 }
+
+export default Heatmap;
+
+
+const Wrapper = styled.div`
+max-width: 80vw;
+margin: 1rem 1rem;
+
+
+  
+
+`
