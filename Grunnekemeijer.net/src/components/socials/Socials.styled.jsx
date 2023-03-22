@@ -30,8 +30,20 @@ export const Container = styled.div`
     scale: 1;
     }
   }
-    
-  
-
-
 `
+
+
+export const EmailLinkStyled = styled.div`
+  filter: drop-shadow(1px 1px 0.5px hotpink);
+  margin-inline: 1rem;
+  @media screen and (max-width: 1024px) {
+    margin-inline: 0.5rem;
+  }
+
+  & svg {
+    scale: 1.2;
+    @media screen and (max-width: 1024px) {
+      scale: 1;
+    }
+  }
+`;
