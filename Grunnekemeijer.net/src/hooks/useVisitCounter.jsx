@@ -10,14 +10,14 @@ export const useVisitCounter = () => {
     const now = new Date().getTime();
 
     // after one hour the current visit expires
-    if (lastVisitTime && now - lastVisit > oneHour) {
+    if (lastVisitTime && now - lastVisitTime > oneHour) {
       setVisitCount((prevCount) => prevCount + 1);
       localStorage.setItem('visitCount', visitCount + 1);
     }
 
     localStorage.setItem('lastVisitTime', now);
     setLastVisitTime(now);
-  }, []);
+  }, [visitCount]);
 
   return visitCount;
 };
