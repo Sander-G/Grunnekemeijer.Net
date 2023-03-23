@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import EmailLink from './mailTo/EmailLink';
+import EmailLink from '../mailTo/EmailLink';
 import { Container, EmailLinkStyled } from './Socials.styled'
 import { MuteContext } from "../../context/MuteContext";
 
