@@ -17,10 +17,13 @@ export default function Flashlight() {
   const handleTouchMove = (e) => {
      e.preventDefault();
      const containerRect = containerRef.current.getBoundingClientRect();
+      if (typeof event.touches !== 'undefined' && event.touches.length > 0) {
+
      const x = e.touches[0].clientX;
      const y = e.touches[0].clientY;
      mapX.set(x - containerRect.left);
      mapY.set(y - containerRect.top);
+      }
    };
 
 
@@ -32,7 +35,7 @@ export default function Flashlight() {
          }
        };
        
-       document.addEventListener('touchmove', handleDocumentTouchMove, { passive: true });
+       document.addEventListener('touchmove', handleDocumentTouchMove, { passive: false });
 
        return () => {
          document.removeEventListener('touchmove', handleDocumentTouchMove, { passive: false });
