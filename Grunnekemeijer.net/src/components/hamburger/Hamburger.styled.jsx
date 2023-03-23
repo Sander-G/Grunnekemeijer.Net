@@ -10,6 +10,7 @@ export const MenuLabel = styled.label`
   cursor: pointer;
   z-index: 100;
   user-select: none;
+  padding-right: 0.5rem;
 `;
 
 export const Icon = styled.span`

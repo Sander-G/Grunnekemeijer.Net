@@ -12,6 +12,9 @@ export const Container = styled.div`
   background-color: transparent;
   border-bottom: 0.5px solid hotpink;
   user-select: none;
+  
+  margin-left: 0.5rem;
+  margin-right:0.5rem;
 
   @media screen and (max-width: 600px) {
     height: 3.5rem;
@@ -21,7 +24,7 @@ export const Container = styled.div`
 export const LeftContainer = styled.div`
   display: flex;
   & svg {
-    margin-inline: 2px;
+    margin-inline: 1px;
 
   }
   
