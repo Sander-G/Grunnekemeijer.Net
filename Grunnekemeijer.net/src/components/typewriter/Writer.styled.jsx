@@ -18,7 +18,7 @@ export const Button = styled.button`
   opacity: ${(props) => (props.show ? 0 : 1)};
   transition: opacity 2500ms ease-in-out;
   position: absolute;
-  top:6.35rem;
+  top: 6.8rem;
   right: 1rem;
   z-index:2;
   border-radius: 5px;

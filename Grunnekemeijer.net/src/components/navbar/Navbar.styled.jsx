@@ -11,26 +11,27 @@ export const Container = styled.div`
   max-width: 100vw;
   background-color: transparent;
   border-bottom: 0.5px solid hotpink;
-  margin: 0rem 0.5rem;
-  
-
   user-select: none;
 
   @media screen and (max-width: 600px) {
-    height: 3rem;
+    height: 3.5rem;
   }
 `;
 
 export const LeftContainer = styled.div`
   display: flex;
+  & svg {
+    margin-inline: 2px;
+
+  }
   
 
   @media screen and (max-width: 1024px) {
     scale: 0.8;
-    margin-left: -0.5rem;
+    
   }
   @media screen and (max-width: 600px) {
-    gap: 0.2rem;
+    
   }
 `;
 

@@ -76,7 +76,7 @@ export default function Flashlight() {
           sounds[0].stop();
         }}
       >
-        {!isOn ? (
+        {isOn ? (
           <svg fill='currentColor' height='22px' width='22px' aria-labelledby='Zaklamp uit' version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'>
             <title lang='nl'>Zaklamp uit</title>
             <g>

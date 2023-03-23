@@ -6,9 +6,7 @@ export const useVisitCounter = () => {
   const oneHour = 60 * 60 * 1000;
 
   useEffect(() => {
-    const lastVisit = localStorage.getItem('lastVisitTime');
     const now = new Date().getTime();
-
     // after one hour the current visit expires
     if (lastVisitTime && now - lastVisitTime > oneHour) {
       setVisitCount((prevCount) => prevCount + 1);
