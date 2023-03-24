@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Typed from 'react-typed';
 import { Container, Button, ButtonWrapper, BlinkingCursor, Row } from './Writer.styled';
+import Heatmap from '../heatmap/Heatmap.jsx'
 
 export default function Writer() {
   const [lines, setLines] = useState(['This is the first line of text.', '', '']);
@@ -90,6 +91,9 @@ export default function Writer() {
           </Row>
         </Container>
       )}
+      <ButtonWrapper show={showButton}>
+        <Heatmap />
+      </ButtonWrapper>
     </>
   );
 }

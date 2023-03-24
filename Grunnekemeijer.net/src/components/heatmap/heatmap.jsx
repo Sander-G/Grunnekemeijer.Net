@@ -1,9 +1,10 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import GithubCalendar from 'react-github-calendar';
 import styled from 'styled-components';
 
 
 function Heatmap() {
+   const [isLoaded, setIsLoaded] = useState(false);
   const selectTimeSpan = (contributions) => {
        const shownMonths = 3;
 
@@ -20,12 +21,15 @@ function Heatmap() {
     });
   };
 
-  
+   useEffect(() => {
+     setIsLoaded(true);
+   }, []);
 
   return (
-    <Wrapper>
-      <GithubCalendar username='Sander-G' transformData={selectTimeSpan} transformTotalCount='' hideColorLegend color='Hotpink' showWeekdayLabels='true' />
-    </Wrapper>
+    <Wrapper isLoaded={isLoaded}>
+    {isLoaded && 
+      (<GithubCalendar username='Sander-G' transformData={selectTimeSpan} transformTotalCount='' hideColorLegend color='Hotpink' showWeekdayLabels='true' />
+     )} </Wrapper>
   );
 }
 
@@ -33,15 +37,13 @@ export default Heatmap;
 
 
 const Wrapper = styled.div`
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
-  max-width: 100vw;
-  padding: 1rem 2rem;
   align-items: center;
   justify-content: center;
-  position: absolute;
-  bottom: 0%;
-  left: 50vw;
-  margin-left: -50%;
-
-
+  padding: 1rem 1rem;
+  max-width: 100vw;
 `;
