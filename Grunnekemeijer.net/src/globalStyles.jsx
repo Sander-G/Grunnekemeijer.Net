@@ -65,7 +65,7 @@ body {
     -moz-osx-font-smoothing:  grayscale;
     font-size: 62.5%;
     overflow-x: hidden;
-    min-height: 100vh;
+    height: 100vh;
     position: relative;
   
 }
