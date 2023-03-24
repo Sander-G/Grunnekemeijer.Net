@@ -41,9 +41,6 @@ export const LeftContainer = styled.div`
 export const RightContainer = styled.div`
 display: flex;
 padding-right: 1rem;
-/* flex-direction: row;
-align-items: center;
-justify-content: flex-end; */
 gap: 0.3rem;
 @media screen and (max-width:600px) {
   gap:0.2rem;

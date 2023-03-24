@@ -13,7 +13,7 @@ export const Container = styled.div`
   margin: 0.25rem 1.25rem;
 
   & a {
-    filter: drop-shadow(0.5px 0.5px 0.5px hotpink) drop-shadow(-0.5px -0.5px 0.5px hotpink);
+    filter: drop-shadow(1px 1px 1px hotpink) drop-shadow(-1px -1px 1px hotpink);
     margin-inline: 1rem;
     @media screen and (max-width: 1024px) {
       margin-inline: 0.5rem;
@@ -30,7 +30,7 @@ export const Container = styled.div`
 
 
 export const EmailLinkStyled = styled.div`
-  filter: drop-shadow(0.5px 0.5px 0.5px hotpink) drop-shadow(-0.5px -0.5px 0.5px hotpink);
+  filter: drop-shadow(1px 1px 1px hotpink) drop-shadow(-1px -1px 1px hotpink);
   margin-inline: 1rem;
   cursor: pointer;
   @media screen and (max-width: 1024px) {

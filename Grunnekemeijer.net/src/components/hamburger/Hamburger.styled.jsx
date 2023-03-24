@@ -3,13 +3,14 @@ import styled from "styled-components";
 
 export const MenuLabel = styled.label`
   position: relative;
-  height: 40px;
-  width: 40px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  height: 2rem;
+  width: 2rem;
+ 
   cursor: pointer;
   z-index: 100;
   user-select: none;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
   padding-right: 0.5rem;
 `;
 
@@ -33,7 +34,9 @@ export const Icon = styled.span`
     }
   }
 
-  
+  @media screen and (max-width: 1024px) {
+    scale: 0.87;
+  }
   @media screen and (max-width: 600px) {
     scale: 0.75;
   }
