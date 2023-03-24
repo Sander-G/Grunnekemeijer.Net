@@ -152,8 +152,6 @@ h1 {
   position: fixed;
   top: 0;
   left: 0;
-  pointer-events: none;
-  cursor: none;
   user-select: none;
   z-index: 1979;
 }

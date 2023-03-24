@@ -12,12 +12,14 @@ export const Container = styled.div`
   background-color: transparent;
   border-bottom: 0.5px solid hotpink;
   user-select: none;
-  
   margin-left: 0.5rem;
-  margin-right:0.5rem;
+  margin-right: 0.5rem;
 
   @media screen and (max-width: 600px) {
     height: 3.5rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+   
   }
 `;
 
@@ -43,7 +45,8 @@ display: flex;
 padding-right: 1rem;
 gap: 0.3rem;
 @media screen and (max-width:600px) {
-  gap:0.2rem;
+  gap: 2px;
+  padding-right: 0.5rem;
   
 
 }
@@ -56,10 +59,10 @@ export const Button = styled.button`
   width: 40px;
   margin-top: 0.4rem;
   background: transparent;
-  margin-right: -0.5rem;
+
  
 
   @media screen and (max-width: 600px) {
-    margin-left: -0.2rem;
+  
   }
 `;

@@ -23,7 +23,10 @@ export const Container = styled.div`
     }
     @media screen and (max-width: 600px) {
       font-size: 1.3rem;
-      margin-inline: 0.2rem;
+      font-weight: 400;
+      
+      padding-bottom: 2px;
+      margin-inline: 2px;
      
     }
 
