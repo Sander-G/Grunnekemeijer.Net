@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { shakeAnimation } from "../nameDiv/NameDiv.styled";
 
 
 export const MenuLabel = styled.label`
@@ -11,7 +12,7 @@ export const MenuLabel = styled.label`
   user-select: none;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
-  padding-right: 0.5rem;
+  
 `;
 
 export const Icon = styled.span`
@@ -32,6 +33,7 @@ export const Icon = styled.span`
     &:before {
       background-color: #525252;
     }
+    animation: ${shakeAnimation} 0.3s ease-in infinite;
   }
 
   @media screen and (max-width: 1024px) {

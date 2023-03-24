@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { shakeAnimation } from "../nameDiv/NameDiv.styled";
 
 export const Container = styled.div`
   display: flex;
@@ -21,9 +22,13 @@ export const Container = styled.div`
 
   & svg {
     scale: 1.2;
-    filter: drop-shadow(0px 0.5px hotpink) drop-shadow(0px -0.5px hotpink) drop-shadow(0.5px 0px hotpink) drop-shadow(-0.5px 0px hotpink);
+    filter: drop-shadow(0px 1px hotpink) drop-shadow(0px -1px hotpink) drop-shadow(1px 0px hotpink) drop-shadow(-1px 0px hotpink);
     @media screen and (max-width: 1024px) {
       scale: 1;
+    }
+    &:hover {
+      animation: ${shakeAnimation} 0.3s ease-in infinite;
+     
     }
   }
 `;
@@ -39,12 +44,13 @@ export const EmailLinkStyled = styled.div`
   & svg {
     stroke: #343434;
     fill: #343434;
-    filter: drop-shadow(0px 0.5px hotpink) drop-shadow(0px -0.5px hotpink) drop-shadow(0.5px 0px hotpink) drop-shadow(-0.5px 0px hotpink);
+    filter: drop-shadow(0px 1px hotpink) drop-shadow(0px -1px hotpink) drop-shadow(1px 0px hotpink) drop-shadow(-1px 0px hotpink);
     scale: 1.2;
     @media screen and (max-width: 1024px) {
       scale: 1;
     }
     &:hover {
+      animation: ${shakeAnimation} 0.3s ease-in infinite;
       stroke: #525252;
       fill: #525252;
     }
