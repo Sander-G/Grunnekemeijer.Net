@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext, useRef } from 'react';
+import React, { useState, useEffect, useContext, useRef, useCallback } from 'react';
 import { motion, useMotionValue, useTransform } from 'framer-motion';
 import { FlashlightButton } from './Flashlight.styled';
 import { MuteContext } from '../../context/MuteContext';
@@ -6,64 +6,87 @@ import { MuteContext } from '../../context/MuteContext';
 export default function Flashlight() {
   const { sounds, isMuted } = useContext(MuteContext);
   const [isOn, setIsOn] = useState(false);
-   const containerRef = useRef(null);
-   
+  const containerRef = useRef(null);
 
   const cursorX = useMotionValue();
   const cursorY = useMotionValue();
   const mapX = useTransform(cursorX, [0, containerRef.current?.width], [0, window.innerWidth]);
   const mapY = useTransform(cursorY, [0, containerRef.current?.height], [0, window.innerHeight]);
-   
-  const handleTouchMove = (e) => {
-     e.preventDefault();
-     const containerRect = containerRef.current.getBoundingClientRect();
-      if (typeof event.touches !== 'undefined' && event.touches.length > 0) {
 
-     const x = e.touches[0].clientX;
-     const y = e.touches[0].clientY;
-     mapX.set(x - containerRect.left);
-     mapY.set(y - containerRect.top);
+  const handleTouchMove = useCallback((e) => {
+     if (isOn){
+      const containerRect = containerRef.current?.getBoundingClientRect();
+      const x = e.touches[0].clientX ;
+      const y = e.touches[0].clientY ;
+      mapX.set(x - containerRect.left);
+      mapY.set(y - containerRect.top);
+    }},
+    [isOn]
+);
+
+   const moveCursor = useCallback(
+     (e) => {
+       if ('ontouchstart' in window) {
+         handleTouchMove(e);
+       } else {
+         const containerRect = containerRef.current.getBoundingClientRect();
+         cursorX.set((e.clientX - 75) - containerRect.left);
+         cursorY.set((e.clientY - 75) - containerRect.top);
+       }
+     },
+     [cursorX, cursorY, handleTouchMove]
+   );
+
+
+  const handleDocumentTouchMove = useCallback(
+    (e) => {
+      if (isOn) {
+        e.preventDefault();
       }
-   };
-
-
-
-     useEffect(() => {
-       const handleDocumentTouchMove = (e) => {
-         if (isOn) {
-           e.preventDefault();
-         }
-       };
-       
-       document.addEventListener('touchmove', handleDocumentTouchMove, { passive: false });
-
-       return () => {
-         document.removeEventListener('touchmove', handleDocumentTouchMove, { passive: false });
-       };
-     }, [isOn]);
+    },
+    [isOn]
+  );
 
   useEffect(() => {
+    const windowRef = window;
+    const documentRef = document;
 
-     if (!containerRef.current) return;
-    const moveCursor = (e) => {
-      if ('ontouchstart' in window) {
-        handleTouchMove(e);
+    const addEventListeners = () => {
+      windowRef.addEventListener('mousemove', moveCursor);
+      windowRef.addEventListener('touchmove', handleTouchMove, { passive: false });
+      documentRef.addEventListener('touchmove', handleDocumentTouchMove, { passive: false });
+    };
+
+    const removeEventListeners = () => {
+      windowRef.removeEventListener('mousemove', moveCursor);
+      windowRef.removeEventListener('touchmove', handleTouchMove, { passive: false });
+      documentRef.removeEventListener('touchmove', handleDocumentTouchMove, { passive: false });
+    };
+
+    if (!containerRef.current) return;
+
+    addEventListeners();
+
+    return removeEventListeners;
+  }, [handleDocumentTouchMove, handleTouchMove, moveCursor]);
+
+  useEffect(() => {
+    const containerRefCurrent = containerRef.current;
+
+    const toggleTouchMoveListeners = () => {
+      if (isOn) {
+        document.addEventListener('touchmove', handleDocumentTouchMove, { passive: false });
       } else {
-        const containerRect = containerRef.current.getBoundingClientRect();
-        cursorX.set(e.clientX - containerRect.left - 60);
-        cursorY.set(e.clientY - containerRect.top - 75);
+        document.removeEventListener('touchmove', handleDocumentTouchMove, { passive: false });
       }
     };
 
-    window.addEventListener('mousemove', moveCursor);
-    window.addEventListener('touchmove', handleTouchMove, { passive: false });
+    toggleTouchMoveListeners();
 
     return () => {
-      window.removeEventListener('mousemove', moveCursor);
-      window.removeEventListener('touchmove', handleTouchMove, { passive: false });
+      containerRefCurrent && document.removeEventListener('touchmove', handleDocumentTouchMove, { passive: false });
     };
-  }, [cursorX, cursorY, containerRef.current]);
-
+  }, [handleDocumentTouchMove, isOn]);
   return (
     <>
       <FlashlightButton
