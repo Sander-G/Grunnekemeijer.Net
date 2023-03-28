@@ -2,14 +2,18 @@ import React, { useState, useEffect, useRef } from 'react';
 import Typed from 'react-typed';
 import { Container, Button, ButtonWrapper, BlinkingCursor, Row } from './Writer.styled';
 import Heatmap from '../heatmap/Heatmap.jsx'
+import TimeDifference from './TimeDifference';
 
 export default function Writer() {
-  const [lines, setLines] = useState(['This is the first line of text.', '', '']);
+  const { years, months, weeks, days, hours } = TimeDifference();
+  const [lines, setLines] = useState([`This is the first line ${years} ${months} ${weeks} ${days} ${hours} of text.`, '', '']);
   const [instantType, setInstantType] = useState(false);
   const [showButton, setShowButton] = useState(true);
   const [typingCompleted, setTypingCompleted] = useState(false);
   const typedRef = useRef(null);
   const timeoutIdsRef = useRef([]);
+
+  
 
   useEffect(() => {
     if (typedRef.current) {
@@ -30,7 +34,7 @@ export default function Writer() {
   const handleInstantType = () => {
     setInstantType(true);
     setShowButton(false);
-    setLines(['This is the first line of text.', 'This is the second line of text.', 'This is the third line of text.']);
+    setLines([`This is the first line ${years} ${months} ${weeks} ${days} ${hours} of text.`, 'This is the second line of text.', 'This is the third line of text.']);
     timeoutIdsRef.current.forEach(clearTimeout);
   };
 
