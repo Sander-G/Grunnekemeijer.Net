@@ -32,7 +32,7 @@ export const Container = styled.div`
 
     &:hover {
       transition: all 0.5s ease-in-out;
-      animation: ${shakeAnimation} 0.3s ease-in infinite;
+      animation: ${shakeAnimation} 0.2s ease-in infinite;
       color: #525252;
       text-shadow: 0.5px 0px 1px skyblue, -0.5px 0px 1px skyblue, 0px 0.5px 1px skyblue, 0px -0.5px 1px skyblue, 0.5px 0.5px 1px skyblue, -0.5px -0.5px 1px skyblue;
     }
@@ -44,7 +44,7 @@ export const Container = styled.div`
   }
 
   &:hover a:not(:hover) {
-    transition: all 0.4s ease;
+    transition: all 0.4s ease-in;
     text-shadow: 0.5px 0px 1px hotpink, -0.5px 0px 1px hotpink, 0px 0.5px 1px hotpink, 0px -0.5px 1px hotpink, 0.5px 0.5px 1px hotpink, -0.5px -0.5px 1px hotpink;
   }
 `;
