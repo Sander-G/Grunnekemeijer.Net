@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Typed from 'react-typed';
 import { Container, Button, ButtonWrapper, BlinkingCursor, Row } from './Writer.styled';
-import Heatmap from '../heatmap/Heatmap.jsx'
+import Heatmap from '../heatmap/Heatmap';
 import TimeDifference from './TimeDifference';
 
 export default function Writer() {

@@ -50,7 +50,11 @@ export const blink = keyframes`
 export const BlinkingCursor = styled.span`
   &:after {
     content: '\u007C';
-    margin-left: 5px;
+    margin-left: -1px;
+   
+    position: absolute;
+    font-size: 17px;
+    
     animation: ${blink} 0.7s linear infinite;
   }
 `;
