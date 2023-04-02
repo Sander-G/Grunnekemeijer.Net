@@ -17,8 +17,8 @@ export const Container = styled.div`
 
   @media screen and (max-width: 600px) {
     height: 3.5rem;
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
+  
+    
    
   }
 `;
@@ -26,7 +26,7 @@ export const Container = styled.div`
 export const LeftContainer = styled.div`
   display: flex;
   & svg {
-    margin-inline: 1px;
+    margin-inline: 0rem;
 
   }
   
@@ -55,14 +55,13 @@ gap: 0.3rem;
 `
 export const Button = styled.button`
   border: 0;
-  height: 40px;
+  height: 42px;
   width: 40px;
-  margin-top: 0.4rem;
+  margin-bottom: -10px;
+  margin-left:-3px;
   background: transparent;
 
  
 
-  @media screen and (max-width: 600px) {
-  
-  }
+
 `;

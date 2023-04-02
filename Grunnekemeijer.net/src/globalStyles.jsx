@@ -67,6 +67,7 @@ body {
     overflow-x: hidden;
     height: 100vh;
     position: relative;
+    background-color: #e6e5e5;
   
 }
 
