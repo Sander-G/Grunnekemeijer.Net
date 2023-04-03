@@ -15,10 +15,12 @@ export const Container = styled.div`
   overflow: none;
   z-index: 0;
   position: inherit;
-  max-height: calc(100vh - 3rem);
-  max-width: 100vw;
+
+  max-height: 100%
+  width: calc(100%);
   flex-wrap: wrap;
-  margin: 0rem 1rem;
+  margin-top: 1rem;
+  align-items: center;
   justify-content: space-between;
   color: #343434;
   cursor: crosshair;

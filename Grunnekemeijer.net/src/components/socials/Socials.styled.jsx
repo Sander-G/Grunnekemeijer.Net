@@ -11,7 +11,8 @@ export const Container = styled.div`
   place-self: flex-end;
   align-items: center;
   justify-content: flex-end;
-  margin: 0.25rem 0.5rem;
+  margin: 0.25rem 0.25rem;
+
 
  
 
@@ -22,7 +23,7 @@ export const Container = styled.div`
     margin-inline: 1rem;
 
     animation: ${shakeAnimation} 10s linear infinite;
-  filter: drop-shadow(-1px 0px hsl(330, 80%, 70%)) drop-shadow(0px 1px hsl(330, 80%, 70%)) drop-shadow(1px 0px hsl(330, 80%, 70%)) drop-shadow(0px -1px hsl(330, 80%, 70%));
+  filter: drop-shadow(-1px 0px hsl(330, 70%, 70%)) drop-shadow(0px 1px hsl(330, 70%, 70%)) drop-shadow(1px 0px hsl(330, 70%, 70%)) drop-shadow(0px -1px hsl(330, 70%, 70%));
  @media screen and (max-width: 1024px) {
       scale: 1;
     }
@@ -42,7 +43,5 @@ export const Container = styled.div`
 export const EmailLinkStyled = styled.div`
   
   cursor: pointer;
-  @media screen and (max-width: 1024px) {
-  
-  }
+
 `;

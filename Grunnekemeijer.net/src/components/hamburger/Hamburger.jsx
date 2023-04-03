@@ -19,7 +19,7 @@ const { sounds, isMuted } = useContext(MuteContext);
       sounds[0].stop()}}>
 
 
-    <Icon clicked={click}>&nbsp;</Icon>
+    <Icon clicked={click}></Icon>
 
 
     </MenuLabel>

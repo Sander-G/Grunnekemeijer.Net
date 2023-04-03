@@ -13,6 +13,13 @@ export const Container = styled.div`
     justify-content: center;
     margin-left: 0.5rem;
 
+    &:last-child {
+      margin-right: 0.5rem;
+      @media screen and (max-width: 1024px)
+      { margin-right: 0.1rem;
+      }
+    }
+
     color: #343434;
     text-shadow: -1px 0 hotpink, 0 1px hotpink, 1px 0 hotpink, 0 -1px hotpink;
     @media screen and (max-width: 1024px) {
