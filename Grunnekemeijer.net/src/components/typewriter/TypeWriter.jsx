@@ -51,8 +51,6 @@ export function TypeWriter() {
     const lastVisitDate = JSON.parse(localStorage.getItem('lastVisit'));
     const lastIpAddress = JSON.parse(localStorage.getItem('lastIp'));
 
-    console.log('onload', lastIpAddress, lastVisit, visitCount);
-
     if (lastVisitDate) {
       setLastVisit(lastVisitDate);
     }
@@ -72,7 +70,6 @@ export function TypeWriter() {
       }
     };
     getData();
-    console.log('after fetch', lastIpAddress, ip, lastVisit, visitCount);
   }, [currentDate]);
 
   const [showCommand, setShowCommand] = useState(true);
@@ -102,17 +99,7 @@ export function TypeWriter() {
         <span className='terminal'>S:\&nbsp;</span>
         {showCommand && (
           <span>
-            <Typed
-              strings={['Informatie.exe']}
-              typeSpeed={50}
-              backSpeed={0}
-              startDelay={2000}
-              backDelay={2500}
-              onComplete={handleTypedComplete}
-              cursorChar='|'
-              loopCount={0}
-              className='terminal'
-            />
+            <Typed strings={['Informatie.exe']} typeSpeed={50} backSpeed={0} startDelay={2000} backDelay={2500} onComplete={handleTypedComplete} cursorChar='|' loopCount={0} className='terminal' />
           </span>
         )}
       </PromptWrapper>

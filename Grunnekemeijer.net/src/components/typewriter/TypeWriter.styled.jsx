@@ -4,7 +4,7 @@ export const Wrapper = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
-  margin: 1rem 0rem 0.5rem 1rem;
+  margin: 1rem 1rem 0rem 1rem;
   align-items: baseline;
   justify-content: flex-start;
   text-align: left;
@@ -22,7 +22,7 @@ export const PromptWrapper = styled.div`
   display: flex;
   align-items: center;
   flex-direction: row;
-  padding: 0.25em 1rem;
+  margin: 0.5rem 1rem;
   align-items: baseline;
   justify-content: flex-start;
   text-align: left;
