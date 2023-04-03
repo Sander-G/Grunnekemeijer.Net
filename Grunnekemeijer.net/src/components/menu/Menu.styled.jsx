@@ -10,24 +10,19 @@ export const Container = styled.div`
     display: flex;
     user-select: none;
     align-items: center;
-    justify-content: space-between;
-    margin-inline: 0.3rem;
-    
+    justify-content: center;
+    margin-left: 0.5rem;
 
     color: #343434;
     text-shadow: 0.5px 0px 1px hotpink, -0.5px 0px 1px hotpink, 0px 0.5px 1px hotpink, 0px -0.5px 1px hotpink, 0.5px 0.5px 1px hotpink, -0.5px -0.5px 1px hotpink;
 
     @media screen and (max-width: 1024px) {
       font-size: 1.5rem;
-      margin-inline: 0.3rem;
+      margin-left: 0.4rem;
     }
     @media screen and (max-width: 600px) {
       font-size: 1.3rem;
-      font-weight: 400;
-      
-      padding-bottom: 2px;
-      margin-inline: 2px;
-     
+
     }
 
     &:hover {

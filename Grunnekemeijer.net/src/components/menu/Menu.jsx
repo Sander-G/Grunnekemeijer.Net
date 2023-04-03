@@ -21,8 +21,7 @@ export function Menu() {
           }}
           to="/Home"
           alt="Home"
-        >
-          HOME
+        >HOME
         </NavLink>
         <NavLink
           onClick={() => {
@@ -38,8 +37,7 @@ export function Menu() {
           }}
           to="/Info"
           alt="Info"
-        >
-          INFO
+        >INFO
         </NavLink>
         <NavLink
           onClick={() => {
@@ -55,8 +53,7 @@ export function Menu() {
           }}
           to="/Portfolio"
           alt="Portfolio"
-        >
-          PORTFOLIO
+        >PORTFOLIO
         </NavLink>
       </Container>
     </>

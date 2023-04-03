@@ -37,7 +37,7 @@ export const Icon = styled.span`
   }
 
   @media screen and (max-width: 1024px) {
-    scale: 0.87;
+    scale: 0.95;
   }
   @media screen and (max-width: 600px) {
     scale: 0.75;
