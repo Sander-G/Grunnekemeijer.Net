@@ -11,42 +11,19 @@ export const Container = styled.div`
   place-self: flex-end;
   align-items: center;
   justify-content: flex-end;
-  margin: 0.25rem 1.25rem;
+  margin: 0.25rem 0.5rem;
 
-  & a {
-    margin-inline: 1rem;
-    @media screen and (max-width: 1024px) {
-      margin-inline: 0.5rem;
-    }
-  }
+ 
 
   & svg {
-    scale: 1.2;
-    filter: drop-shadow(0px 0.5px hotpink) drop-shadow(0px -0.5px hotpink) drop-shadow(0.5px 0px hotpink) drop-shadow(-0.5px 0px hotpink);
-    @media screen and (max-width: 1024px) {
-      scale: 1;
-    }
-    &:hover {
-      animation: ${shakeAnimation} 0.3s ease-in infinite;
-     
-    }
-  }
-`;
-
-
-export const EmailLinkStyled = styled.div`
-  margin-inline: 1rem;
-  cursor: pointer;
-  @media screen and (max-width: 1024px) {
-    margin-inline: 0.5rem;
-  }
-
-  & svg {
+    scale: 1.1;
     stroke: #343434;
     fill: #343434;
-    filter: drop-shadow(0px 0.5px hotpink) drop-shadow(0px -0.5px hotpink) drop-shadow(0.5px 0px hotpink) drop-shadow(-0.5px 0px hotpink);
-    scale: 1.2;
-    @media screen and (max-width: 1024px) {
+    margin-inline: 1rem;
+
+    animation: ${shakeAnimation} 10s linear infinite;
+  filter: drop-shadow(-1px 0px hsl(330, 80%, 70%)) drop-shadow(0px 1px hsl(330, 80%, 70%)) drop-shadow(1px 0px hsl(330, 80%, 70%)) drop-shadow(0px -1px hsl(330, 80%, 70%));
+ @media screen and (max-width: 1024px) {
       scale: 1;
     }
     &:hover {
@@ -54,5 +31,18 @@ export const EmailLinkStyled = styled.div`
       stroke: #525252;
       fill: #525252;
     }
+
+    @media screen and (max-width: 1024px) {
+      margin-inline: 0.5rem;
+    }
+  }
+`;
+
+
+export const EmailLinkStyled = styled.div`
+  
+  cursor: pointer;
+  @media screen and (max-width: 1024px) {
+  
   }
 `;
