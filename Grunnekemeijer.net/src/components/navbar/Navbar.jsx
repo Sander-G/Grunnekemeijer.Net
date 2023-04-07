@@ -5,8 +5,8 @@ import Flashlight from '../flashlight/flashlight'
 import MuteBtn from '../muteButton/MuteBtn'
 import Hamburger from '../hamburger/Hamburger'
 import { Menu } from '../menu/Menu'
-import { MuteContext } from '../../context/MuteContext'
-import { DarkModeContext } from "../../context/DarkModeContext";
+import { MuteContext } from '../../contexts/MuteContext'
+import { DarkModeContext } from "../../contexts/DarkModeContext";
 
 
 

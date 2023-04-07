@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext, useRef, useCallback } from 'react';
 import { motion, useMotionValue, useTransform } from 'framer-motion';
 import { FlashlightButton } from './Flashlight.styled';
-import { MuteContext } from '../../context/MuteContext';
+import { MuteContext } from '../../contexts/MuteContext';
 
 export default function Flashlight() {
   const { sounds, isMuted } = useContext(MuteContext);
@@ -13,30 +13,31 @@ export default function Flashlight() {
   const mapX = useTransform(cursorX, [0, containerRef.current?.width], [0, window.innerWidth]);
   const mapY = useTransform(cursorY, [0, containerRef.current?.height], [0, window.innerHeight]);
 
-  const handleTouchMove = useCallback((e) => {
-     if (isOn){
-      const containerRect = containerRef.current?.getBoundingClientRect();
-      const x = e.touches[0].clientX ;
-      const y = e.touches[0].clientY ;
-      mapX.set(x - containerRect.left);
-      mapY.set(y - containerRect.top);
-    }},
+  const handleTouchMove = useCallback(
+    (e) => {
+      if (isOn) {
+        const containerRect = containerRef.current?.getBoundingClientRect();
+        const x = e.touches[0].clientX;
+        const y = e.touches[0].clientY;
+        mapX.set(x - containerRect.left);
+        mapY.set(y - containerRect.top);
+      }
+    },
     [isOn]
-);
+  );
 
-   const moveCursor = useCallback(
-     (e) => {
-       if ('ontouchstart' in window) {
-         handleTouchMove(e);
-       } else {
-         const containerRect = containerRef.current.getBoundingClientRect();
-         cursorX.set((e.clientX - 75) - containerRect.left);
-         cursorY.set((e.clientY - 75) - containerRect.top);
-       }
-     },
-     [cursorX, cursorY, handleTouchMove]
-   );
-
+  const moveCursor = useCallback(
+    (e) => {
+      if ('ontouchstart' in window) {
+        handleTouchMove(e);
+      } else {
+        const containerRect = containerRef.current.getBoundingClientRect();
+        cursorX.set(e.clientX - 75 - containerRect.left);
+        cursorY.set(e.clientY - 75 - containerRect.top);
+      }
+    },
+    [cursorX, cursorY, handleTouchMove]
+  );
 
   const handleDocumentTouchMove = useCallback(
     (e) => {

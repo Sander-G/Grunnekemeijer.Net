@@ -1,7 +1,7 @@
-import React, { useContext } from "react";
-import { Container } from "./Menu.styled";
-import { NavLink } from "react-router-dom";
-import { MuteContext } from "../../context/MuteContext";
+import React, { useContext } from 'react';
+import { Container } from './Menu.styled';
+import { NavLink } from 'react-router-dom';
+import { MuteContext } from '../../contexts/MuteContext';
 export function Menu() {
   const { sounds, isMuted } = useContext(MuteContext);
   return (
@@ -19,9 +19,10 @@ export function Menu() {
           onMouseLeave={() => {
             sounds[0].stop();
           }}
-          to="/Home"
-          alt="Home"
-        >HOME
+          to='/Home'
+          alt='Home'
+        >
+          HOME
         </NavLink>
         <NavLink
           onClick={() => {
@@ -35,9 +36,10 @@ export function Menu() {
           onMouseLeave={() => {
             sounds[0].stop();
           }}
-          to="/Info"
-          alt="Info"
-        >INFO
+          to='/Info'
+          alt='Info'
+        >
+          INFO
         </NavLink>
         <NavLink
           onClick={() => {
@@ -51,9 +53,10 @@ export function Menu() {
           onMouseLeave={() => {
             sounds[0].stop();
           }}
-          to="/Portfolio"
-          alt="Portfolio"
-        >PORTFOLIO
+          to='/Portfolio'
+          alt='Portfolio'
+        >
+          PORTFOLIO
         </NavLink>
       </Container>
     </>

@@ -6,8 +6,8 @@ import Home from './pages/Home';
 import Info from './pages/Info';
 import Portfolio from './pages/Portfolio';
 import NotFound from './pages/NotFound';
-import { MuteProvider } from './context/MuteContext';
-import { DarkModeProvider } from './context/DarkModeContext';
+import { MuteProvider } from './contexts/MuteContext';
+import { DarkModeProvider } from './contexts/DarkModeContext';
 
 const App = () => {
   const location = useLocation();

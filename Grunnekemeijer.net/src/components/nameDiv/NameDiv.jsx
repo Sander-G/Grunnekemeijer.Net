@@ -1,15 +1,11 @@
 import React, { useContext, useState, useEffect } from 'react';
-import { MuteContext } from '../../context/MuteContext';
+import { MuteContext } from '../../contexts/MuteContext';
 
 import { Container, G, R, U, N, N2, E, E2, E3, E4, K, M, I, J, R2, DotNet } from './NameDiv.styled';
 
 export default function NameDiv() {
   const { sounds, isMuted } = useContext(MuteContext);
   const [hoveredLetter, setHoveredLetter] = useState(null);
-  
-
-
-
 
   useEffect(() => {
     let timeout;
@@ -37,11 +33,6 @@ export default function NameDiv() {
     const { clientX, clientY } = event.touches[0];
     const element = document.elementFromPoint(clientX, clientY);
 
-
-
-
-
-
     if (element && element.tagName === 'div' && element.textContent === 'nameDiv') {
       if (!hoveredLetter) {
         setHoveredLetter('nameDiv');
@@ -60,40 +51,41 @@ export default function NameDiv() {
             // play sound or trigger animation for G
           }
         } else {
-        if (element && element.tagName === 'P' && element.textContent === 'U') {
-          if (!hoveredLetter) {
-            setHoveredLetter('U');
-            // play sound or trigger animation for G
-          }
-        } else {
-        if (element && element.tagName === 'P' && element.textContent === 'N') {
-          if (!hoveredLetter) {
-            setHoveredLetter('N');
-            // play sound or trigger animation for G
-          }
-        } else {
-          if (element && element.tagName === 'P' && element.textContent === 'N2') {
+          if (element && element.tagName === 'P' && element.textContent === 'U') {
             if (!hoveredLetter) {
-              setHoveredLetter('N2');
+              setHoveredLetter('U');
               // play sound or trigger animation for G
             }
           } else {
-        if (element && element.tagName === 'P' && element.textContent === 'E') {
-          if (!hoveredLetter) {
-            setHoveredLetter('R');
-            // play sound or trigger animation for G
-          }
-        } else {
-            setHoveredLetter(null);
+            if (element && element.tagName === 'P' && element.textContent === 'N') {
+              if (!hoveredLetter) {
+                setHoveredLetter('N');
+                // play sound or trigger animation for G
+              }
+            } else {
+              if (element && element.tagName === 'P' && element.textContent === 'N2') {
+                if (!hoveredLetter) {
+                  setHoveredLetter('N2');
+                  // play sound or trigger animation for G
+                }
+              } else {
+                if (element && element.tagName === 'P' && element.textContent === 'E') {
+                  if (!hoveredLetter) {
+                    setHoveredLetter('R');
+                    // play sound or trigger animation for G
+                  }
+                } else {
+                  setHoveredLetter(null);
+                }
+              }
+            }
           }
         }
-      }}}}
+      }
     }
   }
   function handleTouchEnd() {
-    
     setHoveredLetter(null);
-
   }
 
   console.log(sounds);
