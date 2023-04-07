@@ -40,7 +40,6 @@ export const flicker = keyframes`
   }
 `;
 
-
 const GlobalStyle = createGlobalStyle`
   :root {
   font-synthesis: none;
@@ -73,16 +72,13 @@ body {
     overflow-x: hidden;
     height: 100vh;
     position: relative;
-    background-color: #e6e5e5;
-  
+    background-color: #e6e5e5;  
 }
 
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
 }
-
-
 
 * {
   margin: 0;
@@ -148,9 +144,7 @@ h1 {
   box-shadow: 0 0 20px rgba(255, 255, 0, 0.386);
   animation: ${flicker} 0.05s infinite alternate;
   transition: all 50ms;
-
 }
-
 
 .off {
   position: fixed;
@@ -160,19 +154,11 @@ h1 {
   z-index: 1979;
 }
 
-
 // github calendar 
-
 .react-activity-calendar__legend-weekday, .react-activity-calendar__legend-month, .react-activity-calendar__count {
   font-family: clacon2;
   font-size: 14px;
 }
-
-
-
 `;
-
-
-
 
 export default GlobalStyle;
