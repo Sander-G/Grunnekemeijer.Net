@@ -1,5 +1,6 @@
 import React, { createContext, useState, useEffect } from 'react';
 import Howler from 'howler';
+import PropTypes from 'prop-types';
 
 const soundFiles = [
     'src/assets/tick.mp3',
@@ -20,6 +21,9 @@ export function MuteProvider(props) {
                 volume: 0.1
             }))
     );
+
+    MuteProvider.propTypes = {
+  children: PropTypes.node.isRequired}
 
     const [isMuted, setIsMuted] = useState(true);
     sounds.forEach((sound) => sound.mute(isMuted));
