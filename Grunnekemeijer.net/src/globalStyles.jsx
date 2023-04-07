@@ -1,5 +1,4 @@
 import { createGlobalStyle, keyframes } from 'styled-components';
-
 import clacon2 from './assets/clacon2.woff2';
 
 export const flicker = keyframes`
@@ -22,7 +21,7 @@ export const flicker = keyframes`
     opacity: 0.9
   }
   50% {
-    opacity: 1
+    opacity: 0.6
   }
   60% {
     opacity: 0.95
@@ -40,6 +39,8 @@ export const flicker = keyframes`
     opacity: 1
   }
 `;
+
+
 const GlobalStyle = createGlobalStyle`
   :root {
   font-synthesis: none;
@@ -47,6 +48,11 @@ const GlobalStyle = createGlobalStyle`
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%; 
+}
+
+@font-face {
+    font-family: 'clacon2';
+    src: url(${clacon2}) format('woff2');
 }
 
 a {
@@ -76,10 +82,7 @@ h1 {
   line-height: 1.1;
 }
 
-@font-face {
-    font-family: clacon2;
-    src: url(${clacon2}) format('woff2');
-}
+
 
 * {
   margin: 0;

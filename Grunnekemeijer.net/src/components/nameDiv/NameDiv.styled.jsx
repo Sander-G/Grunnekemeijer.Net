@@ -16,7 +16,7 @@ export const Container = styled.div`
   z-index: 0;
   position: inherit;
 
-  max-height: 100%
+  max-height: 100%;
   width: calc(100%);
   flex-wrap: wrap;
   margin-top: 1rem;
@@ -27,14 +27,27 @@ export const Container = styled.div`
   user-select: none;
   pointer-events: unset;
   animation: ${shakeAnimation} 3s linear infinite;
-
   transition: all 0.6s ease;
-  &:hover, &:active  > p {
+  transform: rotateX(-180deg);
+
+  &:active {
+    & :nth-child(odd) {
+      transition: all 0.3s ease-in-out;
+      transform: scaleY(-1);
+      transform: scaleX(1);
+    }
+    & :nth-child(even) {
+      transition: all 0.3s ease-in-out;
+      transform: scaleY(1);
+      transform: scaleX(-1);
+    }
+  }
+
+  &:hover > p {
     transition: all 0.3s ease;
     transform: scaleX(-1);
     transform: scaleY(-1);
     text-shadow: -1px 0 skyblue, 0 1px skyblue, 1px 0 skyblue, 0 -1px skyblue;
-   
   }
 
   > p {
