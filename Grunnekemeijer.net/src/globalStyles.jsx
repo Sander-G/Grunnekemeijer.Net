@@ -1,6 +1,8 @@
 import { createGlobalStyle, keyframes } from 'styled-components';
 import clacon2 from './assets/clacon2.woff2';
 
+
+//flashlight animation 
 export const flicker = keyframes`
   0% {
     opacity: 1
@@ -39,6 +41,7 @@ export const flicker = keyframes`
     opacity: 1
   }
 `;
+
 
 const GlobalStyle = createGlobalStyle`
   :root {
@@ -154,11 +157,10 @@ h1 {
   z-index: 1979;
 }
 
-// github calendar 
+// github heatmap styling
 .react-activity-calendar__legend-weekday, .react-activity-calendar__legend-month, .react-activity-calendar__count {
   font-family: clacon2;
   font-size: 14px;
 }
 `;
-
 export default GlobalStyle;

@@ -13,7 +13,6 @@ export default function NameDiv() {
     if (!hoveredLetter) {
       timeout = setTimeout(() => {
         setHoveredLetter(null);
-        // reset the animation by setting the hovered letter to null
       }, 5000);
     }
 
@@ -25,7 +24,6 @@ export default function NameDiv() {
   function handleTouchStart() {
     if (!hoveredLetter) {
       setHoveredLetter(null);
-      // play sound or trigger animation for G
     }
   }
 
@@ -36,43 +34,36 @@ export default function NameDiv() {
     if (element && element.tagName === 'div' && element.textContent === 'nameDiv') {
       if (!hoveredLetter) {
         setHoveredLetter('nameDiv');
-        // play sound or trigger animation for G
       }
     } else {
       if (element && element.tagName === 'P' && element.textContent === 'G') {
         if (!hoveredLetter) {
           setHoveredLetter('G');
-          // play sound or trigger animation for G
         }
       } else {
         if (element && element.tagName === 'P' && element.textContent === 'R') {
           if (!hoveredLetter) {
             setHoveredLetter('R');
-            // play sound or trigger animation for G
           }
         } else {
           if (element && element.tagName === 'P' && element.textContent === 'U') {
             if (!hoveredLetter) {
               setHoveredLetter('U');
-              // play sound or trigger animation for G
             }
           } else {
             if (element && element.tagName === 'P' && element.textContent === 'N') {
               if (!hoveredLetter) {
                 setHoveredLetter('N');
-                // play sound or trigger animation for G
               }
             } else {
               if (element && element.tagName === 'P' && element.textContent === 'N2') {
                 if (!hoveredLetter) {
                   setHoveredLetter('N2');
-                  // play sound or trigger animation for G
                 }
               } else {
                 if (element && element.tagName === 'P' && element.textContent === 'E') {
                   if (!hoveredLetter) {
                     setHoveredLetter('R');
-                    // play sound or trigger animation for G
                   }
                 } else {
                   setHoveredLetter(null);
@@ -87,9 +78,6 @@ export default function NameDiv() {
   function handleTouchEnd() {
     setHoveredLetter(null);
   }
-
-  console.log(sounds);
-  console.log(isMuted);
 
   return (
     <Container

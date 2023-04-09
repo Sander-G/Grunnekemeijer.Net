@@ -13,8 +13,6 @@ export default function Writer() {
   const typedRef = useRef(null);
   const timeoutIdsRef = useRef([]);
 
-  
-
   useEffect(() => {
     if (typedRef.current) {
       typedRef.current.typed.reset();

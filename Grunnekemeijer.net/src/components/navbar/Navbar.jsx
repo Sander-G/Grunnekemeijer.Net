@@ -24,7 +24,6 @@ export default function Navbar() {
       <Container>
         <LeftContainer>
           <DarkModeBtn
-           
           
           />
           {darkMode && <Flashlight />}

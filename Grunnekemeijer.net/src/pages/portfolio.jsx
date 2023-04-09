@@ -2,6 +2,9 @@
 import React, {useEffect} from 'react';
 import { StyledImage, Container, ImageWrapper, Italics, Text, TextShadow } from './Portfolio.styled';
 
+// https://css-eindopdr-final.netlify.app/
+// nog toevoegen 
+
 const data = [
   {
     id: 1,
