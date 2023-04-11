@@ -4,7 +4,7 @@ import Navbar from './components/navbar/Navbar';
 import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import Home from './pages/Home';
 import Info from './pages/Info';
-import Portfolio from './pages/Portfolio';
+import Portfolio from './pages/Portfolio'
 import NotFound from './pages/NotFound';
 import { MuteProvider } from './contexts/MuteContext';
 import { DarkModeProvider } from './contexts/DarkModeContext';
