@@ -9,7 +9,7 @@ const data = [
   {
     id: 1,
     link: '../../JSeindopdracht/JSON_Cards/index.html',
-    image: 'src/assets/pix/transformerindex.png',
+    image: '/assets/pix/transformerindex.png',
     text: (
       <>
         De transformer index was een onderdeel van de Javascript eindopdracht die ik tijdens de TechGrounds opleiding heb gemaakt. Het doel van de opdracht was het vinden van een geschikte database
@@ -30,7 +30,7 @@ const data = [
   {
     id: 2,
     link: 'https://sander-g.github.io/WeatherApp/',
-    image: 'src/assets/pix/pietsweerbericht.png',
+    image: '/assets/pix/pietsweerbericht.png',
     text: (
       <>
         My first React App: Piets weerbericht, een ode aan weerman Piet Paulusma (1956-2022). Deze weather App heb is gemaakt met create react app, styled components. Op basis van de
@@ -50,7 +50,7 @@ const data = [
   {
     id: 3,
     link: 'https://skippysskateboards.netlify.app',
-    image: 'src/assets/pix/skippyskateboards.png',
+    image: '/assets/pix/skippyskateboards.png',
     text: (
       <>
         Skippy's vintage skateboards. Create React App project, eerste volledig zelf ontwikkelde webshop met verschillende product categorieën, winkelwagentje, user account login, state management en
@@ -71,7 +71,7 @@ const data = [
   {
     id: 4,
     link: 'https://tg-nepflix.vercel.app',
-    image: 'src/assets/pix/nepflix.png',
+    image: '/assets/pix/nepflix.png',
     text: (
       <>
         Het Nepflix project was de eindopdracht van de TechGrounds opleiding, waarbij we als groep beginnende developers als scrum team in 3 sprints van 2 weken een Netfix clone hebben gebouwd in
@@ -92,7 +92,7 @@ const data = [
   {
     id: 5,
     link: 'https://lottayoga.nl',
-    image: 'src/assets/pix/lottayoga.png',
+    image: '/assets/pix/lottayoga.png',
     text: (
       <>
         De LottaYoga website heb ik voor Lotte (mijn vrouw) gemaakt met HTML, (Sass) CSS en een klein beetje JavaScript voor de hamburger & nav menu, een modal en mail/telefoon obfuscatie. De site is responsive en bestaat uit fullpage achtergrondfoto's van Lotte in verschillende yoga houdingen tegen een blauwe lucht. De foto's worden in verschillende resoluties aangeboden op basis van scherm grootte om lange laadtijden te voorkomen. De verschillende secties van de site heeft een achtergrond parallax effect dat (eerst niet.. maar nu wel) ook werkt in safari mobile. Voor SEO doeleinden heb ik o.a. Structured Data en een sitemap toegevoegd. Woon je in Enschede en overweeg je yoga te gaan doen? Neem contact op met Lotte!

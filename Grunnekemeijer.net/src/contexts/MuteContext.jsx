@@ -2,7 +2,7 @@ import React, { createContext, useState, useEffect } from 'react';
 import Howler from 'howler';
 import PropTypes from 'prop-types';
 
-const soundFiles = ['src/assets/tick.mp3', 'src/assets/clickTone.mp3', 'src/assets/interfaceTap.mp3', 'src/assets/staticBuzz.mp3'];
+const soundFiles = ['/assets/sounds/tick.mp3', '/assets/sounds/clickTone.mp3', '/assets/sounds/interfaceTap.mp3', '/assets/sounds/staticBuzz.mp3'];
 
 export const MuteContext = createContext();
 

@@ -1,5 +1,5 @@
 import { createGlobalStyle, keyframes } from 'styled-components';
-import clacon2 from './assets/clacon2.woff2';
+import clacon2 from '/assets/fonts/clacon2.woff2';
 
 
 //flashlight animation 
