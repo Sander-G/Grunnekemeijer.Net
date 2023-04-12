@@ -11,23 +11,24 @@ export const Container = styled.div`
   margin: 0rem 1rem 0rem 1rem;
   user-select: none;
 max-height: 90vh;
+text-align: left;
 
 `;
 
 export const Button = styled.button`
-  opacity: ${(props) => (props.show ? 0 : 1)};
-  transition: opacity 2500ms ease-in-out;
+  /* opacity: ${(props) => (props.show ? 0 : 1)}; */
+  /* transition: opacity 2500ms ease-in-out; */
   position: absolute;
-  top: 6.8rem;
+  top: 7rem;
   right: 1rem;
   z-index:2;
   border-radius: 5px;
   color: currentColor;
   font-family: clacon2;
   background-color: transparent;
-  padding: 0.2rem;
+  padding: 0.3rem;
   border: 0.5px solid hotpink;
-  box-shadow: 0px 0px 0.5px 0.5px hotpink; 
+  
 `;
 
 export const fadeIn = keyframes`
@@ -50,16 +51,17 @@ export const blink = keyframes`
 export const BlinkingCursor = styled.span`
   &:after {
     content: '\u007C';
-    margin-left: -1px;
-   
-    position: absolute;
-    font-size: 17px;
     
+    
+    font-size: 17px;
+
     animation: ${blink} 0.7s linear infinite;
   }
+ 
 `;
 
 export const Row = styled.div`
     display: flex;
-    flex-direction: row;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
 `
