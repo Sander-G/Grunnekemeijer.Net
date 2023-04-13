@@ -17,8 +17,6 @@ text-align: left;
 `;
 
 export const Button = styled.button`
-  /* opacity: ${(props) => (props.show ? 0 : 1)}; */
-  /* transition: opacity 2500ms ease-in-out; */
   position: sticky;
   top: 7rem;
   left: 1rem;
@@ -29,36 +27,16 @@ export const Button = styled.button`
   background-color: transparent;
   padding: 0.3rem;
   border: 0.5px solid hotpink;
-  
 `;
 
 export const fadeIn = keyframes`
    0% { opacity: 0 }
-  50% { opacity: 0 }
   100% { opacity: 1 }
 `;
 
 export const ButtonWrapper = styled(Container)`
   animation: ${fadeIn} 2500ms ease-in-out;
-
-`;
-
-export const blink = keyframes`
-  0% { opacity: 0 }
-  50% { opacity: 1 }
-  100% { opacity: 0 }
-`;
-
-export const BlinkingCursor = styled.span`
-  &:after {
-    content: '\u007C';
-    
-    
-    font-size: 17px;
-
-    animation: ${blink} 0.7s linear infinite;
-  }
- 
+  transition: opacity 2500ms ease-in-out; 
 `;
 
 export const Row = styled.div`
@@ -68,13 +46,12 @@ export const Row = styled.div`
 `
 
 export const LastRow = styled.div`
-  display: flex;
-  margin-bottom: 1rem;
+  display: inline-block;
+  margin-bottom: 2rem;
   margin-top: 1rem;
 `;
-export const HeatmapLink = styled.a`
-  
-`
+export const HeatmapLink = styled.a` 
+`;
 
 export const HeatmapWrapper = styled.div`
   position: sticky;
