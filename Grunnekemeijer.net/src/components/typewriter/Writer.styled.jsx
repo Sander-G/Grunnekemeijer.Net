@@ -4,6 +4,7 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  position: relative;
   font-size: 1rem;
   color: currentColor;
   font-family: clacon2;
@@ -18,9 +19,9 @@ text-align: left;
 export const Button = styled.button`
   /* opacity: ${(props) => (props.show ? 0 : 1)}; */
   /* transition: opacity 2500ms ease-in-out; */
-  position: absolute;
+  position: sticky;
   top: 7rem;
-  right: 1rem;
+  left: 1rem;
   z-index:2;
   border-radius: 5px;
   color: currentColor;
@@ -65,3 +66,20 @@ export const Row = styled.div`
     margin-bottom: 1rem;
     margin-top: 1rem;
 `
+
+export const LastRow = styled.div`
+  display: flex;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+`;
+export const HeatmapLink = styled.a`
+  
+`
+
+export const HeatmapWrapper = styled.div`
+  position: sticky;
+  bottom:0;
+  left: 50%;
+  max-width: 50vw;
+  transform: translateX(-50%);
+`;

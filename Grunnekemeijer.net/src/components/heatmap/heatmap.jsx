@@ -44,7 +44,7 @@ function Heatmap() {
       {isLoaded && <GithubCalendar 
                       username='Sander-G' 
                       transformData={selectTimeSpan} 
-                      transformTotalCount='' 
+                      transformTotalCount='false' 
                       color='Hotpink' 
                       showWeekdayLabels='true' 
                       hideColorLegend={screenWidth < 768} 
@@ -57,13 +57,5 @@ function Heatmap() {
 export default Heatmap;
 
 const Wrapper = styled.div`
-  position: fixed;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1rem 1rem;
-  max-width: 100vw;
+
 `;
