@@ -2,8 +2,6 @@
 import React, {useEffect} from 'react';
 import { StyledImage, Container, ImageWrapper, Italics, Text, TextShadow } from './Portfolio.styled';
 
-// https://css-eindopdr-final.netlify.app/
-// nog toevoegen 
 
 const data = [
   {
@@ -12,9 +10,13 @@ const data = [
     image: '../assets/pix/transformerindex.png',
     text: (
       <>
-        De transformer index was een onderdeel van de Javascript eindopdracht die ik tijdens de TechGrounds opleiding heb gemaakt. Het doel van de opdracht was het vinden van een geschikte database
-        met RESTful API data, deze data op te halen en gestructureerd weer te geven in een zelfgemaakte index. Een veelgebruikte database hiervoor is de Pokédex API, maar omdat ik kind ben van een
-        eerdere generatie viel de keuze op een Transformer Index (
+        Na wat inleidende oefeningen met sassy 
+        <a href='https://css-eindopdr-final.netlify.app/' target='_blank' rel='noopener noreferrer'>
+          <TextShadow> css </TextShadow>
+        </a>
+        was de Transformer index een van de eerste JavaScript apps die ik tijdens de TechGrounds opleiding heb gemaakt. Het doel van de opdracht was het vinden van een geschikte database met RESTful API
+        data, deze data op te halen en gestructureerd weer te geven in een zelfgemaakte index. Een veelgebruikte database hiervoor is de Pokédex API, maar omdat ik kind ben van een eerdere generatie
+        viel de keuze op een Transformer Index (
         <a href='https://github.com/crxssed7/transformers-api' target='_blank' rel='noopener noreferrer'>
           <TextShadow>deze</TextShadow>
         </a>
@@ -76,8 +78,9 @@ const data = [
       <>
         Het Nepflix project was de eindopdracht van de TechGrounds opleiding, waarbij we als groep beginnende developers als scrum team in 3 sprints van 2 weken een Netfix clone hebben gebouwd in
         React met Vite als Toolchain, React Router, Redux Toolkit, React-Icons, Styled Components. Het team bestond uit een front-end en een backend groep. Er was een scrum master, een productowner en
-        planning en voortgang werd bijgehouden in een Jira board. De front-end groep was vooral gericht op het nauwkeurig nabouwen van de Netflix site en de functionele componenten zoals de carousels, players and modals. De backend groep was gericht op het aanleveren van API data voor de frontend obv de gebruikte databases (TMDB, FanArt TV). Er waren dagelijkse stand-up meetings en sprint reviews na afloop van de sprints. De phishing waarschuwing die de landingpage
-        veroorzaakte accepteerden we als bewijs van een geslaagde kopie :) Het Github
+        planning en voortgang werd bijgehouden in een Jira board. De front-end groep was vooral gericht op het nauwkeurig nabouwen van de Netflix site en de functionele componenten zoals de carousels,
+        players and modals. De backend groep was gericht op het aanleveren van API data voor de frontend obv de gebruikte databases (TMDB, FanArt TV). Er waren dagelijkse stand-up meetings en sprint
+        reviews na afloop van de sprints. De phishing waarschuwing die de landingpage veroorzaakte accepteerden we als bewijs van een geslaagde kopie :) Het Github
         <a href='https://github.com/tg-netflix' target='_blank' rel='noopener noreferrer'>
           <TextShadow> project</TextShadow>
         </a>{' '}
@@ -95,7 +98,10 @@ const data = [
     image: '../assets/pix/lottayoga.png',
     text: (
       <>
-        De LottaYoga website heb ik voor Lotte (mijn vrouw) gemaakt met HTML, (Sass) CSS en een klein beetje JavaScript voor de hamburger & nav menu, een modal en mail/telefoon obfuscatie. De site is responsive en bestaat uit fullpage achtergrondfoto's van Lotte in verschillende yoga houdingen tegen een blauwe lucht. De foto's worden in verschillende resoluties aangeboden op basis van scherm grootte om lange laadtijden te voorkomen. De verschillende secties van de site heeft een achtergrond parallax effect dat (eerst niet.. maar nu wel) ook werkt in safari mobile. Voor SEO doeleinden heb ik o.a. Structured Data en een sitemap toegevoegd. Woon je in Enschede en overweeg je yoga te gaan doen? Neem contact op met Lotte!
+        De LottaYoga website heb ik voor Lotte (mijn vrouw) gemaakt met HTML, (Sass) CSS en een klein beetje JavaScript voor de hamburger & nav menu, een modal en mail/telefoon obfuscatie. De site is
+        responsive en bestaat uit fullpage achtergrondfoto's van Lotte in verschillende yoga houdingen tegen een blauwe lucht. De foto's worden in verschillende resoluties aangeboden op basis van
+        scherm grootte om lange laadtijden te voorkomen. De verschillende secties van de site heeft een achtergrond parallax effect dat (eerst niet.. maar nu wel) ook werkt in safari mobile. Voor SEO
+        doeleinden heb ik o.a. Structured Data en een sitemap toegevoegd. Woon je in Enschede en overweeg je yoga te gaan doen? Neem contact op met Lotte!
         <a href='https://lottayoga.nl' target='_blank' rel='noopener noreferrer'>
           <TextShadow> https://lottayoga.nl</TextShadow>
         </a>

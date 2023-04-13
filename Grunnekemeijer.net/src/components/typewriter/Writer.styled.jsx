@@ -50,12 +50,13 @@ export const LastRow = styled.div`
   margin-bottom: 2rem;
   margin-top: 1rem;
 `;
-export const HeatmapLink = styled.a` 
+
+export const HeatmapLink = styled.a`
+  color: currentColor !important;
 `;
 
 export const HeatmapWrapper = styled.div`
   position: sticky;
-  bottom:0;
   left: 50%;
   max-width: 50vw;
   transform: translateX(-50%);

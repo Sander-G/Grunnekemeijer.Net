@@ -41,15 +41,16 @@ function Heatmap() {
 
   return (
     <Wrapper isLoaded={isLoaded}>
-      {isLoaded && <GithubCalendar 
-                      username='Sander-G' 
-                      transformData={selectTimeSpan} 
-                      transformTotalCount='false' 
-                      color='Hotpink' 
-                      showWeekdayLabels='true' 
-                      hideColorLegend={screenWidth < 768} 
-
-                      />}
+      {isLoaded && (
+        <GithubCalendar
+          username='Sander-G'
+          transformTotalCount='false'
+          color='Hotpink'
+          showWeekdayLabels='true'
+          hideColorLegend={screenWidth < 768}
+          transformData={selectTimeSpan}
+        />
+      )}
     </Wrapper>
   );
 }
@@ -57,5 +58,5 @@ function Heatmap() {
 export default Heatmap;
 
 const Wrapper = styled.div`
-
+  color: currentColor;
 `;
