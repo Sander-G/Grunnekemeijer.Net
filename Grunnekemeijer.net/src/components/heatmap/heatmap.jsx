@@ -31,9 +31,10 @@ function Heatmap() {
     return contributions.filter((day) => {
       const date = new Date(day.date);
 
-      return date >= startDate && date <= new Date();
+      return date >= startDate && date <= new Date() && !day.total; 
     });
   };
+
 
   useEffect(() => {
     setIsLoaded(true);
@@ -41,16 +42,7 @@ function Heatmap() {
 
   return (
     <Wrapper isLoaded={isLoaded}>
-      {isLoaded && (
-        <GithubCalendar
-          username='Sander-G'
-          transformTotalCount='false'
-          color='Hotpink'
-          showWeekdayLabels='true'
-          hideColorLegend={screenWidth < 768}
-          transformData={selectTimeSpan}
-        />
-      )}
+      {isLoaded && <GithubCalendar username='Sander-G' color='Hotpink' showWeekdayLabels='true' hideColorLegend={screenWidth < 768} transformData={selectTimeSpan} transformTotalCount='false' />}
     </Wrapper>
   );
 }
@@ -59,4 +51,5 @@ export default Heatmap;
 
 const Wrapper = styled.div`
   color: currentColor;
+  margin-top: 2rem;
 `;
