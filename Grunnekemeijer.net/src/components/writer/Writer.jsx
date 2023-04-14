@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useRef, useContext } from 'react';
 import Typed from 'react-typed';
 import { Container, Button, ButtonWrapper, Row, HeatmapLink, HeatmapWrapper, LastRow } from './Writer.styled';
-import Heatmap from '../heatmap/Heatmap';
-import TimeDifference from './TimeDifference';
+import TimeDifference from '../timeDifference/TimeDifference';
 import { MuteContext } from '../../contexts/MuteContext';
+import Heatmap from '../heatmap/Heatmap';
 
 export default function Writer() {
   const { sounds, isMuted } = useContext(MuteContext);
@@ -85,15 +85,7 @@ export default function Writer() {
             </ButtonWrapper>
           )}
           <Row>
-            <Typed
-              strings={[lines[0]]}
-              typeSpeed={20}
-              loop={false}
-              fadeOut={false}
-              showCursor={false}
-              ref={typedRef}
-              startDelay={500}
-            />
+            <Typed strings={[lines[0]]} typeSpeed={20} loop={false} fadeOut={false} showCursor={false} ref={typedRef} startDelay={500} />
           </Row>
           <Typed strings={[lines[1]]} typeSpeed={20} loop={false} shuffle={false} startDelay={18000} showCursor={false} />
           <LastRow>

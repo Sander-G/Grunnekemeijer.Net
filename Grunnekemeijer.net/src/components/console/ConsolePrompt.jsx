@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { Wrapper, PromptWrapper } from './TypeWriter.styled';
+import { Wrapper, PromptWrapper } from './ConsolePrompt.styled';
 import { useVisitCounter } from '../../hooks/useVisitCounter';
 import Typed from 'react-typed';
-import Writer from './Writer';
+import Writer from '../writer/Writer';
 
-export function TypeWriter() {
+export function ConsolePrompt() {
   const [currentDate, setCurrentDate] = useState('');
   const [lastVisit, setLastVisit] = useState('');
   const [ip, setIp] = useState('');

@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react'
-import { TypeWriter } from '../components/typewriter/TypeWriter'
+import {ConsolePrompt} from '../components/console/ConsolePrompt'
 
 
 
@@ -20,7 +20,7 @@ export default function Info() {
     return (
         <>
       
-        <TypeWriter />
+        <ConsolePrompt />
        
     
 

@@ -42,7 +42,16 @@ function Heatmap() {
 
   return (
     <Wrapper isLoaded={isLoaded}>
-      {isLoaded && <GithubCalendar username='Sander-G' color='Hotpink' showWeekdayLabels='true' hideColorLegend={screenWidth < 768} transformData={selectTimeSpan} transformTotalCount='false' />}
+      {isLoaded && (
+        <GithubCalendar
+          username='Sander-G'
+          color='Hotpink'
+          showWeekdayLabels='true'
+          hideColorLegend={screenWidth < 768}
+          transformData={selectTimeSpan}
+          hideTotalCount={true}
+        />
+      )}
     </Wrapper>
   );
 }
