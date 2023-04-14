@@ -1,7 +1,7 @@
-/* eslint-disable react/no-unescaped-entities */
-import React, {useEffect} from 'react';
-import { StyledImage, Container, ImageWrapper, Italics, Text, TextShadow } from './Portfolio.styled';
 
+import React, {useEffect, useContext} from 'react';
+import { StyledImage, Container, ImageWrapper, Italics, Text, TextShadow } from './Portfolio.styled';
+import { MuteContext } from '../contexts/MuteContext';
 
 const data = [
   {
@@ -10,13 +10,13 @@ const data = [
     image: '../assets/pix/transformerindex.png',
     text: (
       <>
-        Na wat inleidende oefeningen met sassy 
+        Na wat inleidende oefeningen met sassy
         <a href='https://css-eindopdr-final.netlify.app/' target='_blank' rel='noopener noreferrer'>
           <TextShadow> css </TextShadow>
         </a>
-        was de Transformer index een van de eerste JavaScript apps die ik tijdens de TechGrounds opleiding heb gemaakt. Het doel van de opdracht was het vinden van een geschikte database met RESTful API
-        data, deze data op te halen en gestructureerd weer te geven in een zelfgemaakte index. Een veelgebruikte database hiervoor is de Pokédex API, maar omdat ik kind ben van een eerdere generatie
-        viel de keuze op een Transformer Index (
+        was de Transformer index een van de eerste JavaScript apps die ik tijdens de TechGrounds opleiding heb gemaakt. Het doel van de opdracht was het vinden van een geschikte database met RESTful
+        API data, deze data op te halen en gestructureerd weer te geven in een zelfgemaakte index. Een veelgebruikte database hiervoor is de Pokédex API, maar omdat ik kind ben van een eerdere
+        generatie viel de keuze op een Transformer Index (
         <a href='https://github.com/crxssed7/transformers-api' target='_blank' rel='noopener noreferrer'>
           <TextShadow>deze</TextShadow>
         </a>
@@ -43,7 +43,7 @@ const data = [
         vervolgens het weer & zevendaagse voorspelling voor de gezochte locatie. Nog niet geheel responsive maar extra trots op de windvaan met kloppende windrichting. Hier de gedeployde versie van de
         App:
         <a href='https://sander-g.github.io/WeatherApp/' target='_blank' rel='noopener noreferrer'>
-          <TextShadow> Piet's Weerbericht</TextShadow>
+          <TextShadow> Piets Weerbericht</TextShadow>
         </a>
         .
       </>
@@ -55,10 +55,11 @@ const data = [
     image: '../assets/pix/skippyskateboards.png',
     text: (
       <>
-        Skippy's vintage skateboards. Create React App project, eerste volledig zelf ontwikkelde webshop met verschillende product categorieën, winkelwagentje, user account login, state management en
-        Routing. In enkele weken gebouwd vanaf user stories en wireframe tot gedeployde webshop. De webshop maakt gebruik van React Router voor pagina Routing, user account/login met Google Firebase
-        (inmiddels verwijderd), state management met Redux toolkit, Express server backend voor de product database. Styling is gedaan met styled-components, de pagina is responsive en de producten
-        uit de database worden gefetched als de pagina voor het eerst wordt geladen. Winkelwagentje en favoriete producten worden in local storage bewaard. Het product database JSON bestand wordt
+        Skippy&apos;s vintage skateboards. Create React App project, eerste volledig zelf ontwikkelde webshop met verschillende product categorieën, winkelwagentje, user account login, state
+        management en Routing. In enkele weken gebouwd vanaf user stories en wireframe tot gedeployde webshop. De webshop maakt gebruik van React Router voor pagina Routing, user account/login met
+        Google Firebase (inmiddels verwijderd), state management met Redux toolkit, Express server backend voor de product database. Styling is gedaan met styled-components, de pagina is responsive en
+        de producten uit de database worden gefetched als de pagina voor het eerst wordt geladen. Winkelwagentje en favoriete producten worden in local storage bewaard. Het product database JSON
+        bestand wordt
         <a href='https://skippysexpressserver.netlify.app/.netlify/functions/api/products' target='_blank' rel='noopener noreferrer'>
           <TextShadow> gehost </TextShadow>
         </a>
@@ -99,9 +100,9 @@ const data = [
     text: (
       <>
         De LottaYoga website heb ik voor Lotte (mijn vrouw) gemaakt met HTML, (Sass) CSS en een klein beetje JavaScript voor de hamburger & nav menu, een modal en mail/telefoon obfuscatie. De site is
-        responsive en bestaat uit fullpage achtergrondfoto's van Lotte in verschillende yoga houdingen tegen een blauwe lucht. De foto's worden in verschillende resoluties aangeboden op basis van
-        scherm grootte om lange laadtijden te voorkomen. De verschillende secties van de site heeft een achtergrond parallax effect dat (eerst niet.. maar nu wel) ook werkt in safari mobile. Voor SEO
-        doeleinden heb ik o.a. Structured Data en een sitemap toegevoegd. Woon je in Enschede en overweeg je yoga te gaan doen? Neem contact op met Lotte!
+        responsive en bestaat uit fullpage achtergrondfoto&apos;s van Lotte in verschillende yoga houdingen tegen een blauwe lucht. De foto&apos;s worden in verschillende resoluties aangeboden op
+        basis van scherm grootte om lange laadtijden te voorkomen. De verschillende secties van de site heeft een achtergrond parallax effect dat (eerst niet.. maar nu wel) ook werkt in safari mobile.
+        Voor SEO doeleinden heb ik o.a. Structured Data en een sitemap toegevoegd. Woon je in Enschede en overweeg je yoga te gaan doen? Neem contact op met Lotte!
         <a href='https://lottayoga.nl' target='_blank' rel='noopener noreferrer'>
           <TextShadow> https://lottayoga.nl</TextShadow>
         </a>
@@ -115,7 +116,7 @@ const data = [
 
 
 export default function Portfolio() {
-
+ const { sounds, isMuted } = useContext(MuteContext);
    useEffect(() => {
      document.removeEventListener('touchmove', preventDefault);
    }, []);
@@ -131,11 +132,47 @@ export default function Portfolio() {
         {data.map((item) => (
           <React.Fragment key={item.id}>
             <ImageWrapper>
-              <a href={item.link} target='_blank' rel='noopener noreferrer'>
+              <a
+                href={item.link}
+                target='_blank'
+                rel='noopener noreferrer'
+                onClick={() => {
+                  !isMuted && sounds[1].volume(0.1);
+                  !isMuted && sounds[1].play();
+                }}
+                onMouseEnter={() => {
+                  !isMuted && sounds[0].volume(0.1);
+                  !isMuted && sounds[0].play();
+                }}
+                onMouseLeave={() => {
+                  sounds[0].stop();
+                }}
+              >
                 <StyledImage src={item.image} alt={`Image ${item.id}`} />
               </a>
             </ImageWrapper>
-            <Text index={item.id}>{item.text}</Text>
+            <Text index={item.id}>
+              {React.cloneElement(item.text, {
+                children: React.Children.map(item.text.props.children, (child) => {
+                  if (child.type === 'a') {
+                    return React.cloneElement(child, {
+                      onClick: () => {
+                        !isMuted && sounds[1].volume(0.1);
+                        !isMuted && sounds[1].play();
+                      },
+                      onMouseEnter: () => {
+                        !isMuted && sounds[0].volume(0.1);
+                        !isMuted && sounds[0].play();
+                      },
+                      onMouseLeave: () => {
+                        sounds[0].stop();
+                      },
+                    });
+                  }
+                  return child;
+                }),
+              })}
+            </Text>
           </React.Fragment>
         ))}
       </Container>

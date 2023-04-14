@@ -6,9 +6,7 @@ export const Italics = styled.span`
 
 export const TextShadow = styled.span`
   color: hotpink;
-  &:hover {
-    color: skyblue;
-  }
+  
 `;
 
 export const Container = styled.div`

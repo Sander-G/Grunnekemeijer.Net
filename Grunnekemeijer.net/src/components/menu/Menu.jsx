@@ -9,11 +9,11 @@ export function Menu() {
       <Container>
         <NavLink
           onClick={() => {
-            if (!isMuted) {
-              sounds[1].play();
-            }
+            !isMuted && sounds[1].volume(0.1);
+            !isMuted && sounds[1].play();
           }}
           onMouseEnter={() => {
+            !isMuted && sounds[0].volume(0.1);
             !isMuted && sounds[0].play();
           }}
           onMouseLeave={() => {
@@ -26,11 +26,11 @@ export function Menu() {
         </NavLink>
         <NavLink
           onClick={() => {
-            if (!isMuted) {
-              sounds[1].play();
-            }
+            !isMuted && sounds[1].volume(0.1);
+            !isMuted && sounds[1].play();
           }}
           onMouseEnter={() => {
+            !isMuted && sounds[0].volume(0.1);
             !isMuted && sounds[0].play();
           }}
           onMouseLeave={() => {
@@ -43,11 +43,11 @@ export function Menu() {
         </NavLink>
         <NavLink
           onClick={() => {
-            if (!isMuted) {
-              sounds[1].play();
-            }
+            !isMuted && sounds[1].volume(0.1);
+            !isMuted && sounds[1].play();
           }}
           onMouseEnter={() => {
+            !isMuted && sounds[0].volume(0.1);
             !isMuted && sounds[0].play();
           }}
           onMouseLeave={() => {

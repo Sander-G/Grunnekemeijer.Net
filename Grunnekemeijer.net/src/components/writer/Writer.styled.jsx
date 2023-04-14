@@ -25,6 +25,7 @@ export const Button = styled.button`
   color: currentColor;
   font-family: clacon2;
   background-color: transparent;
+  cursor:pointer;
   padding: 0.3rem;
   border: 0.5px solid hotpink;
 `;
