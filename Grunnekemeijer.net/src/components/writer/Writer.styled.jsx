@@ -57,8 +57,9 @@ export const HeatmapLink = styled.a`
 `;
 
 export const HeatmapWrapper = styled.div`
-  position: sticky;
+  position: relative;
   left: 50%;
-  max-width: 50vw;
+  max-width: 50%;
   transform: translateX(-50%);
+  padding-bottom: 2rem;
 `;

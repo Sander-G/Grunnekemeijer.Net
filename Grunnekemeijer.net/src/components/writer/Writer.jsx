@@ -81,20 +81,22 @@ export default function Writer() {
         <Container>
           {typingCompleted ? null : (
             <ButtonWrapper show={showButton}>
-              <Button 
+              <Button
                 onClick={() => {
-                handleInstantType();
-                !isMuted && sounds[1].volume(0.1);
-                !isMuted && sounds[1].play();
+                  handleInstantType();
+                  !isMuted && sounds[1].volume(0.1);
+                  !isMuted && sounds[1].play();
                 }}
                 onMouseEnter={() => {
-                !isMuted && sounds[0].volume(0.1);
-                !isMuted && sounds[0].play();
+                  !isMuted && sounds[0].volume(0.1);
+                  !isMuted && sounds[0].play();
                 }}
                 onMouseLeave={() => {
-                sounds[0].stop();
+                  sounds[0].stop();
                 }}
-                >Cut to the chase</Button>
+              >
+                Cut to the chase
+              </Button>
             </ButtonWrapper>
           )}
           <Row>
@@ -119,28 +121,27 @@ export default function Writer() {
           </LastRow>
         </Container>
       )}
-      <ButtonWrapper show={showButton}>
-        <HeatmapWrapper>
-          <HeatmapLink
-            href={githubProfileUrl}
-            target='_blank'
-            rel='noopener noreferrer'
-            onMouseEnter={() => {
-              !isMuted && sounds[0].volume(0.1);
-              !isMuted && sounds[0].play();
-            }}
-            onMouseLeave={() => {
-              sounds[0].stop();
-            }}
-             onClick={() => {
-                !isMuted && sounds[1].volume(0.1);
-                !isMuted && sounds[1].play();
-                }}
-          >
-            <Heatmap />
-          </HeatmapLink>
-        </HeatmapWrapper>
-      </ButtonWrapper>
+
+      <HeatmapWrapper show={showButton}>
+        <HeatmapLink
+          href={githubProfileUrl}
+          target='_blank'
+          rel='noopener noreferrer'
+          onMouseEnter={() => {
+            !isMuted && sounds[0].volume(0.1);
+            !isMuted && sounds[0].play();
+          }}
+          onMouseLeave={() => {
+            sounds[0].stop();
+          }}
+          onClick={() => {
+            !isMuted && sounds[1].volume(0.1);
+            !isMuted && sounds[1].play();
+          }}
+        >
+          <Heatmap />
+        </HeatmapLink>
+      </HeatmapWrapper>
     </>
   );
 }
