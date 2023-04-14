@@ -7,9 +7,9 @@ import Heatmap from '../heatmap/Heatmap';
 
 export default function Writer() {
   const { sounds, isMuted } = useContext(MuteContext);
-  const { years, months, weeks, days, hours } = TimeDifference();
+  const { years, months, weeks, days } = TimeDifference();
   const [lines, setLines] = useState([
-    `Welkom op de geheel vernieuwde Grunnekemeijer.net website. Sinds jaar en dag domein voor mijn E-mail, tegenwoordig ook voor mijn developer portfolio. In 2022 heb ik mijn langgekoesterde wens om over te stappen naar een carrière in softwareontwikkeling waargemaakt. In mei 2022 heb ik mij gekwalificeerd voor het volgen van een developer opleiding bij TechGrounds in Amsterdam en heb ik mijn kennis van front-end technologie in een intensief half jaar flink verbeterd.`,
+    `|| April '23 || Welkom op de geheel vernieuwde Grunnekemeijer.net website. Sinds jaar en dag domein voor mijn E-mail, tegenwoordig ook voor mijn developer portfolio. In 2022 heb ik mijn langgekoesterde wens om over te stappen naar een carrière in softwareontwikkeling waargemaakt. In mei 2022 ben ik begonnen met het front-end programma van de TechGrounds Academy in Amsterdam en heb ik mijn kennis van front-end technologie in een intensief half jaar flink verbeterd.`,
     '',
     '',
   ]);
@@ -28,8 +28,8 @@ export default function Writer() {
       timeoutIdsRef.current.push(
         setTimeout(() => {
           setLines([
-            'Welkom op de geheel vernieuwde Grunnekemeijer.net website. Sinds jaar en dag domein voor mijn E-mail, tegenwoordig ook voor mijn developer portfolio. In 2022 heb ik mijn langgekoesterde wens om over te stappen naar een carrière in softwareontwikkeling waargemaakt. In mei 2022 heb ik mij gekwalificeerd voor het volgen van een developer opleiding bij TechGrounds in Amsterdam en heb ik mijn kennis van front-end technologie in een intensief half jaar flink verbeterd.',
-            'Mijn vaardigheden omvatten het bouwen van webapplicaties met HTML, CSS en JavaScript, evenals het werken met React, Styled Components, React Router en Redux. Ik ben bekend met Git en Jira en ben comfortabel met het werken in een Scrum/Agile teamomgeving. Ik hou van interface sounds, darkmode (vandaar de zaklamp..) en minimalistisch design. Op dit moment ben ik bezig met het leren van TypeScript.',
+            '|| April \'23 || - Welkom op de geheel vernieuwde Grunnekemeijer.net website. Sinds jaar en dag domein voor mijn E-mail, tegenwoordig ook voor mijn developer portfolio. In 2022 heb ik mijn langgekoesterde wens om over te stappen naar een carrière in softwareontwikkeling waargemaakt. In mei 2022 ben ik begonnen met het front-end programma van de TechGrounds Academy in Amsterdam en heb ik mijn kennis van front-end technologie in een intensief half jaar flink verbeterd.',
+            'Mijn vaardigheden omvatten het bouwen van webapplicaties met HTML, CSS en JavaScript, evenals het werken met React, Styled Components, React Router en Redux. Ik ben bekend met Git en Jira en ben comfortabel met het werken in een Scrum/Agile teamomgeving. Ik hou van interface sounds, darkmode (vandaar de zaklamp..) en minimalistisch design. Op dit moment ben ik me aan het verdiepen in TypeScript. Ik ben op dit moment beschikbaar voor zowel een junior developer functie als freelance webdesign. ',
             '',
           ]);
         }, 4000)
@@ -37,9 +37,9 @@ export default function Writer() {
       timeoutIdsRef.current.push(
         setTimeout(() => {
           setLines([
-            'Welkom op de geheel vernieuwde Grunnekemeijer.net website. Sinds jaar en dag domein voor mijn E-mail, tegenwoordig ook voor mijn developer portfolio. In 2022 heb ik mijn langgekoesterde wens om over te stappen naar een carrière in softwareontwikkeling waargemaakt. In mei 2022 heb ik mij gekwalificeerd voor het volgen van een developer opleiding bij TechGrounds in Amsterdam en heb ik mijn kennis van front-end technologie in een intensief half jaar flink verbeterd.',
-            'Mijn vaardigheden omvatten het bouwen van webapplicaties met HTML, CSS en JavaScript, evenals het werken met React, Styled Components, React Router en Redux. Ik ben bekend met Git en Jira en ben comfortabel met het werken in een Scrum/Agile teamomgeving. Ik hou van interface sounds, darkmode (vandaar de zaklamp..) en minimalistisch design. Op dit moment ben ik bezig met het leren van TypeScript.',
-            `Naast mijn passie voor webdevelopment, vind ik het leuk om te klussen aan ons huis. Ik ben ook geïnteresseerd in smarthome technologie en het bevrijden van apparaten uit de cloud. Als trotse vader van mijn ${years} jaar, ${months} maanden, ${weeks} weken, ${days} dagen en ${hours} uur oude dochtertje, geniet ik van de tijd die we samen doorbrengen. In mijn vrije tijd vind ik het heerlijk om op de racefiets te stappen en in de zomer speel ik graag cricket. -Sander.`,
+            '|| April \'23 || - Welkom op de geheel vernieuwde Grunnekemeijer.net website. Sinds jaar en dag domein voor mijn E-mail, tegenwoordig ook voor mijn developer portfolio. In 2022 heb ik mijn langgekoesterde wens om over te stappen naar een carrière in softwareontwikkeling waargemaakt. In mei 2022 ben ik begonnen met het front-end programma van de TechGrounds Academy in Amsterdam en heb ik mijn kennis van front-end technologie in een intensief half jaar flink verbeterd.',
+            'Mijn vaardigheden omvatten het bouwen van webapplicaties met HTML, CSS en JavaScript, evenals het werken met React, Styled Components, React Router en Redux. Ik ben bekend met Git en Jira en ben comfortabel met het werken in een Scrum/Agile teamomgeving. Ik hou van interface sounds, darkmode (vandaar de zaklamp..) en minimalistisch design. Op dit moment ben ik me aan het verdiepen in TypeScript. Ik ben op dit moment beschikbaar voor zowel een junior developer functie als freelance webdesign. ',
+            `Naast mijn passie voor webdevelopment, vind ik het leuk om te klussen aan ons huis. Ik ben ook geïnteresseerd in smarthome technologie en het bevrijden van apparaten uit de cloud. Als trotse vader van mijn ${years} jaar, ${months} maanden, ${weeks} weken, ${days} dagen oude dochtertje, geniet ik van de tijd die we samen doorbrengen. In mijn vrije tijd vind ik het heerlijk om op de racefiets te stappen en in de zomer speel ik graag cricket. - Sander.`,
           ]);
         }, 10000)
       );
@@ -50,9 +50,9 @@ export default function Writer() {
     setInstantType(true);
     setShowButton(false);
     setLines([
-      `Welkom op de geheel vernieuwde Grunnekemeijer.net website. Sinds jaar en dag domein voor mijn E-mail, tegenwoordig ook voor mijn developer portfolio. In 2022 heb ik mijn langgekoesterde wens om over te stappen naar een carrière in softwareontwikkeling waargemaakt. In mei 2022 heb ik mij gekwalificeerd voor het volgen van een developer opleiding bij TechGrounds in Amsterdam en heb ik mijn kennis van front-end technologie in een intensief half jaar flink verbeterd.`,
-      'Mijn vaardigheden omvatten het bouwen van webapplicaties met HTML, CSS en JavaScript, evenals het werken met React, Styled Components, React Router en Redux. Ik ben bekend met Git en Jira en ben comfortabel met het werken in een Scrum/Agile teamomgeving. Ik hou van interface sounds, darkmode (vandaar de zaklamp..) en minimalistisch design. Op dit moment ben ik bezig met het leren van TypeScript.',
-      `Naast mijn passie voor webdevelopment, vind ik het leuk om te klussen aan ons huis. Ik ben ook geïnteresseerd in smarthome technologie en het bevrijden van apparaten uit de cloud. Als trotse vader van mijn ${years} jaar, ${months} maanden, ${weeks} weken, ${days} dagen en ${hours} uur oude dochtertje, geniet ik van de tijd die we samen doorbrengen. In mijn vrije tijd vind ik het heerlijk om op de racefiets te stappen en in de zomer speel ik graag cricket. -Sander.`,
+      `|| April '23 || - Welkom op de geheel vernieuwde Grunnekemeijer.net website. Sinds jaar en dag domein voor mijn E-mail, tegenwoordig ook voor mijn developer portfolio. In 2022 heb ik mijn langgekoesterde wens om over te stappen naar een carrière in softwareontwikkeling waargemaakt. In mei 2022 ben ik begonnen met het front-end programma van de TechGrounds Academy in Amsterdam en heb ik mijn kennis van front-end technologie in een intensief half jaar flink verbeterd.`,
+      'Mijn vaardigheden omvatten het bouwen van webapplicaties met HTML, CSS en JavaScript, evenals het werken met React, Styled Components, React Router en Redux. Ik ben bekend met Git en Jira en ben comfortabel met het werken in een Scrum/Agile teamomgeving. Ik hou van interface sounds, darkmode (vandaar de zaklamp..) en minimalistisch design. Op dit moment ben ik me aan het verdiepen in TypeScript. Ik ben op dit moment beschikbaar voor zowel een junior developer functie als freelance webdesign. ',
+      `Naast mijn passie voor webdevelopment, vind ik het leuk om te klussen aan ons huis. Ik ben ook geïnteresseerd in smarthome technologie en het bevrijden van apparaten uit de cloud. Als trotse vader van mijn ${years} jaar, ${months} maanden, ${weeks} weken, ${days} dagen oude dochtertje, geniet ik van de tijd die we samen doorbrengen. In mijn vrije tijd vind ik het heerlijk om op de racefiets te stappen en in de zomer speel ik graag cricket. - Sander.`,
     ]);
     timeoutIdsRef.current.forEach(clearTimeout);
   };

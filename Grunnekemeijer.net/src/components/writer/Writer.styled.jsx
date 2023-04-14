@@ -11,9 +11,15 @@ export const Container = styled.div`
   line-height: 1;
   margin: 0rem 1rem 0rem 1rem;
   user-select: none;
-max-height: 90vh;
-text-align: left;
+  max-height: 90vh;
+  text-align: left;
 
+  @media screen and (min-width: 768px) and (max-width: 1024px) {
+    padding-bottom: 3rem;
+  }
+  @media screen and (min-width: 1025px) {
+    padding-bottom: 6rem;
+  }
 `;
 
 export const Button = styled.button`
@@ -48,7 +54,6 @@ export const Row = styled.div`
 
 export const LastRow = styled.div`
   display: inline-block;
-  margin-bottom: 2rem;
   margin-top: 1rem;
 `;
 
@@ -59,7 +64,10 @@ export const HeatmapLink = styled.a`
 export const HeatmapWrapper = styled.div`
   position: relative;
   left: 50%;
-  max-width: 50%;
+  max-width: 90vw;
   transform: translateX(-50%);
   padding-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;

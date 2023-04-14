@@ -10,7 +10,7 @@ const data = [
     image: '../assets/pix/transformerindex.png',
     text: (
       <>
-        Na wat inleidende oefeningen met sassy
+        Na wat inleidende oefening met HTML en sass
         <a href='https://css-eindopdr-final.netlify.app/' target='_blank' rel='noopener noreferrer'>
           <TextShadow> css </TextShadow>
         </a>
