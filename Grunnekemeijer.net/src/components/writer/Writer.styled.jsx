@@ -41,7 +41,7 @@ export const fadeIn = keyframes`
   100% { opacity: 1 }
 `;
 
-export const ButtonWrapper = styled(Container)`
+export const ButtonWrapper = styled.div`
   animation: ${fadeIn} 2500ms ease-in-out;
   transition: opacity 2500ms ease-in-out; 
 `;
@@ -50,6 +50,7 @@ export const Row = styled.div`
     display: flex;
     margin-bottom: 1rem;
     margin-top: 1rem;
+    text-align: left;
 `
 
 export const LastRow = styled.div`
@@ -70,4 +71,6 @@ export const HeatmapWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  animation: ${fadeIn} 4500ms ease-in-out;
+  transition: opacity 4500ms ease-in-out;
 `;
