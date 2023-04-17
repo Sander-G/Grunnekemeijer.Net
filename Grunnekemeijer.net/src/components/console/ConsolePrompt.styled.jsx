@@ -8,7 +8,7 @@ export const Wrapper = styled.div`
   align-items: baseline;
   justify-content: flex-start;
   text-align: left;
-
+  overflow-y: scroll;
   letter-spacing: 0.8;
 
   & .terminal {

@@ -14,13 +14,14 @@ const App = () => {
 
   useEffect(() => {
     const { pathname } = location;
-    const noScrolling = pathname === '/' || pathname === '/Home' || pathname === 'Info';
+    const noScrolling = pathname === '/Home' ;
     document.body.style.overflow = noScrolling ? 'hidden' : 'auto';
     document.body.style.overscrollBehavior = noScrolling ? 'none' : 'auto';
     document.body.style.position = noScrolling ? 'fixed' : 'static';
     document.body.style.height = noScrolling ? '100vh' : 'auto';
     document.body.style.touchAction = noScrolling ? 'none' : 'auto';
     document.body.style.webkitOverflowScrolling = noScrolling ? 'touch' : 'auto';
+  
   }, [location]);
 
   return (
