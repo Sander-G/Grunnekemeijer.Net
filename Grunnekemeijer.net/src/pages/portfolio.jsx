@@ -6,7 +6,7 @@ import { MuteContext } from '../contexts/MuteContext';
 const data = [
   {
     id: 1,
-    link: '../../JSeindopdracht/JSON_Cards/index.html',
+    link: 'https://jseindopdrachtsanderg.netlify.app/json_cards/',
     image: '../assets/pix/transformerindex.png',
     text: (
       <>
@@ -22,7 +22,7 @@ const data = [
         </a>
         ). Na enig worstelen met endpoints die niet werkten zoals verwacht heb ik de database JSON data gekopieerd en geprobeerd deze data lokaal te fetchen
         <Italics>- introductie met CORS errors.</Italics> Het resultaat is een pagina met 1st Gen. Transformers gemapped vanuit een JSON bestand, met een modal voor grotere weergave.
-        <a href='../../JSeindopdracht/JSON_Cards/index.html' target='_blank' rel='noopener noreferrer'>
+        <a href='https://jseindopdrachtsanderg.netlify.app/json_cards/' target='_blank' rel='noopener noreferrer'>
           <TextShadow> Hier </TextShadow>
         </a>
         een live versie van de Transformer Index en een paar andere Javascript opdrachten die ik heb gemaakt.
