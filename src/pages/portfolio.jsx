@@ -2,6 +2,7 @@
 import React, {useEffect, useContext} from 'react';
 import { StyledImage, Container, ImageWrapper, Italics, Text, TextShadow } from './Portfolio.styled';
 import { MuteContext } from '../contexts/MuteContext';
+import { useTouchEvents } from '../hooks/useTouchEvents'
 
 const data = [
   {
@@ -117,6 +118,21 @@ const data = [
 
 export default function Portfolio() {
  const { sounds, isMuted } = useContext(MuteContext);
+  const { handleMouseEnter, handleMouseLeave } = useTouchEvents();
+ const handleClick = () => {
+   !isMuted && sounds[1].volume(0.1);
+   !isMuted && sounds[1].play();
+ };
+
+ const handleMouseEnterLocal = handleMouseEnter(() => {
+   !isMuted && sounds[0].volume(0.1);
+   !isMuted && sounds[0].play();
+ });
+
+ const handleMouseLeaveLocal = handleMouseLeave(() => {
+   sounds[0].stop();
+ });
+
    useEffect(() => {
      document.removeEventListener('touchmove', preventDefault);
    }, []);
@@ -132,40 +148,24 @@ export default function Portfolio() {
         {data.map((item) => (
           <React.Fragment key={item.id}>
             <ImageWrapper>
-              <a
-                href={item.link}
-                target='_blank'
-                rel='noopener noreferrer'
-                onClick={() => {
-                  !isMuted && sounds[1].volume(0.1);
-                  !isMuted && sounds[1].play();
-                }}
-                onMouseEnter={() => {
-                  !isMuted && sounds[0].volume(0.1);
-                  !isMuted && sounds[0].play();
-                }}
-                onMouseLeave={() => {
-                  sounds[0].stop();
-                }}
-              >
+              <a href={item.link} target='_blank' rel='noopener noreferrer' onClick={handleClick} onMouseEnter={handleMouseEnterLocal} onMouseLeave={handleMouseLeaveLocal}>
                 <StyledImage src={item.image} alt={`Image ${item.id}`} />
               </a>
             </ImageWrapper>
-            <Text index={item.id}>
+            <Text index={item.id} >
+              
               {React.cloneElement(item.text, {
                 children: React.Children.map(item.text.props.children, (child) => {
                   if (child.type === 'a') {
                     return React.cloneElement(child, {
                       onClick: () => {
-                        !isMuted && sounds[1].volume(0.1);
-                        !isMuted && sounds[1].play();
+                        handleClick;
                       },
                       onMouseEnter: () => {
-                        !isMuted && sounds[0].volume(0.1);
-                        !isMuted && sounds[0].play();
+                        handleMouseEnterLocal;
                       },
                       onMouseLeave: () => {
-                        sounds[0].stop();
+                        handleMouseLeaveLocal;
                       },
                     });
                   }

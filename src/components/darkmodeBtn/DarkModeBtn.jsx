@@ -2,27 +2,32 @@ import React, { useContext } from 'react';
 import { DmButton } from './DarkModeBtn.styled';
 import { MuteContext } from '../../contexts/MuteContext';
 import { DarkModeContext } from '../../contexts/DarkModeContext';
+import { useTouchEvents } from '../../hooks/useTouchEvents';
 
 export default function DarkModeBtn() {
   const { sounds, isMuted } = useContext(MuteContext);
   const { darkMode, handleToggle } = useContext(DarkModeContext);
+  const { handleMouseEnter, handleMouseLeave } = useTouchEvents();
+
+  const handleClick = () => {
+    handleToggle();
+    !isMuted && sounds[1].volume(0.1);
+    !isMuted && sounds[1].play();
+  };
+
+  const handleMouseEnterLocal = handleMouseEnter(() => {
+    !isMuted && sounds[0].volume(0.1);
+    !isMuted && sounds[0].play();
+  });
+
+  const handleMouseLeaveLocal = handleMouseLeave(() => {
+    sounds[0].stop();
+  });
+
 
   return (
     <>
-      <DmButton
-        onClick={() => {
-          handleToggle();
-          if (!isMuted) {
-            sounds[1].play();
-          }
-        }}
-        onMouseEnter={() => {
-          !isMuted && sounds[0].play();
-        }}
-        onMouseLeave={() => {
-          sounds[0].stop();
-        }}
-      >
+      <DmButton onClick={handleClick} onMouseEnter={handleMouseEnterLocal} onMouseLeave={handleMouseLeaveLocal}>
         {darkMode ? (
           <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' height='22' width='22' aria-labelledby='Darkmode uit' role='presentation'>
             <title lang='nl'>Darkmode uit</title>

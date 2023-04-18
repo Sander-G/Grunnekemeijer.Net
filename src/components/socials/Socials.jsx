@@ -2,24 +2,30 @@ import React, { useContext } from 'react';
 import EmailLink from '../mailTo/EmailLink';
 import { Container, EmailLinkStyled } from './Socials.styled';
 import { MuteContext } from '../../contexts/MuteContext';
+import { useTouchEvents } from '../../hooks/useTouchEvents';
 
 export default function Socials() {
   const { sounds, isMuted } = useContext(MuteContext);
+  const { handleMouseEnter, handleMouseLeave } = useTouchEvents();
+
+  const handleClick = () => {
+    !isMuted && sounds[1].volume(0.1);
+    !isMuted && sounds[1].play();
+  };
+
+  const handleMouseEnterLocal = handleMouseEnter(() => {
+    !isMuted && sounds[0].volume(0.1);
+    !isMuted && sounds[0].play();
+  });
+
+  const handleMouseLeaveLocal = handleMouseLeave(() => {
+    sounds[0].stop();
+  });
 
   return (
     <Container>
       <EmailLinkStyled
-        onMouseEnter={() => {
-          !isMuted && sounds[0].volume(0.1);
-          !isMuted && sounds[0].play();
-        }}
-        onMouseLeave={() => {
-          sounds[0].stop();
-        }}
-        onClick={() => {
-          !isMuted && sounds[1].volume(0.1);
-          !isMuted && sounds[1].play();
-        }}
+        onClick={handleClick} onMouseEnter={handleMouseEnterLocal} onMouseLeave={handleMouseLeaveLocal}
       >
         <EmailLink />
       </EmailLinkStyled>
@@ -27,17 +33,7 @@ export default function Socials() {
         href='https://github.com/Sander-G'
         target='_blank'
         rel='noopener noreferrer'
-        onMouseEnter={() => {
-          !isMuted && sounds[0].volume(0.1);
-          !isMuted && sounds[0].play();
-        }}
-        onMouseLeave={() => {
-          sounds[0].stop();
-        }}
-        onClick={() => {
-          !isMuted && sounds[1].volume(0.1);
-          !isMuted && sounds[1].play();
-        }}
+        onClick={handleClick} onMouseEnter={handleMouseEnterLocal} onMouseLeave={handleMouseLeaveLocal}
       >
         <svg stroke='currentColor' fill='currentColor' strokeWidth='0' viewBox='0 0 16 16' height='30px' width='30px' aria-labelledby='Sander&#39;s Github' role='presentation'>
           <title lang='nl'>Sander&#39;s Github</title>
@@ -49,17 +45,8 @@ export default function Socials() {
         href='https://www.linkedin.com/in/sander-grunnekemeijer'
         target='_blank'
         rel='noopener noreferrer'
-        onMouseEnter={() => {
-          !isMuted && sounds[0].volume(0.1);
-          !isMuted && sounds[0].play();
-        }}
-        onMouseLeave={() => {
-          sounds[0].stop();
-        }}
-        onClick={() => {
-          !isMuted && sounds[1].volume(0.1);
-          !isMuted && sounds[1].play();
-        }}
+         onClick={handleClick} onMouseEnter={handleMouseEnterLocal} onMouseLeave={handleMouseLeaveLocal}
+     
       >
         <svg stroke='currentColor' fill='currentColor' strokeWidth='0' viewBox='0 0 16 16' height='30px' width='30px' aria-labelledby='Sander&#39;s LinkedIn' role='presentation'>
           <title lang='nl'>Sander&#39;s LinkedIn</title>
@@ -71,17 +58,8 @@ export default function Socials() {
         href='https://www.instagram.com/sander_gr_'
         target='_blank'
         rel='noopener noreferrer'
-        onMouseEnter={() => {
-          !isMuted && sounds[0].volume(0.1);
-          !isMuted && sounds[0].play();
-        }}
-        onMouseLeave={() => {
-          sounds[0].stop();
-        }}
-        onClick={() => {
-          !isMuted && sounds[1].volume(0.1);
-          !isMuted && sounds[1].play();
-        }}
+         onClick={handleClick} onMouseEnter={handleMouseEnterLocal} onMouseLeave={handleMouseLeaveLocal}
+     
       >
         <svg
           stroke='currentColor'

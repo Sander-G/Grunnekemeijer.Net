@@ -1,28 +1,34 @@
 import React, { useContext } from 'react';
 import { MuteButton } from './muteBtn.styled';
 import { MuteContext } from '../../contexts/MuteContext';
+import { useTouchEvents } from '../../hooks/useTouchEvents';
 
 export default function MuteBtn() {
   const { isMuted, toggleMute, sounds } = useContext(MuteContext);
+  const { handleMouseEnter, handleMouseLeave } = useTouchEvents();
 
-  function handleClick() {
+  const handleClick = () => {
     toggleMute();
-  }
+    !isMuted && sounds[1].volume(0.1);
+    !isMuted && sounds[1].play();
+   
+  };
+
+  const handleMouseEnterLocal = handleMouseEnter(() => {
+    !isMuted && sounds[0].volume(0.1);
+    !isMuted && sounds[0].play();
+  });
+
+  const handleMouseLeaveLocal = handleMouseLeave(() => {
+    sounds[0].stop();
+  });
+
+
+  
 
   return (
     <>
-      <MuteButton
-        onClick={() => {
-          handleClick();
-          !isMuted && sounds[1].play();
-        }}
-        onMouseEnter={() => {
-          !isMuted && sounds[0].play();
-        }}
-        onMouseLeave={() => {
-          sounds[0].stop();
-        }}
-      >
+      <MuteButton onClick={handleClick} onMouseEnter={handleMouseEnterLocal} onMouseLeave={handleMouseLeaveLocal}>
         {isMuted ? (
           <svg stroke='currentColor' fill='currentColor' strokeWidth='0' viewBox='0 0 16 16' height='22px' width='22px' aria-labelledby='Geluid uit' xmlns='http://www.w3.org/2000/svg'>
             <title lang='nl'>Geluid aan</title>

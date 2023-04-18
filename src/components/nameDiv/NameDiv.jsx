@@ -97,11 +97,11 @@ export default function NameDiv() {
           sounds[3].play();
           sounds[3].loop(true);
         }
-        setHoveredLetter(true);
+        setHoveredLetter(null);
       }}
       onMouseLeave={() => {
         sounds[3].stop();
-        setHoveredLetter(null);
+        setHoveredLetter(false);
       }}
     >
       <G

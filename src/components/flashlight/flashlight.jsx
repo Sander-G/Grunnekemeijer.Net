@@ -2,12 +2,29 @@ import React, { useState, useEffect, useContext, useRef, useCallback } from 'rea
 import { motion, useMotionValue, useTransform } from 'framer-motion';
 import { FlashlightButton } from './Flashlight.styled';
 import { MuteContext } from '../../contexts/MuteContext';
+import { useTouchEvents } from '../../hooks/useTouchEvents';
 
 export default function Flashlight() {
   const { sounds, isMuted } = useContext(MuteContext);
+  const { handleMouseEnter, handleMouseLeave } = useTouchEvents();
+
+  const handleClick = () => {
+    !isMuted && sounds[1].volume(0.1);
+    !isMuted && sounds[1].play();
+    setIsOn(!isOn);
+  };
+
+  const handleMouseEnterLocal = handleMouseEnter(() => {
+    !isMuted && sounds[0].volume(0.1);
+    !isMuted && sounds[0].play();
+  });
+
+  const handleMouseLeaveLocal = handleMouseLeave(() => {
+    sounds[0].stop();
+  });
+
   const [isOn, setIsOn] = useState(false);
   const containerRef = useRef(null);
-
   const cursorX = useMotionValue();
   const cursorY = useMotionValue();
   const mapX = useTransform(cursorX, [0, containerRef.current?.width], [0, window.innerWidth]);
@@ -90,19 +107,7 @@ export default function Flashlight() {
   }, [handleDocumentTouchMove, isOn]);
   return (
     <>
-      <FlashlightButton
-        ref={containerRef}
-        onClick={() => {
-          setIsOn(!isOn);
-          !isMuted && sounds[1].play();
-        }}
-        onMouseEnter={() => {
-          !isMuted && sounds[0].play();
-        }}
-        onMouseLeave={() => {
-          sounds[0].stop();
-        }}
-      >
+      <FlashlightButton ref={containerRef} onClick={handleClick} onMouseEnter={handleMouseEnterLocal} onMouseLeave={handleMouseLeaveLocal}>
         {isOn ? (
           <svg fill='currentColor' height='22px' width='22px' aria-labelledby='Zaklamp uit' version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'>
             <title lang='nl'>Zaklamp uit</title>

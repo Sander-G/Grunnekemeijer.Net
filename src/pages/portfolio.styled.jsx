@@ -19,6 +19,7 @@ export const Container = styled.div`
   margin: 1rem;
   line-height: 1.1;
   user-select: none;
+  cursor: default;
 
 
   @media (max-width: 800px) {
@@ -59,6 +60,8 @@ export const Text = styled.p`
   grid-row: span 1;
   font-size: 17px;
   text-align: justify;
+  user-select: none;
+  -webkit-user-select: none;
   margin: 1rem 0.5rem 0rem 0rem;
   &:first-letter {
     float: left;
