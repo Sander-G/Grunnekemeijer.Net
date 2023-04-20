@@ -45,7 +45,7 @@ export default function Navbar() {
 
         <RightContainer>
           {menuActive && <Menu />}
-          <Button onClick={handleClick} onMouseEnter={handleMouseEnterLocal} onMouseLeave={handleMouseLeaveLocal}>
+          <Button aria-label='Menu Button' onClick={handleClick} onMouseEnter={handleMouseEnterLocal} onMouseLeave={handleMouseLeaveLocal}>
             <Hamburger />
           </Button>
         </RightContainer>

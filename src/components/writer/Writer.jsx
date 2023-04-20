@@ -114,6 +114,7 @@ export default function Writer() {
           {typingCompleted ? null : (
             <ButtonWrapper show={showButton}>
               <Button
+                aria-label='Cut to the Chase Button'
                 onClick={() => {
                   handleClick();
                   handleInstantType();
