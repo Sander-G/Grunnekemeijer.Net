@@ -26,26 +26,17 @@ export const LeftContainer = styled.div`
   flex-direction: row;
 
   & svg {
-    margin-right: 10px;
-
-    & last-child: {
+    margin-right: 1rem;
+    & last-child {
       margin-right: 0px;
     }
     @media screen and (max-width: 1024px) {
       scale: 0.9;
       margin-right: 10px;
-
-      & last-child: {
-        margin-right: 0px;
-      }
     }
     @media screen and (max-width: 400px) {
       scale: 0.8;
       margin-right: 3px;
-
-      & last-child: {
-        margin-right: 0px;
-      }
     }
   }
 `;

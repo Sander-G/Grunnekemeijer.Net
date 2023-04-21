@@ -4,11 +4,7 @@ import styled from 'styled-components';
 const StyledSvg = styled.svg`
   scale: 1.2;
   transition: color 0.3s ease-in-out;
-  stroke: #343434;
 
-  &:hover {
-    color: #525252;
-  }
 
   @media screen and (max-width: 1024px) {
     scale: 1;

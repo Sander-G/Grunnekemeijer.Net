@@ -27,13 +27,13 @@ export function Menu() {
   return (
     <>
       <Container>
-        <NavLink onClick={handleClick} onMouseEnter={handleMouseEnterMenu} onMouseLeave={handleMouseLeaveMenu} to='/Home' alt='Home'>
+        <NavLink onClick={handleClick} aria-label='menu item - Home Page' onMouseEnter={handleMouseEnterMenu} onMouseLeave={handleMouseLeaveMenu} to='/Home' alt='Home'>
           HOME
         </NavLink>
-        <NavLink onClick={handleClick} onMouseEnter={handleMouseEnterMenu} onMouseLeave={handleMouseLeaveMenu} to='/Info' alt='Info'>
+        <NavLink onClick={handleClick} aria-label='menu item - Info Page' onMouseEnter={handleMouseEnterMenu} onMouseLeave={handleMouseLeaveMenu} to='/Info' alt='Info'>
           INFO
         </NavLink>
-        <NavLink onClick={handleClick} onMouseEnter={handleMouseEnterMenu} onMouseLeave={handleMouseLeaveMenu} to='/Portfolio' alt='Portfolio'>
+        <NavLink onClick={handleClick} aria-label='menu item - Portfolio Page' onMouseEnter={handleMouseEnterMenu} onMouseLeave={handleMouseLeaveMenu} to='/Portfolio' alt='Portfolio'>
           PORTFOLIO
         </NavLink>
       </Container>

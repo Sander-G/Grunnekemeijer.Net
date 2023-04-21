@@ -22,7 +22,7 @@ export const Container = styled.div`
     fill: #343434;
     margin-inline: 1rem;
 
-    animation: ${shakeAnimation} 10s linear infinite;
+    animation: ${shakeAnimation} 7s linear infinite;
   filter: drop-shadow(-1px 0px hsl(330, 70%, 70%)) drop-shadow(0px 1px hsl(330, 70%, 70%)) drop-shadow(1px 0px hsl(330, 70%, 70%)) drop-shadow(0px -1px hsl(330, 70%, 70%));
  @media screen and (max-width: 1024px) {
       scale: 1;

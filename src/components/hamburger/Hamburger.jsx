@@ -9,10 +9,8 @@ export default function Hamburger() {
 
   return (
     <>
-      <MenuLabel
-        onClick={handleClick}
-        
-      >
+      <MenuLabel aria-label='Menu Button' 
+      onClick={handleClick}>
         <Icon clicked={click}></Icon>
       </MenuLabel>
     </>
