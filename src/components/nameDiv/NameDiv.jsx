@@ -63,10 +63,58 @@ export default function NameDiv() {
               } else {
                 if (element && element.tagName === 'P' && element.textContent === 'E') {
                   if (!hoveredLetter) {
-                    setHoveredLetter('R');
+                    setHoveredLetter('E');
                   }
                 } else {
-                  setHoveredLetter(null);
+                  if (element && element.tagName === 'P' && element.textContent === 'K') {
+                    if (!hoveredLetter) {
+                      setHoveredLetter('K');
+                    }
+                  } else {
+                    if (element && element.tagName === 'P' && element.textContent === 'E2') {
+                      if (!hoveredLetter) {
+                        setHoveredLetter('E2');
+                      }
+                    } else {
+                      if (element && element.tagName === 'P' && element.textContent === 'M') {
+                        if (!hoveredLetter) {
+                          setHoveredLetter('M');
+                        }
+                      } else {
+                        if (element && element.tagName === 'P' && element.textContent === 'E3') {
+                          if (!hoveredLetter) {
+                            setHoveredLetter('E3');
+                          }
+                        } else {
+                          if (element && element.tagName === 'P' && element.textContent === 'I') {
+                            if (!hoveredLetter) {
+                              setHoveredLetter('I');
+                            }
+                          } else {
+                            if (element && element.tagName === 'P' && element.textContent === 'J') {
+                              if (!hoveredLetter) {
+                                setHoveredLetter('J');
+                              }
+                            } else {
+                              if (element && element.tagName === 'P' && element.textContent === 'E4') {
+                                if (!hoveredLetter) {
+                                  setHoveredLetter('E4');
+                                }
+                              } else {
+                                if (element && element.tagName === 'P' && element.textContent === 'R') {
+                                  if (!hoveredLetter) {
+                                    setHoveredLetter('R');
+                                  }
+                                } else {
+                                  setHoveredLetter(null);
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
                 }
               }
             }
