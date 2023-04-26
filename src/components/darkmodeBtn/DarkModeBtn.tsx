@@ -4,7 +4,11 @@ import { MuteContext } from '../../contexts/MuteContext';
 import { DarkModeContext } from '../../contexts/DarkModeContext';
 import { useTouchEvents } from '../../hooks/useTouchEvents';
 
-export default function DarkModeBtn() {
+interface DarkModeBtnProps {
+  // add any props here
+}
+
+export default function DarkModeBtn(props: DarkModeBtnProps): JSX.Element {
   const { sounds, isMuted } = useContext(MuteContext);
   const { darkMode, handleToggle } = useContext(DarkModeContext);
   const { handleMouseEnter, handleMouseLeave } = useTouchEvents();
