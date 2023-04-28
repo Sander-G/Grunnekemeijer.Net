@@ -7,6 +7,11 @@ export default function NameDiv() {
   const { sounds, isMuted } = useContext(MuteContext);
   const [hoveredLetter, setHoveredLetter] = useState(null);
 
+  const letterMap = {
+    div: { nameDiv: 'nameDiv' },
+    p: { G: 'G', R: 'R', U: 'U', N: 'N', N2: 'N2', E: 'E', K: 'K', E2: 'E2', M: 'M', E3: 'E3', I: 'I', J: 'J', E4: 'E4' },
+  };
+
   useEffect(() => {
     let timeout;
 
@@ -27,102 +32,28 @@ export default function NameDiv() {
     }
   }
 
+
   function handleTouchMove(event) {
     const { clientX, clientY } = event.touches[0];
     const element = document.elementFromPoint(clientX, clientY);
 
-    if (element && element.tagName === 'div' && element.textContent === 'nameDiv') {
-      if (!hoveredLetter) {
-        setHoveredLetter('nameDiv');
-      }
-    } else {
-      if (element && element.tagName === 'P' && element.textContent === 'G') {
-        if (!hoveredLetter) {
-          setHoveredLetter('G');
-        }
-      } else {
-        if (element && element.tagName === 'P' && element.textContent === 'R') {
-          if (!hoveredLetter) {
-            setHoveredLetter('R');
-          }
-        } else {
-          if (element && element.tagName === 'P' && element.textContent === 'U') {
-            if (!hoveredLetter) {
-              setHoveredLetter('U');
-            }
-          } else {
-            if (element && element.tagName === 'P' && element.textContent === 'N') {
-              if (!hoveredLetter) {
-                setHoveredLetter('N');
-              }
-            } else {
-              if (element && element.tagName === 'P' && element.textContent === 'N2') {
-                if (!hoveredLetter) {
-                  setHoveredLetter('N2');
-                }
-              } else {
-                if (element && element.tagName === 'P' && element.textContent === 'E') {
-                  if (!hoveredLetter) {
-                    setHoveredLetter('E');
-                  }
-                } else {
-                  if (element && element.tagName === 'P' && element.textContent === 'K') {
-                    if (!hoveredLetter) {
-                      setHoveredLetter('K');
-                    }
-                  } else {
-                    if (element && element.tagName === 'P' && element.textContent === 'E2') {
-                      if (!hoveredLetter) {
-                        setHoveredLetter('E2');
-                      }
-                    } else {
-                      if (element && element.tagName === 'P' && element.textContent === 'M') {
-                        if (!hoveredLetter) {
-                          setHoveredLetter('M');
-                        }
-                      } else {
-                        if (element && element.tagName === 'P' && element.textContent === 'E3') {
-                          if (!hoveredLetter) {
-                            setHoveredLetter('E3');
-                          }
-                        } else {
-                          if (element && element.tagName === 'P' && element.textContent === 'I') {
-                            if (!hoveredLetter) {
-                              setHoveredLetter('I');
-                            }
-                          } else {
-                            if (element && element.tagName === 'P' && element.textContent === 'J') {
-                              if (!hoveredLetter) {
-                                setHoveredLetter('J');
-                              }
-                            } else {
-                              if (element && element.tagName === 'P' && element.textContent === 'E4') {
-                                if (!hoveredLetter) {
-                                  setHoveredLetter('E4');
-                                }
-                              } else {
-                                if (element && element.tagName === 'P' && element.textContent === 'R') {
-                                  if (!hoveredLetter) {
-                                    setHoveredLetter('R');
-                                  }
-                                } else {
-                                  setHoveredLetter(null);
-                                }
-                              }
-                            }
-                          }
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
+    let letter = null;
+
+    if (element) {
+      const tag = element.tagName.toLowerCase();
+      const textContent = element.textContent.trim();
+      if (letterMap[tag] && letterMap[tag][textContent]) {
+        letter = letterMap[tag][textContent];
       }
     }
-  }
+
+    if (letter && !hoveredLetter) {
+      setHoveredLetter(letter);
+    } else if (!letter) {
+      setHoveredLetter(null);
+    }
+    }
+
   function handleTouchEnd() {
     setHoveredLetter(null);
   }
