@@ -33,9 +33,9 @@ export function Menu() {
         <NavLink onClick={handleClick} aria-label='menu item - Info Page' onMouseEnter={handleMouseEnterMenu} onMouseLeave={handleMouseLeaveMenu} to='/Info' alt='Info'>
           INFO
         </NavLink>
-        <NavLink onClick={handleClick} aria-label='menu item - Portfolio Page' onMouseEnter={handleMouseEnterMenu} onMouseLeave={handleMouseLeaveMenu} to='/Portfolio' alt='Portfolio'>
+        {/* <NavLink onClick={handleClick} aria-label='menu item - Portfolio Page' onMouseEnter={handleMouseEnterMenu} onMouseLeave={handleMouseLeaveMenu} to='/Portfolio' alt='Portfolio'>
           PORTFOLIO
-        </NavLink>
+        </NavLink> */}
       </Container>
     </>
   );
