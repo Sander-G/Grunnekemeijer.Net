@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Wrapper, PromptWrapper } from './ConsolePrompt.styled';
 import { useVisitCounter } from '../../hooks/useVisitCounter';
 import Typed from 'react-typed';
-import Writer from '../writer/Writer';
+// import Writer from '../writer/Writer';
 
 export function ConsolePrompt() {
   const [currentDate, setCurrentDate] = useState('');
@@ -73,15 +73,15 @@ export function ConsolePrompt() {
   }, [currentDate]);
 
   const [showCommand, setShowCommand] = useState(true);
-  const [showWriter, setShowWriter] = useState(false);
+  // const [showWriter, setShowWriter] = useState(false);
 
   const handleTypedComplete = () => {
     setTimeout(() => {
       setShowCommand(false);
-    }, 2000);
-    setTimeout(() => {
-      setShowWriter(true);
-    }, 2500);
+    }, 20000);
+    // setTimeout(() => {
+    //   setShowWriter(true);
+    // }, 2500);
   };
   return (
     <>
@@ -99,12 +99,12 @@ export function ConsolePrompt() {
         <span className='terminal'>S:\&nbsp;</span>
         {showCommand && (
           <span>
-            <Typed strings={['Informatie.exe']} typeSpeed={50} backSpeed={0} startDelay={2000} backDelay={2500} onComplete={handleTypedComplete} cursorChar='|' loopCount={0} className='terminal' />
+            <Typed strings={['Hello World!']} typeSpeed={50} backSpeed={0} startDelay={2000} backDelay={2500} onComplete={handleTypedComplete} cursorChar='|' loopCount={0} className='terminal' />
           </span>
         )}
       </PromptWrapper>
 
-      {showWriter && <Writer />}
+      {/* {showWriter && <Writer />} */}
     </>
   );
 }
